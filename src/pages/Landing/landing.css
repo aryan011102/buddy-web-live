@@ -1,0 +1,66 @@
+/* Root landing wrapper */
+.landing {
+  min-height: 100vh;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* 👈 IMPORTANT */
+  padding-bottom: clamp(3rem, 8vw, 8rem);
+  gap: clamp(1rem, 2vw, 2.5rem);
+}
+
+/* Main title */
+.hero-title {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.08);
+
+  /* THIS is the Framer-like scaling */
+  font-size: clamp(4rem, 18vw, 12rem);
+  line-height: 1;
+}
+
+/* CTA button */
+.hero-cta {
+  padding: clamp(0.75rem, 1.2vw, 1.25rem)
+           clamp(1.5rem, 3vw, 3rem);
+
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: white;
+  cursor: pointer;
+
+  transition: transform 0.15s ease;
+}
+
+.hero-cta:hover {
+  transform: scale(1.04);
+}
+
+/* BOXES SECTION */
+.boxes {
+  position: relative;
+  padding: clamp(2rem, 6vw, 6rem) clamp(1.5rem, 4vw, 4rem);
+}
+
+/* Temporary placeholder */
+.boxes-placeholder {
+  height: clamp(200px, 30vw, 420px);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.03);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  color: rgba(0, 0, 0, 0.4);
+}
