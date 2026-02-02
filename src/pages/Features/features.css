@@ -15,7 +15,6 @@
   color: #f4c400;
 }
 
-/* Desktop playground */
 .features-playground {
   position: relative;
   height: 520px;
@@ -28,4 +27,11 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .features-title  {
+   
+    margin-bottom: 80px;
+  }
 }

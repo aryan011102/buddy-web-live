@@ -3,6 +3,7 @@ import * as PIXI from "pixi.js";
 
 export default function MagnifyText({ text }: { text: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
+const LETTER_SPACING = -12; // try -10 to -30
 
   useEffect(() => {
     const container = containerRef.current;
@@ -18,8 +19,10 @@ export default function MagnifyText({ text }: { text: string }) {
 
   
     const style = new PIXI.TextStyle({
+  
       fontFamily: "Rethink Sans",
-      fontSize: 180,
+     fontSize: window.innerWidth < 640 ? 110 : 180,
+
       fontWeight: "400",
       fill: 0xF6DDE1,
     });
@@ -48,7 +51,7 @@ export default function MagnifyText({ text }: { text: string }) {
     for (const l of letters) {
       l.x = x + l.width / 2;
       l.y = app.screen.height / 2;
-      x += l.width;
+    x += l.width + LETTER_SPACING;
     }
 
     // --------------------
@@ -108,12 +111,10 @@ export default function MagnifyText({ text }: { text: string }) {
     <div
       ref={containerRef}
       style={{
-        position: "absolute",
-        top: "40%",
-        left: "50%",
-        transform: "translate(-50%, -60%)",
-        width: "100%",
-        height: "300px",
+       position: "relative",
+width: "100%",
+height: "100%",
+        cursor: "none",
       }}
     />
   );

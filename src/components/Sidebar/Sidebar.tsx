@@ -16,9 +16,6 @@ export default function Sidebar({ open, onClose }: Props) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // ------------------------
-  // HOME (smart behavior)
-  // ------------------------
 
   function goHome() {
     if (location.pathname === "/") {
@@ -35,18 +32,13 @@ export default function Sidebar({ open, onClose }: Props) {
     }
   }
 
-  // ------------------------
-  // ABOUT
-  // ------------------------
+ 
 
   function goAbout() {
     navigate("/about");
     onClose();
   }
 
-  // ------------------------
-  // SCROLL TO SECTION
-  // ------------------------
 
   function scrollTo(id: string) {
     const el = document.getElementById(id);
@@ -70,23 +62,24 @@ export default function Sidebar({ open, onClose }: Props) {
 
       <aside className={`sidebar ${open ? "open" : ""}`}>
 
-        {/* HEADER */}
+    
         <div className="sidebar-header">
-          <div className="sidebar-brand">buddy</div>
-
-          <button className="sidebar-close" onClick={onClose}>
+           <button className="sidebar-close" onClick={onClose}>
             ☰
           </button>
+          <div className="sidebar-brand">buddy</div>
+
+         
         </div>
 
-        {/* STAIRCASE */}
+
         <img
           src={stairs}
           className="sidebar-stairs"
           alt=""
         />
 
-        {/* NAV */}
+  
         <nav className="sidebar-nav">
           <button onClick={goHome}>Home</button>
           <button onClick={goAbout}>About Us</button>
@@ -97,10 +90,10 @@ export default function Sidebar({ open, onClose }: Props) {
           <button onClick={() => scrollTo("contact")}>Contact Us</button>
         </nav>
 
-        {/* CTA */}
+   
         <button className="sidebar-cta">Try Buddy</button>
 
-        {/* FOOTER */}
+
         <div className="sidebar-footer">
           <span>© buddy</span>
 

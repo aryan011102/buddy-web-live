@@ -3,11 +3,15 @@ import { FEATURES } from "./features.constants";
 import FeatureCard from "../../components/FeatureCard/FeatureCard";
 import { useInViewport } from "../../hooks/useInViewport";
 import "./features.css";
+import { useRevealOnScroll } from "../../hooks/useRevealOnScroll";
+
 
 export default function FeaturesSection() {
-  const { ref, inView } = useInViewport();
   const [resetKey, setResetKey] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+const { ref: viewportRef, inView } = useInViewport();
+const { ref: revealRef, visible } = useRevealOnScroll();
+
 
   useEffect(() => {
     const handler = () => {
@@ -25,8 +29,18 @@ export default function FeaturesSection() {
     }
   }, [inView]);
 
+  function setRefs(el: HTMLElement | null) {
+  viewportRef.current = el;
+  revealRef.current = el;
+}
+
+
   return (
-    <section ref={ref} className="features-section" id="features">
+   <section
+ref={setRefs}
+  className={`features-section reveal ${visible ? "visible" : ""}`}
+  id="features"
+>
       <h2 className="features-title">
         Features that <span>separate</span> us from the chaos
       </h2>

@@ -6,10 +6,17 @@ import { useInViewport } from "../../hooks/useInViewport";
 import "./questions.css";
 import QuestionBubble from "../../components/QuestionsBubble/QuestionBubble";
 
+import { useRevealOnScroll } from "../../hooks/useRevealOnScroll";
 export default function QuestionsSection() {
-  const { ref, inView } = useInViewport();
+
+const { ref: viewportRef, inView } = useInViewport();
+const { ref: revealRef, visible } = useRevealOnScroll();
   const { bubbles, reset } = useQuestionSpawner(inView);
 
+  function setRefs(el: HTMLElement | null) {
+  viewportRef.current = el;
+  revealRef.current = el;
+}
   useEffect(() => {
     if (!inView) {
       reset();
@@ -17,12 +24,12 @@ export default function QuestionsSection() {
   }, [inView]);
 
   return (
-    <section id="questions" ref={ref} className="questions-section">
+    <section id="questions" ref={setRefs} className={`questions-section ${visible ? "visible" : ""}`}>
       <div className="questions-div">
         <h2 className="questions-title">Questions that have haunted us all!</h2>
       </div>
-
-      {DEFAULT_QUESTIONS.map((text, i) => (
+<div className="questions-cloud">
+ {DEFAULT_QUESTIONS.map((text, i) => (
         <QuestionBubble
           key={`default-${i}`}
           text={text}
@@ -44,6 +51,8 @@ export default function QuestionsSection() {
           tail={b.tail}
         />
       ))}
+</div>
+     
     </section>
   );
 }

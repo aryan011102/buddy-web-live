@@ -6,12 +6,15 @@ import { useState } from "react";
 import FloatingMenuButton from "./components/FloatingMenuButton/FloatingMenuButton";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Landing from "./pages/Landing/Landing";
+import CursorDot from "./components/Cursor/CursorDot";
 
 function App() {
   const [open, setOpen] = useState(false);
 
   return (
+    
     <BrowserRouter>
+        <CursorDot />
    {!open && <FloatingMenuButton onClick={() => setOpen(true)} />}
 
       <Sidebar open={open} onClose={() => setOpen(false)} />
