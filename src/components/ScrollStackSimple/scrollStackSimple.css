@@ -1,0 +1,38 @@
+.stack-container {
+  height: 500vh;
+  padding-top: 20vh;
+}
+
+.stack-card {
+  position: sticky;
+  top: 18vh;
+
+  width: min(1100px, 88vw);
+  margin-inline: auto;
+
+  height: 450px;             
+  margin-bottom: 140px;
+
+  background: white;
+  border-radius: 40px;
+  padding: 56px;
+
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: top center;
+}
+
+
+@media (max-width: 768px) {
+  .stack-container {
+    height: auto;
+  }
+
+  .stack-card {
+    position: relative;
+    top: auto;
+    height: auto;
+    margin-bottom: 40px;
+    padding: 28px;
+  }
+}

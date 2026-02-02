@@ -1,0 +1,12 @@
+.steps-section {
+  min-height: 100vh;
+  background: #6fc0ff;
+  padding: 120px 0;
+}
+
+.steps-title {
+  text-align: center;
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 700;
+  margin-bottom: 80px;
+}

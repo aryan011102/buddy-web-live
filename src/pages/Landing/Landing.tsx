@@ -2,6 +2,7 @@
 import { FeaturesSection } from "../Features";
 import HeroSection from "../Hero/HeroSection";
 import QuestionsSection from "../Questions/QuestionsSection";
+import StepsSection from "../Steps/StepsSection";
 
 export default function Landing() {
   return (
@@ -9,6 +10,7 @@ export default function Landing() {
       <HeroSection />
       <QuestionsSection />
       <FeaturesSection />
+      <StepsSection/>
     </div>
   );
 }
