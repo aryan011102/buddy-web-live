@@ -18,3 +18,8 @@ body {
 button {
   font-family: inherit;
 }
+
+
+html {
+  scroll-behavior: smooth;
+}

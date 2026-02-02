@@ -1,0 +1,135 @@
+/* Backdrop */
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 40;
+}
+
+/* Sidebar Panel */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 320px;
+  height: 100vh;
+  background: #f6dde1;
+
+  padding: 28px 20px;
+  box-sizing: border-box;
+
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  z-index: 50;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;         /* important */
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Header */
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  gap: 10px;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 3;
+}
+
+.sidebar-brand {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.sidebar-close {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Staircase */
+
+.sidebar-stairs {
+  position: absolute;
+  right: 18px;
+  top: 32px;
+  height: 350px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Nav */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.sidebar-nav button {
+  height: 44px;
+  border-radius: 10px;
+  border: none;
+  background: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sidebar-nav button:nth-child(even) {
+  background: #1e1e1e;
+  color: #f6dde1;
+}
+
+/* CTA */
+
+.sidebar-cta {
+  margin-top: auto;
+  height: 48px;
+  border-radius: 999px;
+  border: none;
+  background: black;
+  color: #f6dde1;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Footer */
+
+.sidebar-footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    width: 100vw;
+  }
+}

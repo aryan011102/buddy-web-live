@@ -1,0 +1,42 @@
+
+
+.hero-cta {
+  padding: clamp(0.75rem, 1.2vw, 1.25rem)
+           clamp(1.5rem, 3vw, 3rem);
+
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: white;
+  cursor: pointer;
+
+  transition: transform 0.15s ease;
+}
+
+.hero-cta:hover {
+  transform: scale(1.04);
+}
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+
+.hero-cta-wrapper {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+
+.hero-boxes {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
