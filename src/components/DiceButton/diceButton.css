@@ -1,0 +1,44 @@
+.dice-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.2s ease;
+}
+
+.dice-btn img {
+  width: 52px;
+  height: 52px;
+  display: block;
+}
+.dice-btn:not(.rolling) img {
+  transition: transform 0.2s ease;
+}
+
+.dice-btn:not(.rolling):active img {
+  transform: scale(0.9);
+}
+
+
+/* Hover micro feedback */
+.dice-btn:hover {
+  transform: scale(1.06);
+}
+
+.dice-btn.rolling img {
+  animation: dice-shake-once 0.65s ease;
+}
+
+@keyframes dice-shake-once {
+  0% { transform: translateX(0) rotate(0); }
+  20% { transform: translateX(-10px) rotate(-10deg); }
+  40% { transform: translateX(10px) rotate(10deg); }
+  60% { transform: translateX(-4px) rotate(-4deg); }
+  80% { transform: translateX(4px) rotate(4deg); }
+  100% { transform: translateX(0) rotate(0); }
+}

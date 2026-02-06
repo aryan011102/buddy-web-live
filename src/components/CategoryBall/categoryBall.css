@@ -1,0 +1,59 @@
+.category-ball {
+  width: var(--ball-size);
+  height: var(--ball-size);
+  border-radius: 50%;
+  position: relative;
+  perspective: 800px;
+  user-select: none;
+}
+
+
+.ball-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(.2, .8, .2, 1);
+}
+
+
+.category-ball.flip:hover .ball-inner {
+  transform: rotateY(180deg);
+}
+
+
+.ball-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12%;
+  backface-visibility: hidden;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+.ball-face.back {
+  transform: rotateY(180deg);
+}
+
+.category-ball img {
+  width: clamp(38px, 50%, 92px);
+  height: clamp(38px, 50%, 92px);
+  object-fit: contain;
+}
+
+.ball-face span {
+  max-width: 75%;
+  font-size: clamp(11px, 1.1vw, 16px);
+  line-height: 1.15;
+  color: #111;
+  word-break: break-word;
+}
+
+.category-ball.filler {
+  border-radius: 50%;
+}

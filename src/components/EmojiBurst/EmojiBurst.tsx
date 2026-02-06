@@ -29,7 +29,7 @@ export default function EmojiBurst({ targets }: { targets: Target[] }) {
 
         el.style.position = "absolute";
         el.style.pointerEvents = "none";
-        el.style.fontSize = "22px";
+        el.style.fontSize = "28px";
         el.style.opacity = "1";
         el.style.willChange = "transform, opacity";
         el.style.zIndex = "2";
@@ -46,7 +46,7 @@ export default function EmojiBurst({ targets }: { targets: Target[] }) {
         nodes.push(el);
 
        
-        const riseHeight = 180 + Math.random() * 220;
+        const riseHeight = 180 + Math.random() * 240;
 
        
         const xDrift = (Math.random() - 0.5) * 140;

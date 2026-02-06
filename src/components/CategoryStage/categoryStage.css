@@ -1,0 +1,19 @@
+.categories-stage {
+  position: relative;
+  width: 100%;
+  height: min(90vh, 900px);
+  overflow: hidden;
+}
+
+.ball-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .categories-stage {
+    height: 70vh;
+  }
+}
