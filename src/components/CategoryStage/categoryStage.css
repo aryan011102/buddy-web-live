@@ -1,7 +1,7 @@
 .categories-stage {
   position: relative;
   width: 100%;
-  height: min(90vh, 900px);
+  height: min(85vh, 900px);
   overflow: hidden;
 }
 

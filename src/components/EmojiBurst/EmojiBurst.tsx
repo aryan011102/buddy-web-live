@@ -29,7 +29,7 @@ export default function EmojiBurst({ targets }: { targets: Target[] }) {
 
         el.style.position = "absolute";
         el.style.pointerEvents = "none";
-        el.style.fontSize = "28px";
+        el.style.fontSize = "32px";
         el.style.opacity = "1";
         el.style.willChange = "transform, opacity";
         el.style.zIndex = "2";

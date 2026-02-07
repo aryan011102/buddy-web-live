@@ -15,7 +15,7 @@ type Ball = {
   variant: "icon" | "text" | "filler";
 };
 
-const GRAVITY = window.innerWidth < 768 ? 2.2 : 1.2;
+const GRAVITY = window.innerWidth < 768 ? 2.2 : 2.2;
 const FRICTION = window.innerWidth < 768 ? 0.88 : 0.92;
 
 export default function CategoryStage() {

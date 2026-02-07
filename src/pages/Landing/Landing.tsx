@@ -1,6 +1,7 @@
 
 import BuddyIdentitySection from "../BuddyIdentity/BuddyIdentitySection";
 import CategoriesSection from "../Categories/CategoriesSection";
+import FaqSection from "../FAQs/FaqSection";
 import { FeaturesSection } from "../Features";
 import HeroSection from "../Hero/HeroSection";
 import QuestionsSection from "../Questions/QuestionsSection";
@@ -15,6 +16,7 @@ export default function Landing() {
       <StepsSection/>
       <CategoriesSection/>
       <BuddyIdentitySection/>
+      <FaqSection/>
     </div>
   );
 }

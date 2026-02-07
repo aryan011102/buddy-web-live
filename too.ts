@@ -1,5 +1,8 @@
-//in the buddy landing page, make the gap between characters less
-//make the emojis popout from the height of the lowest box, and might also end them there using a fade
-//adding scroll animations and micro animations, making first hero section phone responsive
+//buddy identities one line, irrepsective of length
+//category flip slowed a lil
+//in identity section remove sparkles and line from phone display
+//count skip from phone view
+//cards to be stacked on phone view for steps and heading can be seen with cards
+//height for fall of categories to be above heading not below
 
 
