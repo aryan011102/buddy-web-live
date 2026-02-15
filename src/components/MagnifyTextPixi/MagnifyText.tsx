@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import * as PIXI from "pixi.js";
 
 export default function MagnifyText({ text }: { text: string }) {
-  const containerRef = useRef<HTMLDivElement>(null);
+const containerRef = useRef<HTMLDivElement>(null);
 const LETTER_SPACING = -12; // try -10 to -30
 
   useEffect(() => {

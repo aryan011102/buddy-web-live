@@ -1,8 +1,3 @@
-:root {
-  --spark-ground: 88vh;
-}
-
-/* ---------------- SECTION ---------------- */
 
 .faq-section {
   position: relative;
@@ -15,8 +10,6 @@
   overflow: hidden;
 }
 
-/* ---------------- TITLE ---------------- */
-
 .faq-title {
   font-size: clamp(32px, 4vw, 40px);
   font-weight: 600;
@@ -27,7 +20,6 @@
   color: #8b8cff;
 }
 
-/* ---------------- FAQ BOX ---------------- */
 
 .faq-box {
   width: 100%;
@@ -37,7 +29,6 @@
   padding-right: 6px;
 }
 
-/* ---------------- SPARK LAYER ---------------- */
 
 .faq-sparks-layer {
   position: absolute;
@@ -45,16 +36,15 @@
   pointer-events: none;
 }
 
-/* Base spark */
 
 .faq-spark {
   position: absolute;
   width: 18px;
   z-index: 2;
   pointer-events: auto;
+  will-change: transform;
 }
 
-/* ---------------- FLOATING ---------------- */
 
 .faq-spark.floating {
   cursor: pointer;
@@ -65,32 +55,21 @@
   transform: scale(1.25);
 }
 
-/* ---------------- FALLING ---------------- */
-
 .faq-spark.falling {
-  animation: spark-fall 0.1s linear forwards;
+  animation: spark-fall 1.4s cubic-bezier(.22,.61,.36,1) forwards;
 }
 
-
-/* ---------------- GROUND ---------------- */
 
 .faq-spark.ground {
-  bottom: 18px; /* SINGLE ground line */
+  bottom: 18px; 
 }
 
-/* ---------------- ANIMATION ---------------- */
 
 @keyframes spark-fall {
-  0% {
+  from {
     transform: translate(0, 0);
   }
-  70% {
-    transform: translate(var(--drift-x), calc(var(--spark-ground) - 100%));
-  }
-  85% {
-    transform: translate(var(--drift-x), calc(var(--spark-ground) - 100% + 6px));
-  }
-  100% {
-    transform: translate(var(--drift-x), calc(var(--spark-ground) - 100%));
+  to {
+    transform: translate(var(--drift-x), 520px);
   }
 }

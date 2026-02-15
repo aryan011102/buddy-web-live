@@ -6,7 +6,7 @@
 }
 
 .categories-title {
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(32px, 4vw, 40px);
   font-weight: 600;
   text-align: center;
   margin-bottom: 20px;
