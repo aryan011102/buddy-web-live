@@ -17,17 +17,23 @@ const ReasonsSection = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end end"]
+    offset: ["start start", "end start"]
+
   })
 
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    ["0%", `-${(totalGroups - 1) * 100}%`]
+    ["0%", `-${(totalGroups - 2) * 100}%`]
   )
 
   return (
-    <section ref={ref} className="reasons-section">
+ <section
+  ref={ref}
+  className="reasons-section"
+  style={{ height: `${totalGroups * 100}vh` }}
+>
+
       <div className="reasons-sticky">
         <div className="reasons-heading">
           <h2>Not moving out?</h2>

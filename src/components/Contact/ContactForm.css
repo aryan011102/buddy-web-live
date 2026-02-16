@@ -1,0 +1,90 @@
+.contact-form h2 {
+  font-size: clamp(32px, 3vw, 48px);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.contact-sub {
+  color: #8793A1;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.contact-fields p {
+  color: #1E1E1E;
+  font-size: 24px;
+  margin-bottom: 16px; /* reduced from 24px */
+}
+/* REAL INPUTS styled like dashed lines */
+
+.input-line {
+  display: inline-block;
+  width: 180px;
+  border: none;
+  font-size: 24px;
+  border-bottom: 2px dashed #F6DDE1;
+  outline: none;
+  background: transparent;
+  padding-bottom: 4px;
+}
+.input-line:focus {
+  border-bottom-color: #d8a6af;
+}
+
+.textarea-line {
+  width: 100%;
+  min-height: 60px;
+  border: none;
+  border-bottom: 2px dashed #F6DDE1;
+  outline: none;
+  background: transparent;
+  resize: none;
+  margin-top: 12px; /* reduced from 20px */
+  padding-bottom: 6px;
+}
+
+.textarea-line:focus {
+  border-bottom-color: #d8a6af;
+}
+
+.submit-btn {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 18px 40px;
+  border-radius: 16px;
+  border: none;
+  background: #1e1e1e;
+  color: #F6DDE1;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+}
+/* ERROR STATE */
+
+
+.error {
+  border-bottom-color: #ff6b6b !important;
+}
+
+.error-text {
+  display: block;
+  color: #ff6b6b;
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+/* BUTTON STATES */
+
+.submit-btn.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submit-btn:disabled {
+  cursor: not-allowed;
+}

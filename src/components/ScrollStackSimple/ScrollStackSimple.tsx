@@ -25,8 +25,9 @@ export default function ScrollStackSimple({
         const clamped = Math.max(0, Math.min(1, p));
         const scale = 1 - i * 0.01 * clamped;
         const direction = i % 2 === 0 ? 1 : -1;
-        const maxRotate = 2;
-        const rotate = direction * maxRotate * clamped;
+        const maxRotate = window.innerWidth <= 765 ? 0 : 2;
+
+        const rotate = window.innerWidth <= 765 ? 0 : direction * maxRotate * clamped;
 
         card.style.transform = `
   scale(${scale})

@@ -1,0 +1,118 @@
+.boxes-wrapper {
+  position: relative;
+  width: clamp(450px, 45vw, 700px);
+  aspect-ratio: 4 / 3;
+}
+
+/* ---------- BOXES ---------- */
+
+.boxes-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.box {
+  position: absolute;
+  width: clamp(120px, 12vw, 180px);
+  height: auto;
+}
+
+/* Position boxes roughly like Figma */
+
+.box-blue   { bottom: 0; left: 0; }
+.box-green  { bottom: 0; left: 25%; }
+.box-purple { bottom: 0; left: 50%; }
+.box-pink   { bottom: 0; left: 85%; }
+.box-yellow { bottom: 0; left: 40%; }
+.box-trolley { bottom: 0; right: 0; }
+
+/* ---------- CHARACTERS ---------- */
+
+.chars-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.char {
+  cursor: pointer;
+  position: absolute;
+  width: clamp(80px, 6vw, 120px);
+  height: auto;
+}
+
+/* Characters resting on boxes */
+
+.char-insta {
+  bottom: 27%;
+  left: 35%;
+}
+
+.char-linkedin {
+  bottom: 35%;
+  left: 72%;
+}
+
+.char-whatsapp {
+  bottom: 35%;
+  left: 55%;
+}
+
+.char-cookie {
+  bottom: 21%;
+  left: 15%;
+}
+
+.char-fortune {
+  bottom: 22%;
+  left: 1%;
+  width: clamp(70px, 6vw, 100px);
+}
+
+
+@media (max-width: 1200px) {
+
+  .boxes-wrapper {
+  transform: scale(0.9);
+    transform-origin: bottom;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 480px;
+    align-items: center;
+  }
+    .boxes-wrapper {
+    transform: scale(0.75);
+    transform-origin: bottom center;
+    margin-top: 0;
+  }
+
+}
+
+
+
+@media (max-width: 375px) {
+    .boxes-wrapper {
+    transform: scale(0.65);
+    transform-origin: bottom center;
+    margin-top: 0;
+  }
+
+}

@@ -10,25 +10,25 @@ const desktopPositions = [
   { top: "10%", left: "15%" },
   { top: "40%", left: "8%" },
   { top: "20%", left: "40%" },
-  { top: "65%", left: "18%" },
-  { top: "75%", left: "50%" },
-  { top: "35%", left: "75%" },
-  { top: "15%", left: "85%" },
+  { top: "65%", left: "10%" },
+  { top: "75%", left: "60%" },
+  { top: "35%", left: "80%" },
+  { top: "10%", left: "65%" },
   { top: "70%", left: "85%" },
-  { top: "85%", left: "30%" }
+  { top: "77%", left: "30%" }
 ]
-
+//g 65 10
 
 const mobilePositions = [
   { top: "12%", left: "18%" },
   { top: "28%", left: "8%" },
-  { top: "22%", left: "60%" },
+  { top: "18%", left: "60%" },
   { top: "45%", left: "15%" },
   { top: "50%", left: "55%" },
-  { top: "38%", left: "72%" },
+  { top: "31%", left: "72%" },
   { top: "65%", left: "20%" },
-  { top: "70%", left: "60%" },
-  { top: "80%", left: "35%" }
+  { top: "70%", left: "65%" },
+  { top: "85%", left: "35%" }
 ]
 
 const ReasonsGrid = ({ reasons }: Props) => {

@@ -8,7 +8,7 @@ export const FAQS: FaqItem[] = [
   {
     id: "1",
     question: "Does the app require a subscription?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo conseq"
+    answer: "Not just yet.\nRight now, you can discover trusted recommendations and leads shared by the users on the app.\nIn our upcoming version, you’ll be able to:\nExplore the best PGs and flats\nSee real reviews and ratings from people on the app\nConnect directly for availability and bookings\nWe’re building a more transparent, community-powered way to find housing. Stay tuned."
   },
   {
     id: "2",

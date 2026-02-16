@@ -1,6 +1,7 @@
 
 import BuddyIdentitySection from "../BuddyIdentity/BuddyIdentitySection";
 import CategoriesSection from "../Categories/CategoriesSection";
+import ContactSection from "../ContactSection/ContactSection";
 import CTASection from "../CTASection/CTASection";
 import FaqSection from "../FAQs/FaqSection";
 import { FeaturesSection } from "../Features";
@@ -12,15 +13,16 @@ import StepsSection from "../Steps/StepsSection";
 export default function Landing() {
   return (
     <div>
-      <HeroSection />
+      {/* <HeroSection />
       <QuestionsSection />
       <FeaturesSection />
       <StepsSection/>
       <CategoriesSection/>
       <BuddyIdentitySection/>
-      <FaqSection/>
+      <FaqSection/> */}
       <ReasonsSection/>
       <CTASection/>
+      <ContactSection/>
     </div>
   );
 }

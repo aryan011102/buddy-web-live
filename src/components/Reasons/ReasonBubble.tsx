@@ -21,11 +21,11 @@ const ReasonBubble = ({ reason }: Props) => {
   whileHover={!isTouch ? { scale: 1.08 } : undefined}
   animate={{
     width: expanded
-      ? (isTouch ? 180 : 220)
-      : (isTouch ? 72 : 92),
+      ? (isTouch ? 120 : 180)
+      : (isTouch ? 60 : 82),
     height: expanded
       ? (isTouch ? 110 : 120)
-      : (isTouch ? 72 : 92),
+      : (isTouch ? 60 : 82),
   }}
   transition={{ duration: 0.3 }}
   onHoverStart={!isTouch ? () => setExpanded(true) : undefined}
