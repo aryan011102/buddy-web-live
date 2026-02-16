@@ -1,14 +1,27 @@
 .identity-title {
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(42px, 5vw, 72px);
   font-weight: 600;
   color: #f6eaea;
   line-height: 1.1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  white-space: nowrap;
 }
 
+
+.identity-static {
+  flex-shrink: 0;
+}
+
+
 .identity-word {
-  color: #4da9ff;
   position: relative;
   display: inline-block;
+  transition: color 0.25s ease;
 }
 
 .identity-word .underline {
@@ -19,15 +32,29 @@
   height: 3px;
   background: currentColor;
 }
-.identity-word {
-  display: inline-block;
-  position: relative;
-  transition: color 0.25s ease;
-}
 
 
 @keyframes textJitter {
   0% { transform: translateY(0); }
   50% { transform: translateY(-2px); }
   100% { transform: translateY(0); }
+}
+
+
+@media (max-width: 768px) {
+
+  .identity-title {
+    flex-direction: column;   
+    gap: 8px;
+    white-space: normal;   
+  }
+
+  .identity-static {
+    font-size: 28px;
+  }
+
+  .identity-word {
+    font-size: 30px;
+  }
+
 }
