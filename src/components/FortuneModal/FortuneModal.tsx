@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
+import { createPortal } from "react-dom" // NEW IMPORT
 import "./FortuneModal.css"
 
 const fortunes = [
@@ -15,26 +16,20 @@ const fortunes = [
   "Stay playful."
 ]
 
-interface Props {
-  isOpen: boolean
-  onClose: () => void
-}
-
-export default function FortuneModal({ isOpen, onClose }: Props) {
+export default function FortuneModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [fortune, setFortune] = useState("")
 
   useEffect(() => {
     if (isOpen) {
-      const random = fortunes[Math.floor(Math.random() * fortunes.length)]
-      setFortune(random)
+      setFortune(fortunes[Math.floor(Math.random() * fortunes.length)])
     }
   }, [isOpen])
 
-  return (
+  // Wrap everything in a Portal so it renders at the root level of the site
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Overlay */}
           <motion.div
             className="fortune-overlay"
             initial={{ opacity: 0 }}
@@ -43,25 +38,20 @@ export default function FortuneModal({ isOpen, onClose }: Props) {
             onClick={onClose}
           />
 
-          {/* Content */}
           <motion.div
             className="fortune-container"
-            initial={{ scale: 0.6, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.6, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            initial={{ scale: 0.4, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.4, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
           >
-            <motion.div
-              className="fortune-paper"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-            >
+            <div className="fortune-paper">
               {fortune}
-            </motion.div>
+            </div>
           </motion.div>
         </>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body // This pushes the modal to the very end of the HTML
   )
 }
