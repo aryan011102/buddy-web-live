@@ -116,7 +116,7 @@ export default function FaqSection() {
   }
 
   return (
-    <section className="faq-section">
+    <section className="faq-section" id="faq">
       
       <div className="faq-sparks-layer">
      
