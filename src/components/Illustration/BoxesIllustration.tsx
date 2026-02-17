@@ -2,7 +2,7 @@ import "./BoxesIllustration.css"
 import { useState, useRef } from "react"
 import { motion, AnimatePresence, type Variants } from "framer-motion"
 
-// Assets
+// Assets (Keep your existing imports)
 import blueBox from "../../assets/svg/blue-box-footer.svg"
 import greenBox from "../../assets/svg/green-box-footer.svg"
 import yellowBox from "../../assets/svg/yellow-box-footer.svg"
@@ -17,9 +17,13 @@ import cookie from "../../assets/svg/cookie.svg"
 
 import FortuneModal from "../FortuneModal/FortuneModal"
 
+// Blast particle configuration
+const BLAST_PARTICLES = Array.from({ length: 12 });
+
 export default function BoxesIllustration() {
   const [isFortuneOpen, setIsFortuneOpen] = useState(false)
   const [isZooming, setIsZooming] = useState(false)
+  const [showBlast, setShowBlast] = useState(false)
   
   const cookieRef = useRef<HTMLImageElement>(null)
   const [animationData, setAnimationData] = useState({ x: 0, y: 0 })
@@ -27,8 +31,6 @@ export default function BoxesIllustration() {
   const handleCookieClick = () => {
     if (cookieRef.current) {
       const rect = cookieRef.current.getBoundingClientRect()
-      
-      // Calculate the distance to move to get to the center of the screen
       const screenCenterX = window.innerWidth / 2
       const screenCenterY = window.innerHeight / 2
       const cookieCenterX = rect.left + rect.width / 2
@@ -41,11 +43,14 @@ export default function BoxesIllustration() {
       
       setIsZooming(true)
 
-      // Sync modal appearance with the end of the fly animation
+      // Trigger blast slightly before modal
+      setTimeout(() => setShowBlast(true), 750);
+
       setTimeout(() => {
         setIsFortuneOpen(true)
         setIsZooming(false)
-      }, 900)
+        setShowBlast(false)
+      }, 950)
     }
   }
 
@@ -62,7 +67,7 @@ export default function BoxesIllustration() {
       opacity: [1, 1, 0],
       transition: { 
         duration: 0.9, 
-        ease: [0.4, 0, 0.2, 1], // Custom cubic-bezier for a smooth "lift"
+        ease: [0.4, 0, 0.2, 1],
         opacity: { times: [0, 0.8, 1], duration: 0.9 }
       }
     }
@@ -86,7 +91,7 @@ export default function BoxesIllustration() {
         <motion.img src={cookieChar} className="char char-cookie" whileHover={{ scale: 1.1 }} />
 
         <AnimatePresence>
-          {/* THE GLOW EFFECT */}
+          {/* 1. THE GLOW: Follows the cookie path */}
           {isZooming && (
             <motion.div
               className="cookie-glow-effect"
@@ -94,19 +99,40 @@ export default function BoxesIllustration() {
               animate={{ 
                 x: animationData.x, 
                 y: animationData.y, 
-                scale: 15, 
-                opacity: [0, 0.8, 0] 
+                scale: [2, 14], 
+                opacity: [0, 0.9, 0] 
               }}
               transition={{ duration: 0.9, ease: "easeOut" }}
               style={{
                 position: 'absolute',
-                // Center the glow on the cookie's starting position
                 bottom: '22%',
                 left: '1%',
-                zIndex: 9998
+                zIndex: 10001
               }}
             />
           )}
+
+          {/* 2. THE BLAST: Bursting from the center */}
+          {showBlast && BLAST_PARTICLES.map((_, i) => (
+            <motion.div
+              key={i}
+              className="blast-particle"
+              initial={{ x: animationData.x, y: animationData.y, scale: 1 }}
+              animate={{ 
+               x: animationData.x + (Math.cos(i * (360 / 12) * (Math.PI / 180)) * 250), 
+                y: animationData.y + (Math.sin(i * (360 / 12) * (Math.PI / 180)) * 250),
+                scale: 0,
+                opacity: 0
+              }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              style={{
+                position: 'absolute',
+                bottom: '22%',
+                left: '1%',
+                zIndex: 10002
+              }}
+            />
+          ))}
 
           {!isFortuneOpen && (
             <motion.img
@@ -122,10 +148,7 @@ export default function BoxesIllustration() {
         </AnimatePresence>
       </div>
 
-      <FortuneModal 
-        isOpen={isFortuneOpen} 
-        onClose={() => setIsFortuneOpen(false)} 
-      />
+      <FortuneModal isOpen={isFortuneOpen} onClose={() => setIsFortuneOpen(false)} />
     </div>
   )
 }

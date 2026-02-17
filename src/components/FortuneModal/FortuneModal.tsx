@@ -38,13 +38,18 @@ export default function FortuneModal({ isOpen, onClose }: { isOpen: boolean; onC
             onClick={onClose}
           />
 
-          <motion.div
-            className="fortune-container"
-            initial={{ scale: 0.4, opacity: 0, y: 20 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.4, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 260, damping: 20 }}
-          >
+         <motion.div
+  className="fortune-container"
+  initial={{ scale: 0.5, opacity: 0, filter: "brightness(5) blur(10px)" }}
+  animate={{ scale: 1, opacity: 1, filter: "brightness(1) blur(0px)" }}
+  exit={{ scale: 0.5, opacity: 0 }}
+  transition={{ 
+    type: "spring", 
+    stiffness: 300, 
+    damping: 25,
+    filter: { duration: 0.4 } // The flash fades out quickly
+  }}
+>
             <div className="fortune-paper">
               {fortune}
             </div>
