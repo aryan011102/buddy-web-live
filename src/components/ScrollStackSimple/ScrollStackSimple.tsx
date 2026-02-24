@@ -3,8 +3,10 @@ import "./scrollStackSimple.css";
 
 export default function ScrollStackSimple({
   children,
+  count,
 }: {
   children: ReactNode;
+  count?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -45,6 +47,17 @@ export default function ScrollStackSimple({
           );
         }
       });
+
+      const lastCard = cards[cards.length - 1];
+      if (lastCard) {
+        const lastRect = lastCard.getBoundingClientRect();
+        const hideAt = window.innerWidth <= 765 ? 0.6 : 0.5;
+        if (lastRect.top <= vh * hideAt) {
+          section.classList.add("hide-steps-title");
+        } else {
+          section.classList.remove("hide-steps-title");
+        }
+      }
     };
 
     window.addEventListener("scroll", onScroll);
@@ -54,7 +67,15 @@ export default function ScrollStackSimple({
   }, []);
 
   return (
-    <div ref={ref} className="stack-container">
+    <div
+      ref={ref}
+      className="stack-container"
+      style={
+        count
+          ? ({ "--stack-count": count } as React.CSSProperties)
+          : undefined
+      }
+    >
       {children}
     </div>
   );

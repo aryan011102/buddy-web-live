@@ -11,13 +11,13 @@ export default function FeatureCard({ data, draggable }: Props) {
   return (
   <motion.div
   className="feature-card-outer"
+  data-id={data.id}
   drag={draggable}
   dragMomentum={false}
   dragElastic={0.2}
   style={{
-   left: `calc(${data.initialX}% )`,
-top: `calc(${data.initialY}% )`,
-
+    ["--card-x" as any]: `${data.initialX}%`,
+    ["--card-y" as any]: `${data.initialY}%`,
     transform: "translate(-50%, -50%)",
     ["--edge" as any]: data.borderColor
   }}

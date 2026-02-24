@@ -24,14 +24,7 @@
   transition: color 0.25s ease;
 }
 
-.identity-word .underline {
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 3px;
-  background: currentColor;
-}
+
 
 
 @keyframes textJitter {

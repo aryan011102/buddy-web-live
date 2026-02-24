@@ -11,7 +11,7 @@ export default function StepsSection() {
         How Buddy helps you find your place
       </h2>
 
-    <ScrollStackSimple>
+    <ScrollStackSimple count={STEPS.length}>
   {STEPS.map((step) => (
     <ScrollStackItem
       key={step.title}

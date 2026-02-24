@@ -133,3 +133,47 @@
     width: 100vw;
   }
 }
+
+@media (max-height: 700px) and (min-width: 768px) {
+  .sidebar {
+    padding: 18px 16px;
+  }
+
+  .sidebar-header {
+    margin-bottom: 16px;
+  }
+
+  .sidebar-brand {
+    font-size: 24px;
+  }
+
+  .sidebar-close {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .sidebar-stairs {
+    top: 24px;
+    height: 280px;
+  }
+
+  .sidebar-nav {
+    gap: 10px;
+  }
+
+  .sidebar-nav button {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .sidebar-cta {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .sidebar-footer {
+    margin-top: 24px;
+    font-size: 14px;
+  }
+}

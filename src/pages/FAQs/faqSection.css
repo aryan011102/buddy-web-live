@@ -73,3 +73,9 @@
     transform: translate(var(--drift-x), 520px);
   }
 }
+
+@media (max-width: 768px) {
+  .faq-sparks-layer {
+    display: none;
+  }
+}

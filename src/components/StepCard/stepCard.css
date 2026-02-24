@@ -102,6 +102,33 @@ background: var(--step-image-bg);
   color: #111;
 }
 
+@media (max-width: 1100px) and (min-width: 769px) {
+  .step-card {
+    gap: 48px;
+  }
+
+  .step-image-wrap {
+    width: 300px;
+    height: 280px;
+  }
+
+  .step-right h3 {
+    font-size: 32px;
+  }
+
+  .step-right ul {
+    gap: 28px;
+  }
+
+  .step-right li {
+    gap: 24px;
+  }
+
+  .step-right li span {
+    font-size: 15px;
+  }
+}
+
 /* ---------------- MOBILE ---------------- */
 
 @media (max-width: 768px) {

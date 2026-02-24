@@ -53,11 +53,6 @@ const positions = Array.from(elements).map((el, i) => {
     )}
   </div>
 
-
-  <p className="hero-subtitle">
-   No one should do life alone
-  </p>
-
   <button className="hero-cta">
     Launching soon
   </button>

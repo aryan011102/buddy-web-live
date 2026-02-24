@@ -1,8 +1,13 @@
 .categories-section {
   width: 100%;
-  padding: 100px 0 80px;
+  padding: clamp(72px, 10vh, 100px) 0 0;
   background: #ffffff;
   overflow: hidden;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  --categories-offset: 190px;
 }
 
 .categories-title {
@@ -15,4 +20,11 @@
 
 .categories-title span {
   color: #6aa9ff;
+}
+
+@media (max-height: 720px) {
+  .categories-section {
+    padding: 32px 0 0;
+    --categories-offset: 150px;
+  }
 }

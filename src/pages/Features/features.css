@@ -22,6 +22,21 @@
   margin: 0 auto;
 }
 
+@media (max-width: 1100px) {
+  .features-section {
+    padding: 96px 4.5vw;
+  }
+
+  .features-title {
+    margin-bottom: 140px;
+  }
+
+  .features-playground {
+    height: 460px;
+    max-width: 980px;
+  }
+}
+
 /* Mobile stack */
 .features-stack {
   display: flex;
