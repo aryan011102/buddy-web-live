@@ -1,5 +1,5 @@
 import "./BoxesIllustration.css"
-import { useState, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { motion, AnimatePresence, type Variants } from "framer-motion"
 
 // Assets (Keep your existing imports)
@@ -14,6 +14,7 @@ import linkedinChar from "../../assets/svg/linkedin-char.svg"
 import whatsappChar from "../../assets/svg/whatsapp-char.svg"
 import cookieChar from "../../assets/svg/cookie-char.svg"
 import cookie from "../../assets/svg/cookie.svg"
+import cookieSound from "../../assets/sound/cookie-sound.mp3"
 
 import FortuneModal from "../FortuneModal/FortuneModal"
 
@@ -27,6 +28,12 @@ export default function BoxesIllustration() {
   
   const cookieRef = useRef<HTMLImageElement>(null)
   const [animationData, setAnimationData] = useState({ x: 0, y: 0 })
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+
+  useEffect(() => {
+    audioRef.current = new Audio(cookieSound)
+    audioRef.current.volume = 0.7
+  }, [])
 
   const handleCookieClick = () => {
     if (cookieRef.current) {
@@ -47,6 +54,10 @@ export default function BoxesIllustration() {
       setTimeout(() => setShowBlast(true), 750);
 
       setTimeout(() => {
+        if (audioRef.current) {
+          audioRef.current.currentTime = 0
+          void audioRef.current.play()
+        }
         setIsFortuneOpen(true)
         setIsZooming(false)
         setShowBlast(false)
