@@ -13,13 +13,13 @@ import StepsSection from "../Steps/StepsSection";
 export default function Landing() {
   return (
     <div>
-      {/* <HeroSection />
+      <HeroSection />
       <QuestionsSection />
       <FeaturesSection />
       <StepsSection/>
       <CategoriesSection/>
       <BuddyIdentitySection/>
-      <FaqSection/> */}
+      <FaqSection/>
       <ReasonsSection/>
       <CTASection/>
       <ContactSection/>

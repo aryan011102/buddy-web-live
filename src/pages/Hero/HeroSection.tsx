@@ -44,27 +44,30 @@ const positions = Array.from(elements).map((el, i) => {
   }, []);
 
   return (
-    <section className="hero-section" id="hero-section">
-      
-   <div className="hero-title-wrapper">
-  {window.innerWidth < 640 ? (
-    <SimpleHeroText text="buddy" />
-  ) : (
-    <MagnifyText text="buddy" />
-  )}
-</div>
+   <section className="hero-section" id="hero-section">
+  <div className="hero-title-wrapper">
+    {window.innerWidth < 640 ? (
+      <SimpleHeroText text="buddy" />
+    ) : (
+      <MagnifyText text="buddy" />
+    )}
+  </div>
 
 
-      <button className="hero-cta">
-        Download Now
-      </button>
+  <p className="hero-subtitle">
+   No one should do life alone
+  </p>
 
-      {targets.length > 0 && <EmojiBurst targets={targets} />}
+  <button className="hero-cta">
+    Launching soon
+  </button>
 
-      <div className="hero-boxes">
-        <Boxes />
-      </div>
+  {targets.length > 0 && <EmojiBurst targets={targets} />}
 
-    </section>
+  <div className="hero-boxes">
+    <Boxes />
+  </div>
+</section>
+
   );
 }

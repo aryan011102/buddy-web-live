@@ -1,121 +1,126 @@
 import { useEffect, useRef } from "react";
-import * as PIXI from "pixi.js";
 
 export default function MagnifyText({ text }: { text: string }) {
-const containerRef = useRef<HTMLDivElement>(null);
-const LETTER_SPACING = -12; // try -10 to -30
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const lettersRef = useRef<Array<HTMLSpanElement | null>>([]);
+
+  const RADIUS = 80;
+  const MAX_SCALE = 1.8;
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+    const cursor = cursorRef.current;
 
-    const app = new PIXI.Application({
-      resizeTo: container,
-      backgroundAlpha: 0,
-      antialias: true,
-    });
+    // 🔒 Hard guard — TS + runtime safe
+    if (!container || !cursor) return;
 
-    container.appendChild(app.view as HTMLCanvasElement);
+    const move = (e: PointerEvent) => {
+      const rect = container.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      const my = e.clientY - rect.top;
 
-  
-    const style = new PIXI.TextStyle({
-  
-      fontFamily: "Rethink Sans",
-     fontSize: window.innerWidth < 640 ? 110 : 180,
+      // cursor is now guaranteed non-null
+      cursor.style.left = `${mx}px`;
+      cursor.style.top = `${my}px`;
+      cursor.style.opacity = "1";
 
-      fontWeight: "400",
-      fill: 0xF6DDE1,
-    });
-    //bold when magnify and space between characs reduce
+      lettersRef.current.forEach((letter) => {
+        if (!letter) return;
 
-    const letters: PIXI.Sprite[] = [];
+        const r = letter.getBoundingClientRect();
+        const cx = r.left - rect.left + r.width / 2;
+        const cy = r.top - rect.top + r.height / 2;
 
-    for (const char of text.split("")) {
-      const t = new PIXI.Text(char, style);
-      t.updateText(true);
+        const dx = mx - cx;
+        const dy = my - cy;
+        const dist = Math.hypot(dx, dy);
 
-      const sprite = new PIXI.Sprite(t.texture);
-      sprite.anchor.set(0.5);
-      app.stage.addChild(sprite);
-      letters.push(sprite);
-    }
-
-
-    const totalWidth = letters.reduce(
-      (s, l) => s + l.width,
-      0
-    );
-
-    let x = app.screen.width / 2 - totalWidth / 2;
-
-    for (const l of letters) {
-      l.x = x + l.width / 2;
-      l.y = app.screen.height / 2;
-    x += l.width + LETTER_SPACING;
-    }
-
-    // --------------------
-    // MAGNIFY CURSOR
-    // --------------------
-    const cursor = new PIXI.Graphics();
-    const radius = 80;
-
-    cursor.lineStyle(2, 0xF6DDE1, 0.6);
-    cursor.drawCircle(0, 0, radius);
-    app.stage.addChild(cursor);
-    cursor.visible = false;
-
-
-    app.stage.eventMode = "static";
-    app.stage.hitArea = app.screen;
-
-    app.stage.on("pointerover", () => {
-      cursor.visible = true;
-    });
-
-    app.stage.on("pointerout", () => {
-      cursor.visible = false;
-
-      letters.forEach((l) => {
-        l.scale.set(1);
-      });
-    });
-
-    app.stage.on("pointermove", (e) => {
-      const mx = e.global.x;
-      const my = e.global.y;
-
-      cursor.position.set(mx, my);
-
-      for (const l of letters) {
-        const dx = mx - l.x;
-        const dy = my - l.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < radius) {
-          const t = 1 - dist / radius;
-          const scale = 1 + t * 0.8; 
-          l.scale.set(scale);
+        if (dist < RADIUS) {
+          const t = 1 - dist / RADIUS;
+          letter.style.transform = `scale(${1 + t * (MAX_SCALE - 1)})`;
         } else {
-          l.scale.set(1);
+          letter.style.transform = "scale(1)";
         }
-      }
-    });
+      });
+    };
+
+    const leave = () => {
+      cursor.style.opacity = "0";
+      lettersRef.current.forEach((letter) => {
+        if (!letter) return;
+        letter.style.transform = "scale(1)";
+      });
+    };
+
+    container.addEventListener("pointermove", move);
+    container.addEventListener("pointerleave", leave);
 
     return () => {
-      app.destroy(true);
+      container.removeEventListener("pointermove", move);
+      container.removeEventListener("pointerleave", leave);
     };
-  }, [text]);
+  }, []);
 
   return (
     <div
       ref={containerRef}
       style={{
-       position: "relative",
-width: "100%",
-height: "100%",
+        position: "relative",
+        width: "100%",
+        height: "130%",
         cursor: "none",
       }}
-    />
+    >
+      {/* Cursor ring */}
+      <div
+        ref={cursorRef}
+        style={{
+          position: "absolute",
+          width: 160,
+          height: 160,
+          border: "2px solid rgba(246,221,225,0.6)",
+          borderRadius: "50%",
+          pointerEvents: "none",
+          transform: "translate(-50%, -50%)",
+          opacity: 0,
+        }}
+      />
+
+      {/* Text */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          userSelect: "none",
+        }}
+      >
+        {text.split("").map((char, i) => (
+         <span
+  key={i}
+  ref={(el) => {
+    lettersRef.current[i] = el;
+  }}
+  style={{
+    fontFamily: "Rethink Sans",
+    fontSize: "clamp(96px, 18vw, 180px)",
+    fontWeight: 400,
+    color: "#F6DDE1",
+    display: "inline-block",
+    transformOrigin: "center",
+    transition: "transform 0.1s linear",
+    marginLeft: i === 0 ? 0 : "-12px",
+    willChange: "transform",
+  }}
+>
+  {char}
+</span>
+
+        ))}
+      </div>
+    </div>
   );
 }
