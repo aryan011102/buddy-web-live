@@ -16,6 +16,7 @@ export default function ContactForm() {
 
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [submitError, setSubmitError] = useState("")
 
   const validate = () => {
     let newErrors = { name: "", email: "", message: "" }
@@ -55,20 +56,67 @@ export default function ContactForm() {
 
     if (!validate()) return
 
+    const apiUrl = import.meta.env.VITE_CONTACT_API_URL as string | undefined
+    if (!apiUrl) {
+      setSubmitError("Contact service is not configured.")
+      return
+    }
+
     setLoading(true)
     setSuccess(false)
+    setSubmitError("")
 
-    // Simulated API delay
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    const controller = new AbortController()
+    const timeoutId = window.setTimeout(() => controller.abort(), 12000)
 
-    console.log("Submitting:", form)
+    try {
+      const res = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          message: form.message.trim(),
+        }),
+        signal: controller.signal,
+      })
 
-    setLoading(false)
-    setSuccess(true)
+      let data: unknown = null
+      try {
+        data = await res.json()
+      } catch {
+        data = null
+      }
 
-    setForm({ name: "", email: "", message: "" })
+      if (!res.ok) {
+        let message = `Request failed (${res.status})`
+        if (
+          data &&
+          typeof data === "object" &&
+          "message" in data &&
+          typeof (data as { message?: unknown }).message === "string"
+        ) {
+          message = (data as { message: string }).message
+        }
+        throw new Error(message)
+      }
 
-    setTimeout(() => setSuccess(false), 3000)
+      setSuccess(true)
+      setForm({ name: "", email: "", message: "" })
+      window.setTimeout(() => setSuccess(false), 3000)
+    } catch (err) {
+      if ((err as Error).name === "AbortError") {
+        setSubmitError("Request timed out. Please try again.")
+      } else {
+        setSubmitError((err as Error).message || "Something went wrong. Please try again.")
+      }
+    } finally {
+      window.clearTimeout(timeoutId)
+      setLoading(false)
+    }
   }
 
   return (
@@ -124,6 +172,8 @@ export default function ContactForm() {
       >
         {loading ? "Sending..." : success ? "Sent ✓" : "Submit"}
       </button>
+
+      {submitError && <p className="error-text">{submitError}</p>}
 
     </form>
   )

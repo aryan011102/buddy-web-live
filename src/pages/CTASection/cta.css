@@ -1,5 +1,5 @@
 .cta-section {
-  background: #0f0f12;
+  background: var(--cta-bg, #0f0f12);
   height: 30vh;              /* fixed height as you want */
   min-height: 260px;         /* safety for small laptops */
   display: flex;
@@ -27,7 +27,7 @@
   font-size: clamp(28px, 4vw, 42px);
   line-height: 1.1;
   font-weight: 600;
-  color: #e8d6d6;
+  color: var(--cta-title, #e8d6d6);
   margin-bottom: clamp(16px, 2vh, 28px);
 }
 
@@ -37,7 +37,7 @@
 }
 
 .cta-btn {
-  background: #e8d6d6;
+  background: #F6DDE1;
   border: none;
   padding: clamp(10px, 1vw, 14px) clamp(18px, 2vw, 28px);
   border-radius: 40px;

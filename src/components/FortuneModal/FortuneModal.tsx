@@ -2,26 +2,14 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
 import { createPortal } from "react-dom" // NEW IMPORT
 import "./FortuneModal.css"
-
-const fortunes = [
-  "You are closer than you think.",
-  "Something unexpected will delight you.",
-  "A bold move will pay off.",
-  "Today favors curiosity.",
-  "Trust your instincts.",
-  "A message is waiting for you.",
-  "Growth begins outside comfort.",
-  "You are building something meaningful.",
-  "Small steps matter.",
-  "Stay playful."
-]
+import { FORTUNES } from "./fortune"
 
 export default function FortuneModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [fortune, setFortune] = useState("")
 
   useEffect(() => {
     if (isOpen) {
-      setFortune(fortunes[Math.floor(Math.random() * fortunes.length)])
+      setFortune(FORTUNES[Math.floor(Math.random() * FORTUNES.length)])
     }
   }, [isOpen])
 
