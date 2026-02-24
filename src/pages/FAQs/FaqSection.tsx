@@ -2,6 +2,7 @@ import "./faqSection.css";
 import { FAQS } from "./faq.data";
 import FaqAccordion from "../../pages/FAQs/FaqAccordion";
 import { useEffect, useRef, useState } from "react";
+import { getBuddyApiUrl } from "../../utils/api";
 
 import sparkPink from "../../assets/svg/spark-pink.svg";
 import sparkYellow from "../../assets/svg/spark-yellow.svg";
@@ -148,7 +149,9 @@ export default function FaqSection() {
     setLoadedGround(true);
 
     try {
-      const res = await fetch("http://46.62.231.183:8000/api/v1/stars/count", {
+      const url = getBuddyApiUrl("api/v1/stars/count");
+      if (!url) return;
+      const res = await fetch(url, {
         method: "GET",
         headers: {
           accept: "application/json",
@@ -168,7 +171,9 @@ export default function FaqSection() {
 
   async function incrementStarCount() {
     try {
-      await fetch("http://46.62.231.183:8000/api/v1/stars/fall", {
+      const url = getBuddyApiUrl("api/v1/stars/fall");
+      if (!url) return;
+      await fetch(url, {
         method: "POST",
         headers: {
           accept: "application/json",

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { getBuddyApiUrl } from "../../utils/api"
 import "./ContactForm.css"
 
 export default function ContactForm() {
@@ -56,7 +57,7 @@ export default function ContactForm() {
 
     if (!validate()) return
 
-    const apiUrl = import.meta.env.VITE_CONTACT_API_URL as string | undefined
+    const apiUrl = getBuddyApiUrl("api/v1/contact")
     if (!apiUrl) {
       setSubmitError("Contact service is not configured.")
       return
