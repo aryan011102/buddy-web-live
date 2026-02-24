@@ -134,7 +134,7 @@ background: var(--step-image-bg);
 @media (max-width: 768px) {
   .step-card {
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
   }
 
   .step-left,
@@ -143,16 +143,22 @@ background: var(--step-image-bg);
   }
 
   .step-image-wrap {
-    padding: 28px;
+    width: min(72vw, 280px);
+    height: min(62vw, 240px);
+    padding: 20px;
   }
 
   .step-image-wrap img {
-    width: 200px;
+    width: min(52vw, 200px);
   }
 
   .step-right h3 {
     font-size: 28px;
     margin-bottom: 24px;
+  }
+
+  .step-right ul {
+    gap: 24px;
   }
 
   .step-right li span {

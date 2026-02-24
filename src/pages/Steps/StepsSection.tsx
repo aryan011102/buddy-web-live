@@ -8,7 +8,7 @@ export default function StepsSection() {
   return (
     <section className="steps-section" id="steps">
       <h2 className="steps-title">
-        How Buddy helps you find your place
+      Here’s what really makes us, us
       </h2>
 
     <ScrollStackSimple count={STEPS.length}>

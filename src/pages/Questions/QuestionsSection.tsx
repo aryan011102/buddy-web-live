@@ -26,7 +26,9 @@ const { ref: revealRef, visible } = useRevealOnScroll();
   return (
     <section id="questions" ref={setRefs} className={`questions-section ${visible ? "visible" : ""}`}>
       <div className="questions-div">
-        <h2 className="questions-title">Questions that have haunted us all!</h2>
+      
+        <h2 className="questions-title">Moving out comes with questions...  <br/>
+        a lot of them</h2>
       </div>
 <div className="questions-cloud">
  {DEFAULT_QUESTIONS.map((text, i) => (
@@ -35,7 +37,7 @@ const { ref: revealRef, visible } = useRevealOnScroll();
           text={text}
           color="pink"
           x={25 + i * 8}
-          y={35 + (i % 2) * 30}
+          y={30 + (i % 2) * 33}
         tail={i % 2 === 0 ? "left" : "right"}
 
         />

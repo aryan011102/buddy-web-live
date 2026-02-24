@@ -20,7 +20,8 @@ export default function CategoriesSection() {
       }}
     >
       <h2 className="categories-title">
-        Features that <span>separate</span> us from the chaos
+        We also built communities around what you love
+        {/* Features that <span>separate</span> us from the chaos */}
       </h2>
 
       <CategoryStage />

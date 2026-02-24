@@ -42,7 +42,8 @@ ref={setRefs}
   id="features"
 >
       <h2 className="features-title">
-        Features that <span>separate</span> us from the chaos
+        That’s why we made Buddy, an app in which you can...
+        {/* Features that <span>separate</span> us from the chaos */}
       </h2>
 
       <div

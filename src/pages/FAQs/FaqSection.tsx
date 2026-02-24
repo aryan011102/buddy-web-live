@@ -246,7 +246,8 @@ export default function FaqSection() {
 
     
       <h2 className="faq-title">
-        Have any <span>doubts ?</span> we got you covered
+        You’re probably wondering...
+        {/* Have any <span>doubts ?</span> we got you covered */}
       </h2>
 
       <div className="faq-box">

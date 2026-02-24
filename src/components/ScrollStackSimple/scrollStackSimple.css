@@ -40,8 +40,8 @@
 @media (max-width: 765px) {
 
   .stack-container {
-    height: calc(var(--stack-count, 5) * 110vh);
-    padding-top: 12vh;
+    height: calc(var(--stack-count, 5) * 120vh);
+    padding-top: 14vh;
   }
 
   .stack-card {
@@ -50,11 +50,12 @@
 
     width: 92vw;
     height: auto;
-    min-height: 380px;
+    min-height: min(380px, calc(100vh - 16vh));
 
     padding: 28px;
-    margin-bottom: 120px;
+    margin-bottom: 96px;
 
     border-radius: 28px;
+    top: 14vh;
   }
 }

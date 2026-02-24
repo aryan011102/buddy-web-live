@@ -48,7 +48,7 @@ export default function BuddyIdentitySection() {
   return (
     <section className="buddy-identity">
       <div className="buddy-content">
-        <p className="buddy-eyebrow">With Buddy you can be anyone</p>
+        <p className="buddy-eyebrow">With Buddy you can be anyone...</p>
 
         <div className="identity-row">
           <img src={spark1} className="spark left" alt="" />
@@ -64,7 +64,7 @@ export default function BuddyIdentitySection() {
         </div>
 
         <div className="buddy-sub-row">
-          <span>Roll the dice to find out what you become with buddy</span>
+          <span>Roll the dice to find out what kind of a buddy you are</span>
 
           <DiceButton onClick={rollIdentity} rolling={rolling} />
         </div>

@@ -61,12 +61,12 @@
 
 /* Left tail */
 .question-bubble.tail-left::after {
-  left: 16px;
+  left: 24px;
 }
 
 /* Right tail */
 .question-bubble.tail-right::after {
-  right: 16px;
+  right: 24px;
 }
 
 

@@ -33,7 +33,17 @@ export default function FaqAccordion({ items }: Props) {
             </div>
 
             <div className="faq-body">
-              <p>{item.answer}</p>
+         <div className="faq-body-content">
+  <p>{item.answer}</p>
+
+  {item.bullets && (
+    <ul>
+      {item.bullets.map((bullet, i) => (
+        <li key={i}>{bullet}</li>
+      ))}
+    </ul>
+  )}
+</div>
             </div>
           </div>
         );

@@ -57,6 +57,17 @@ color: #8793A1;
   line-height: 1.5;
   font-size: 12px;
 }
+.faq-body-content ul {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+.faq-body-content li {
+  font-size: 12px;
+  color: #424242;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
 
 /* Open State */
 
@@ -66,5 +77,5 @@ color: #8793A1;
 
 
 .faq-item.open .faq-body {
-  max-height: 200px;
+  max-height: 400px;
 }

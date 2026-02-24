@@ -51,7 +51,7 @@ export default function ScrollStackSimple({
       const lastCard = cards[cards.length - 1];
       if (lastCard) {
         const lastRect = lastCard.getBoundingClientRect();
-        const hideAt = window.innerWidth <= 765 ? 0.6 : 0.5;
+        const hideAt = window.innerWidth <= 765 ? 0.2 : 0.15;
         if (lastRect.top <= vh * hideAt) {
           section.classList.add("hide-steps-title");
         } else {

@@ -11,7 +11,7 @@ export function useQuestionSpawner(active: boolean) {
   function generateSafeY(): number {
     const y = randomBetween(10, 85);
 
-    if (y > 35 && y < 55) {
+    if (y > 30 && y < 55) {
       return generateSafeY();
     }
 

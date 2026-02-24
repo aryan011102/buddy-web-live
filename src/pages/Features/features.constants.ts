@@ -10,7 +10,7 @@ export const FEATURES: FeatureCardData[] = [
     id: "find",
     title: "Find A Buddy",
     description:
-      "Find people you like through a personalised recommendation system.",
+      "Find people who’ve been there, done that and can help you through a personalised recommendation system",
     image: findBuddy,
     bgColor: "#E3FFAF",
     borderColor: "#98D81E",
@@ -21,7 +21,7 @@ export const FEATURES: FeatureCardData[] = [
     id: "become",
     title: "Become A Buddy",
     description:
-      "Find people you like through a personalised recommendation system.",
+      "Create a profile for people to discover you as their buddy",
     image: becomeBuddy,
     bgColor: "#B9B9FF",
     borderColor: "#8D8DFF",
@@ -32,7 +32,7 @@ export const FEATURES: FeatureCardData[] = [
     id: "communities",
     title: "Join Buddy Communities",
     description:
-      "Find people you like through a personalised recommendation system.",
+      "Join different communities and interest groups and join or create events",
     image:joinCommunity,
     bgColor: "#FFF2A4",
     borderColor: "#F6D307",
@@ -43,7 +43,7 @@ export const FEATURES: FeatureCardData[] = [
     id: "nudge",
     title: "Post A Nudge",
     description:
-      "Find people you like through a personalised recommendation system.",
+      "Find flat mates, and buddies to accompany you in spontaneous plans",
     image: postNudge,
     bgColor: "#FFDAFF",
     borderColor: "#FFB9FF",
@@ -54,7 +54,7 @@ export const FEATURES: FeatureCardData[] = [
     id: "explore",
     title: "Explore Top Recommendations",
     description:
-      "Find people you like through a personalised recommendation system.",
+      "Discover the best options, rated and reviewed by people just like you",
     image: explore,
     bgColor: "#ADDCFF",
     borderColor: "#64BDFF",
