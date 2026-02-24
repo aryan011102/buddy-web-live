@@ -37,7 +37,7 @@
 
 .buddy-eyebrow {
   color: #f0dede;
-  font-size: 32px;
+  font-size: clamp(32px, 4vw, 38px);
   margin-bottom: 48px;
 }
 

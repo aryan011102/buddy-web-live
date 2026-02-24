@@ -6,12 +6,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 68px;
+  gap: 16px;
   overflow: hidden;
 }
 
 .faq-title {
-  font-size: clamp(32px, 4vw, 40px);
+  font-size: clamp(32px, 4vw, 38px);
   font-weight: 600;
   text-align: center;
 }

@@ -17,32 +17,37 @@ const ReasonBubble = ({ reason }: Props) => {
 
   return (
     <motion.div
-  className="reason-bubble"
-  whileHover={!isTouch ? { scale: 1.08 } : undefined}
-  animate={{
-    width: expanded
-      ? (isTouch ? 120 : 180)
-      : (isTouch ? 60 : 82),
-    height: expanded
-      ? (isTouch ? 110 : 120)
-      : (isTouch ? 60 : 82),
-  }}
-  transition={{ duration: 0.3 }}
-  onHoverStart={!isTouch ? () => setExpanded(true) : undefined}
-  onHoverEnd={!isTouch ? () => setExpanded(false) : undefined}
-  onClick={isTouch ? () => setExpanded(!expanded) : undefined}
-  style={{ zIndex: expanded ? 20 : 5 }}
->
+      className={`reason-bubble ${expanded ? "expanded" : ""}`}
+      whileHover={!isTouch ? { scale: 1.06 } : undefined}
+      transition={{ duration: 0.25 }}
+      layout
+      onHoverStart={!isTouch ? () => setExpanded(true) : undefined}
+      onHoverEnd={!isTouch ? () => setExpanded(false) : undefined}
+      onClick={isTouch ? () => setExpanded(!expanded) : undefined}
+      style={{ zIndex: expanded ? 20 : 5 }}
+    >
       <motion.div
         className="reason-content"
-        animate={{ opacity: expanded ? 0 : 1 }}
+        animate={{
+          opacity: expanded ? 0 : 1,
+          transitionEnd: {
+            visibility: expanded ? "hidden" : "visible",
+          },
+        }}
+        style={{ visibility: expanded ? "hidden" : "visible" }}
       >
         {reason.letter}
       </motion.div>
 
       <motion.div
         className="reason-text"
-        animate={{ opacity: expanded ? 1 : 0 }}
+        animate={{
+          opacity: expanded ? 1 : 0,
+          transitionEnd: {
+            visibility: expanded ? "visible" : "hidden",
+          },
+        }}
+        style={{ visibility: expanded ? "visible" : "hidden" }}
       >
         {reason.text}
       </motion.div>

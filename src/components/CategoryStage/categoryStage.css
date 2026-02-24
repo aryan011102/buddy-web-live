@@ -4,6 +4,19 @@
   height: clamp(520px, calc(100vh - var(--categories-offset, 220px)), 900px);
   flex: 1 1 auto;
   overflow: hidden;
+  z-index: 3;
+}
+
+.categories-title-slot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: clamp(8px, 2vh, 20px);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
 }
 
 .ball-wrapper {
@@ -11,10 +24,17 @@
   left: 0;
   top: 0;
   will-change: transform;
+  z-index: 3;
 }
 
 @media (max-width: 768px) {
   .categories-stage {
     height: 70vh;
+  }
+}
+
+@media (max-width: 1100px) and (max-height: 700px) {
+  .categories-stage {
+    height: calc(100vh - 140px);
   }
 }

@@ -1,7 +1,7 @@
 .step-card {
   display: flex;
   align-items: center;
-  gap: 72px;
+  gap: 52px;
  
 }
 
@@ -104,7 +104,7 @@ background: var(--step-image-bg);
 
 @media (max-width: 1100px) and (min-width: 769px) {
   .step-card {
-    gap: 48px;
+    gap: 32px;
   }
 
   .step-image-wrap {

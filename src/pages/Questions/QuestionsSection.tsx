@@ -27,8 +27,8 @@ const { ref: revealRef, visible } = useRevealOnScroll();
     <section id="questions" ref={setRefs} className={`questions-section ${visible ? "visible" : ""}`}>
       <div className="questions-div">
       
-        <h2 className="questions-title">Moving out comes with questions...  <br/>
-        a lot of them</h2>
+        <h2 className="questions-title">Moving out comes with<br/>
+        a lot of questions...</h2>
       </div>
 <div className="questions-cloud">
  {DEFAULT_QUESTIONS.map((text, i) => (

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import "./categoryStage.css";
 import { CATEGORIES } from "../../pages/Categories/categories.constants";
 import CategoryBall from "../CategoryBall/CategoryBall";
@@ -18,8 +18,9 @@ type Ball = {
 const GRAVITY = window.innerWidth < 768 ? 2.2 : 2.2;
 const FRICTION = window.innerWidth < 768 ? 0.88 : 0.92;
 
-export default function CategoryStage() {
+export default function CategoryStage({ children }: { children?: ReactNode }) {
   const isMobile = window.innerWidth < 768;
+  const isCompact = window.innerWidth <= 1100 && window.innerHeight <= 700;
   const stageRef = useRef<HTMLDivElement>(null);
 
   const [balls, setBalls] = useState<Ball[]>([]);
@@ -54,12 +55,16 @@ export default function CategoryStage() {
     const w = stage.clientWidth;
 
     const categoryBalls: Ball[] = CATEGORIES.map((cat) => {
-      const size = isMobile ? rand(90, 160) : rand(146, 295);
+      const size = isMobile
+        ? rand(90, 160)
+        : isCompact
+          ? rand(120, 220)
+          : rand(146, 295);
 
       return {
         id: cat.id,
         x: rand(size, w - size),
-        y: rand(-900, -200),
+        y: rand(-1800, -700),
         vx: rand(-0.5, 0.5),
         vy: 0,
         radius: size / 2,
@@ -70,12 +75,16 @@ export default function CategoryStage() {
 
     const fillerBalls: Ball[] = Array.from({ length: isMobile ? 3 : 5 }).map(
       (_, i) => {
-        const size = isMobile ? rand(40, 70) : rand(61, 117);
+        const size = isMobile
+          ? rand(40, 70)
+          : isCompact
+            ? rand(48, 90)
+            : rand(61, 117);
 
         return {
           id: `filler-${i}`,
           x: rand(size, w - size),
-          y: rand(-900, -200),
+          y: rand(-1800, -700),
           vx: rand(-0.3, 0.3),
           vy: 0,
           radius: size / 2,
@@ -170,6 +179,7 @@ export default function CategoryStage() {
 
   return (
     <div ref={stageRef} className="categories-stage">
+      {children ? <div className="categories-title-slot">{children}</div> : null}
       {balls.map((ball) => (
         <div
           key={ball.id}
