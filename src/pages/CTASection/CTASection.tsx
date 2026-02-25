@@ -14,8 +14,9 @@ const CTASection = () => {
 </h2>
 
           <div className="cta-buttons">
-            <button className="cta-btn">App Store</button>
-            <button className="cta-btn">Play Store</button>
+               <button className="cta-btn">Join Waitlist</button>
+            {/* <button className="cta-btn">App Store</button>
+            <button className="cta-btn">Play Store</button> */}
           </div>
         </div>
 

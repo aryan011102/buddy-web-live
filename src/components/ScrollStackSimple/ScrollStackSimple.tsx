@@ -25,7 +25,9 @@ export default function ScrollStackSimple({
 
         const p = 1 - rect.top / vh;
         const clamped = Math.max(0, Math.min(1, p));
-        const scale = 1 - i * 0.01 * clamped;
+        const baseScale =
+          window.innerWidth <= 1100 && window.innerWidth >= 769 ? 0.8 : 1;
+        const scale = (1 - i * 0.01 * clamped) * baseScale;
         const direction = i % 2 === 0 ? 1 : -1;
         const maxRotate = window.innerWidth <= 765 ? 0 : 2;
 
@@ -51,7 +53,7 @@ export default function ScrollStackSimple({
       const lastCard = cards[cards.length - 1];
       if (lastCard) {
         const lastRect = lastCard.getBoundingClientRect();
-        const hideAt = window.innerWidth <= 765 ? 0.2 : 0.15;
+        const hideAt = window.innerWidth <= 765 ? 0.06 : 0.15;
         if (lastRect.top <= vh * hideAt) {
           section.classList.add("hide-steps-title");
         } else {

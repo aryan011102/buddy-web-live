@@ -86,12 +86,12 @@ export default function Sidebar({ open, onClose }: Props) {
           <button onClick={() => scrollTo("features")}>Features</button>
           <button onClick={() => scrollTo("steps")}>Steps</button>
           <button onClick={() => scrollTo("categories")}>Categories</button>
-          <button onClick={() => scrollTo("faq")}>FAQ’s</button>
-          <button onClick={() => scrollTo("contact")}>Contact Us</button>
+          <button onClick={() => scrollTo("faq")}>FAQs</button>
+          <button onClick={() => scrollTo("contact-section")}>Contact Us</button>
         </nav>
 
    
-        <button className="sidebar-cta">Try Buddy</button>
+        <button className="sidebar-cta">Join Waitlist</button>
 
 
         <div className="sidebar-footer">

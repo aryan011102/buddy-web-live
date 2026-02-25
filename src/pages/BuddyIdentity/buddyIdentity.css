@@ -75,6 +75,9 @@
 }
 
 @media (max-width: 768px) {
+  .spark {
+  display: none;
+}
 
   .identity-row {
     flex-direction: column;
@@ -94,4 +97,9 @@
     width: 420px;
     right: -200px;
   }
+  .buddy-eyebrow {
+ 
+  font-size: 26px;
+
+}
 }

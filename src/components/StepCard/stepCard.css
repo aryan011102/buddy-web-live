@@ -38,6 +38,8 @@ background: var(--step-image-bg);
 
 .step-right {
   width: 58%;
+  align-self: center;
+  transform: translateY(-10px);
 }
 
 .step-right h3 {
@@ -134,17 +136,24 @@ background: var(--step-image-bg);
 @media (max-width: 768px) {
   .step-card {
     flex-direction: column;
-    gap: 24px;
+    gap: 10px;
   }
 
-  .step-left,
+  .step-left{
+    width: 100%;
+
+  }
+
   .step-right {
     width: 100%;
+    margin-right: 30px;
+    margin-left:60px;
+    transform: none;
   }
 
   .step-image-wrap {
-    width: min(72vw, 280px);
-    height: min(62vw, 240px);
+    width: min(76vw, 320px);
+    height: min(66vw, 270px);
     padding: 20px;
   }
 
@@ -159,9 +168,10 @@ background: var(--step-image-bg);
 
   .step-right ul {
     gap: 24px;
+    max-width: 320px;
   }
 
   .step-right li span {
-    font-size: 16px;
+    font-size: 12px;
   }
 }

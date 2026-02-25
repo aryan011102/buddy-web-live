@@ -44,6 +44,7 @@
   font-size: clamp(13px, 1vw, 16px);
   font-weight: 600;
   cursor: pointer;
+  margin-top:12px;
 }
 
 /* RIGHT SIDE */

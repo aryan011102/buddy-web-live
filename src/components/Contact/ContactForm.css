@@ -88,3 +88,22 @@
 .submit-btn:disabled {
   cursor: not-allowed;
 }
+
+@media (max-width : 768px) {
+  .contact-form h2 {
+    font-size: 26px;
+  }
+  .contact-sub {
+    font-size: 18px;
+  }
+  .input-line {
+    width: 140px;
+    font-size: 18px;
+  }
+  .textarea-line {
+    min-height: 40px;
+    font-size: 18px;
+    width: 80%;
+
+  }
+}

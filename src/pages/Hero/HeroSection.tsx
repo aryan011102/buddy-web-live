@@ -52,9 +52,13 @@ const positions = Array.from(elements).map((el, i) => {
       <MagnifyText text="buddy" />
     )}
   </div>
+    <p className="hero-subtitle">
+   No one should do life alone
+  </p>
+
 
   <button className="hero-cta">
-    Launching soon
+    Join Waitlist
   </button>
 
   {targets.length > 0 && <EmojiBurst targets={targets} />}

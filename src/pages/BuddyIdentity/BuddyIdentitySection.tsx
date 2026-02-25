@@ -48,7 +48,7 @@ export default function BuddyIdentitySection() {
   return (
     <section className="buddy-identity">
       <div className="buddy-content">
-        <p className="buddy-eyebrow">With Buddy you can be anyone...</p>
+        <p className="buddy-eyebrow">With Buddy, you can be anyone...</p>
 
         <div className="identity-row">
           <img src={spark1} className="spark left" alt="" />

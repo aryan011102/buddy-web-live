@@ -28,7 +28,7 @@
 /* ================= SUBTITLE ================= */
 
 .hero-subtitle {
-  margin-top: 4px; /* tighten buddy → subtitle */
+  margin-top: 36px; /* tighten buddy → subtitle */
   margin-bottom: clamp(16px, 4vw, 24px);
 
   font-family: "Rethink Sans", sans-serif;

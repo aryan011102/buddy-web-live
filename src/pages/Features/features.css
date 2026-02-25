@@ -45,8 +45,9 @@
 }
 
 @media (max-width: 640px) {
+
   .features-title  {
-   
+   font-size: 26px;
     margin-bottom: 80px;
   }
 }

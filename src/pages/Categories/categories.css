@@ -24,7 +24,14 @@
   color: #6aa9ff;
 }
 
+@media (max-width: 768px) {
+  .categories-title{
+    font-size: 26px;
+  }
+}
+
 @media (max-height: 720px) {
+
   .categories-section {
     padding: 32px 0 0;
     --categories-offset: 150px;
