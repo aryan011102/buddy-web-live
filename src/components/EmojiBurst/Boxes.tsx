@@ -45,7 +45,7 @@ return (
         style={{
           position: "absolute",
           left: "8%",
-          bottom: "6px",
+          bottom: "0",
           zIndex: 8,
         }}
       />
@@ -73,7 +73,7 @@ return (
         style={{
           position: "absolute",
           left: "22%",
-          bottom: "-6px",
+          bottom: "0",
           zIndex: 2,
         }}
       />
@@ -115,7 +115,7 @@ return (
         style={{
           position: "absolute",
           left: "36%",
-          bottom: "4px",
+          bottom: "0",
           zIndex: 4,
         }}
       />
@@ -157,7 +157,7 @@ return (
         style={{
           position: "absolute",
           left: "72%",
-          bottom: "2px",
+          bottom: "0",
           zIndex: 4,
         }}
       />
@@ -171,7 +171,7 @@ return (
         style={{
           position: "absolute",
           left: "80%",
-          bottom: "6px",
+          bottom: "0",
           zIndex: 5,
         }}
       />
@@ -185,7 +185,7 @@ return (
         style={{
           position: "absolute",
           right: "0%",
-          bottom: "-8px",
+          bottom: "0",
           zIndex: 2,
         }}
       />

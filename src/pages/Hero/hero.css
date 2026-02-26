@@ -28,7 +28,7 @@
 /* ================= SUBTITLE ================= */
 
 .hero-subtitle {
-  margin-top: 36px; /* tighten buddy → subtitle */
+  margin-top: 4px; /* tighten buddy → subtitle */
   margin-bottom: clamp(16px, 4vw, 24px);
 
   font-family: "Rethink Sans", sans-serif;
@@ -135,9 +135,9 @@
 
   .hero-cta {
     height: 40px;
-    width: 140px;
+    width: 150px;
     font-size: 10px;
-    margin-top: 32px;
+    margin-top: 16px;
   }
 
   .hero-boxes {
@@ -149,5 +149,10 @@
        transform: scale(1.2);
     transform-origin: bottom center;
 
+  }
+  .hero-simple-text{
+    margin-bottom: 0;
+    position: relative;
+    top: -34px;
   }
 }

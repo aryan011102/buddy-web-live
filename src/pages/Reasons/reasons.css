@@ -108,6 +108,10 @@
   white-space: normal;
 }
 
+.reason-bubble.expanded .reason-text {
+  text-align: left;
+}
+
 
 .reason-bubble::after {
   content: "";

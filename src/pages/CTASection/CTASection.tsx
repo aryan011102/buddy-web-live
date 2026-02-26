@@ -1,7 +1,7 @@
 import "./cta.css";
-import phone1 from "../../assets/svg/mockup1.svg";
-import phone2 from "../../assets/svg/mockup2.svg";
-import phoneMockup from "../../assets/svg/phone-mockup.svg";
+import phone1 from "../../assets/png/c1.png";
+import phone2 from "../../assets/png/c2.png";
+import phoneMockup from "../../assets/png/phone-mockup-cta.png";
 const CTASection = () => {
   return (
     <section className="cta-section">
