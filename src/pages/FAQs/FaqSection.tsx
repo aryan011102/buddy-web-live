@@ -1,6 +1,7 @@
 import "./faqSection.css";
 import { FAQS } from "./faq.data";
 import FaqAccordion from "../../pages/FAQs/FaqAccordion";
+import PeopleVisitedSign from "./PeopleVisitedSign";
 import { useEffect, useRef, useState } from "react";
 import { getBuddyApiUrl } from "../../utils/api";
 
@@ -79,6 +80,7 @@ export default function FaqSection() {
   const [fallingSparks, setFallingSparks] = useState<FallingSpark[]>([]);
   const [groundSparks, setGroundSparks] = useState<GroundSpark[]>([]);
   const [loadedGround, setLoadedGround] = useState(false);
+  const [peopleVisitedCount, setPeopleVisitedCount] = useState(0);
 
   function handleSparkClick(spark: FloatingSpark) {
     const fallingId = crypto.randomUUID();
@@ -164,6 +166,7 @@ export default function FaqSection() {
       if (count > 0) {
         setGroundSparks(createGroundSparks(count));
       }
+      setPeopleVisitedCount(count);
     } catch {
       // Best-effort; leave empty on failure
     }
@@ -253,6 +256,7 @@ export default function FaqSection() {
       <div className="faq-box">
         <FaqAccordion items={FAQS} />
       </div>
+      <PeopleVisitedSign count={peopleVisitedCount} />
     </section>
   );
 }
