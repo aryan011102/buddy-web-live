@@ -1,4 +1,4 @@
-import "./FloatingMenuButton.css";
+import "./floatingMenuButton.css";
 import menuIcon from "../../assets/svg/buddyIcon.svg";
 type Props = {
   onClick: () => void;
