@@ -3,7 +3,6 @@ export type BgVariant = {
   titleColor: string;
 };
 
-// Randomize once per page load
 export const IS_DARK = Math.random() < 0.5;
 
 export function makeBgVariant(params: {
@@ -17,3 +16,4 @@ export function makeBgVariant(params: {
     titleColor: IS_DARK ? params.darkTitle : params.lightTitle,
   };
 }
+

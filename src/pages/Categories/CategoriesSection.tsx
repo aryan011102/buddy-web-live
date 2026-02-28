@@ -22,9 +22,10 @@ export default function CategoriesSection() {
       <CategoryStage>
         <h2 className="categories-title">
           We also built communities around what you love
-          {/* Features that <span>separate</span> us from the chaos */}
+
         </h2>
       </CategoryStage>
     </section>
   );
 }
+

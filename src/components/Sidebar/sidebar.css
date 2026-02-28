@@ -1,4 +1,4 @@
-/* Backdrop */
+
 
 .sidebar-backdrop {
   position: fixed;
@@ -6,8 +6,6 @@
   background: rgba(0,0,0,0.25);
   z-index: 40;
 }
-
-/* Sidebar Panel */
 
 .sidebar {
   position: fixed;
@@ -28,14 +26,12 @@
   display: flex;
   flex-direction: column;
 
-  overflow: hidden;         /* important */
+  overflow: hidden;
 }
 
 .sidebar.open {
   transform: translateX(0);
 }
-
-/* Header */
 
 .sidebar-header {
   display: flex;
@@ -63,8 +59,6 @@
   cursor: pointer;
 }
 
-/* Staircase */
-
 .sidebar-stairs {
   position: absolute;
   right: 18px;
@@ -73,8 +67,6 @@
   pointer-events: none;
   z-index: 3;
 }
-
-/* Nav */
 
 .sidebar-nav {
   display: flex;
@@ -99,8 +91,6 @@
   color: #f6dde1;
 }
 
-/* CTA */
-
 .sidebar-cta {
   margin-top: auto;
   height: 48px;
@@ -116,8 +106,6 @@
   justify-content: center;
   text-decoration: none;
 }
-
-/* Footer */
 
 .sidebar-footer {
   margin-top: 40px;
@@ -181,3 +169,4 @@
     font-size: 14px;
   }
 }
+

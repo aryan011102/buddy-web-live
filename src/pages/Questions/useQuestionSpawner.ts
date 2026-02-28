@@ -44,8 +44,6 @@ export function useQuestionSpawner(active: boolean) {
     setBubbles(prev => [...prev, bubble]);
   }
 
-
-
   useEffect(() => {
     if (!active) return;
 
@@ -65,3 +63,4 @@ export function useQuestionSpawner(active: boolean) {
 
   return { bubbles, reset };
 }
+

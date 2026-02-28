@@ -8,3 +8,4 @@ export interface FeatureCardData {
   initialX: number; // %
   initialY: number; // %
 }
+

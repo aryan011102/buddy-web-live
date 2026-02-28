@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 export const useIsTouch = () => {
   const [isTouch, setIsTouch] = useState(false)
@@ -10,3 +10,4 @@ export const useIsTouch = () => {
 
   return isTouch
 }
+

@@ -22,8 +22,7 @@ const CTASection = () => {
                >
                  Join Waitlist
                </a>
-            {/* <button className="cta-btn">App Store</button>
-            <button className="cta-btn">Play Store</button> */}
+
           </div>
         </div>
 
@@ -42,3 +41,4 @@ const CTASection = () => {
 };
 
 export default CTASection;
+

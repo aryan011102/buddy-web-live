@@ -1,4 +1,3 @@
-// src/components/CategoryBall/CategoryBall.tsx
 
 import "./categoryBall.css";
 import type { CategoryItem } from "../../pages/Categories/categories.types";
@@ -56,7 +55,7 @@ export default function CategoryBall({
       style={{ ["--ball-size" as any]: `${size}px` }}
     >
       <div className="ball-inner">
-      
+
         <div
           className="ball-face front"
           style={{ backgroundColor: frontBg }}
@@ -68,7 +67,6 @@ export default function CategoryBall({
           )}
         </div>
 
-       
         <div
           className="ball-face back"
           style={{ backgroundColor: backBg }}
@@ -83,3 +81,4 @@ export default function CategoryBall({
     </div>
   );
 }
+

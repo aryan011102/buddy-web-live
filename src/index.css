@@ -1,4 +1,4 @@
-/* src/index.css */
+
 
 *,
 *::before,
@@ -19,7 +19,6 @@ button {
   font-family: inherit;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -33,3 +32,4 @@ html {
   opacity: 1;
   transform: scale(1);
 }
+

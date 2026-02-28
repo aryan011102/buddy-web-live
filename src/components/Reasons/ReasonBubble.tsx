@@ -56,3 +56,4 @@ const ReasonBubble = ({ reason }: Props) => {
 };
 
 export default ReasonBubble;
+

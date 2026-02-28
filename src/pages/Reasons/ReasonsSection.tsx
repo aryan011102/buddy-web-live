@@ -39,7 +39,7 @@ const ReasonsSection = () => {
           <h2>Not moving out?</h2>
           <p>
             Here are A to Z reasons why you
-    
+
             should still check us out
           </p>
         </div>
@@ -60,3 +60,4 @@ const ReasonsSection = () => {
 }
 
 export default ReasonsSection
+

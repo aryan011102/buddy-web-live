@@ -12,7 +12,6 @@ export default function FeaturesSection() {
 const { ref: viewportRef, inView } = useInViewport();
 const { ref: revealRef, visible } = useRevealOnScroll();
 
-
   useEffect(() => {
     const handler = () => {
       setIsMobile(window.innerWidth < 768);
@@ -34,7 +33,6 @@ const { ref: revealRef, visible } = useRevealOnScroll();
   revealRef.current = el;
 }
 
-
   return (
    <section
 ref={setRefs}
@@ -43,7 +41,7 @@ ref={setRefs}
 >
       <h2 className="features-title">
         That’s why we made Buddy, an app in which you can...
-        {/* Features that <span>separate</span> us from the chaos */}
+
       </h2>
 
       <div
@@ -64,3 +62,4 @@ ref={setRefs}
     </section>
   );
 }
+

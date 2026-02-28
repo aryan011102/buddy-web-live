@@ -20,7 +20,6 @@
   cursor: grabbing;
 }
 
-
 .feature-card-inner {
   position: absolute;
   inset: 16px;
@@ -35,8 +34,6 @@
 
   overflow: visible;
 }
-
-
 
 .feature-text h3 {
   font-family: "Rethink Sans", system-ui, sans-serif;
@@ -80,7 +77,7 @@
 
   }
   .feature-card-outer[data-id="explore"] {
-    
+
     top: 52%;
   }
   .feature-card-outer {
@@ -107,23 +104,6 @@
   }
 }
 
-/* @media (max-width: 1024px) and (max-height: 700px) and (min-width: 769px) {
-  .feature-card-outer[data-id="find"] {
-    left: 15%;
-  }
-
-  .feature-card-outer[data-id="communities"] {
-    left: 86%;
-  }
-
-  .feature-card-outer[data-id="nudge"],
-  .feature-card-outer[data-id="explore"] {
-    top: 52%;
-  }
-}
- */
-
-
 @media (max-width: 768px) {
   .feature-card-outer {
     position: relative;
@@ -140,3 +120,4 @@
     min-height: 220px;
   }
 }
+

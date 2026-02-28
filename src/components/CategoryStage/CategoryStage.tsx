@@ -206,3 +206,4 @@ export default function CategoryStage({ children }: { children?: ReactNode }) {
 function rand(min: number, max: number) {
   return Math.random() * (max - min) + min;
 }
+

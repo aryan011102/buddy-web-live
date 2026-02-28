@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import "./buddyIdentity.css";
 import { BUDDY_IDENTITIES, IDENTITY_COLORS } from "./buddyIdentity.constants";
 import type { BuddyIdentity } from "./buddyIdentity.types";
-
 import IdentityText from "../../components/IdentityText/IdentityText";
 import DiceButton from "../../components/DiceButton/DiceButton";
 import spark1 from "../../assets/svg/spark-pink.svg";
@@ -72,3 +71,4 @@ export default function BuddyIdentitySection() {
     </section>
   );
 }
+

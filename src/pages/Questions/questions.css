@@ -19,7 +19,6 @@
   text-align: center;
 }
 
-
 .question-bubble {
   position: absolute;
   padding: 14px 18px;
@@ -42,12 +41,10 @@
   opacity: 0;
 }
 
-
 .questions-cloud {
   position: absolute;
   inset: 0;
 }
-
 
 .question-bubble::after {
   content: "";
@@ -59,16 +56,13 @@
   transform: rotate(45deg);
 }
 
-/* Left tail */
 .question-bubble.tail-left::after {
   left: 24px;
 }
 
-/* Right tail */
 .question-bubble.tail-right::after {
   right: 24px;
 }
-
 
 @keyframes pop {
   from {
@@ -110,3 +104,4 @@
     bottom: -3px;
   }
 }
+

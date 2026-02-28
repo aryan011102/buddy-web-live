@@ -1,7 +1,4 @@
 import type { CategoryItem } from "./categories.types";
-
-// --- ICON IMPORTS ---
-
 import art from "../../assets/svg/art.svg";
 import health from "../../assets/svg/health.svg";
 import sports from "../../assets/svg/fitness.svg";
@@ -15,7 +12,6 @@ import fashion from "../../assets/svg/fashion.svg";
 import tech from "../../assets/svg/tech.svg";
 import adventure from "../../assets/svg/adventure.svg";
 
-// --- DATA ---
 export const CATEGORIES: CategoryItem[] = [
   {
     id: "music",

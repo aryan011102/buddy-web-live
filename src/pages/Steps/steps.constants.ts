@@ -6,7 +6,6 @@ import step5 from "../../assets/svg/step5.svg";
 import icon1 from "../../assets/svg/circleIcon.svg";
 import icon2 from "../../assets/svg/squareIcon.svg";
 import icon3 from "../../assets/svg/circleBicon.svg";
-import icon4 from "../../assets/svg/squareYicon.svg";
 
 export type StepItem = {
   icon: string;
@@ -19,7 +18,7 @@ export type StepData = {
   image: string;
   items: StepItem[];
    pageBg: string;       // NEW
-  imageBg: string;   
+  imageBg: string;
 };
 
 export const STEPS: StepData[] = [
@@ -31,7 +30,7 @@ export const STEPS: StepData[] = [
       { icon: icon1, text: "Find people who’ve been there, done that and match with them" },
       { icon: icon2, text: "Receive personalised recommendations based on your needs and interests." },
       { icon: icon3, text: "Ask questions and get real advice, not generic internet answers." },
-  
+
     ],
      pageBg: "#64BDFF",
     imageBg: "#E3F3FF",
@@ -85,9 +84,10 @@ export const STEPS: StepData[] = [
       { icon: icon1, text: "Share your experiences and help others navigating the city" },
       { icon: icon2, text: "Earn points for being active and redeem them for events and experiences" },
       { icon: icon3, text: "Stay connected as you move jobs or relocate again and build your network" },
-   
+
     ],
      pageBg: "#98D81E",
     imageBg: "#EEFFCC",
   },
 ];
+

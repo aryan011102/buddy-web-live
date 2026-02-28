@@ -47,3 +47,4 @@ export const DEFAULT_QUESTIONS = [
   "How do I figure out the metro or public transport? ",
   "Are there hobby-based clubs around?"
 ];
+

@@ -4,9 +4,8 @@
   position: relative;
   width: clamp(450px, 45vw, 700px);
   aspect-ratio: 4 / 3;
-  overflow: visible !important; 
+  overflow: visible !important;
 }
-/* ---------- BOXES ---------- */
 
 .boxes-layer {
   position: absolute;
@@ -19,16 +18,12 @@
   height: auto;
 }
 
-/* Position boxes roughly like Figma */
-
 .box-blue   { bottom: 0; left: 0; }
 .box-green  { bottom: 0; left: 25%; }
 .box-purple { bottom: 0; left: 50%; }
 .box-pink   { bottom: 0; left: 85%; }
 .box-yellow { bottom: 0; left: 40%; }
 .box-trolley { bottom: 0; right: 0; }
-
-/* ---------- CHARACTERS ---------- */
 
 .chars-layer {
   position: absolute;
@@ -41,8 +36,6 @@
   width: clamp(80px, 6vw, 120px);
   height: auto;
 }
-
-/* Characters resting on boxes */
 
 .char-insta {
   bottom: 27%;
@@ -74,9 +67,9 @@
 }
 
 .cookie-glow-effect {
-  width: 40px; /* Increased size */
+  width: 40px;
   height: 40px;
-  /* Stronger radial gradient */
+
   background: radial-gradient(circle, #ffca28 20%, #ffca28 40%, rgba(255, 202, 40, 0) 80%);
   border-radius: 50%;
   pointer-events: none;
@@ -130,8 +123,6 @@
 
 }
 
-
-
 @media (max-width: 375px) {
     .boxes-wrapper {
     transform: scale(0.65);
@@ -140,3 +131,4 @@
   }
 
 }
+

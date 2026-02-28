@@ -17,7 +17,6 @@ const desktopPositions = [
   { top: "70%", left: "85%" },
   { top: "77%", left: "30%" }
 ]
-//g 65 10
 
 const mobilePositions = [
   { top: "12%", left: "18%" },
@@ -59,3 +58,4 @@ const ReasonsGrid = ({ reasons }: Props) => {
 }
 
 export default ReasonsGrid
+

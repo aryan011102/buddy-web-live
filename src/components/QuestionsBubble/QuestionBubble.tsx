@@ -18,3 +18,4 @@ export default function QuestionBubble({ text, color, x, y, tail }: Props) {
     </div>
   );
 }
+

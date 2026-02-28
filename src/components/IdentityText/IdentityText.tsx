@@ -26,3 +26,4 @@ export default function IdentityText({
     </h1>
   );
 }
+

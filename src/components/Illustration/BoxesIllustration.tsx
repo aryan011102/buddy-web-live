@@ -1,8 +1,6 @@
 import "./BoxesIllustration.css"
 import { useEffect, useRef, useState } from "react"
 import { motion, AnimatePresence, type Variants } from "framer-motion"
-
-// Assets (Keep your existing imports)
 import blueBox from "../../assets/svg/blue-box-footer.svg"
 import greenBox from "../../assets/svg/green-box-footer.svg"
 import yellowBox from "../../assets/svg/yellow-box-footer.svg"
@@ -17,15 +15,13 @@ import cookie from "../../assets/svg/cookie.svg"
 import cookieSound from "../../assets/sound/cookie-sound.mp3"
 
 import FortuneModal from "../FortuneModal/FortuneModal"
-
-// Blast particle configuration
 const BLAST_PARTICLES = Array.from({ length: 12 });
 
 export default function BoxesIllustration() {
   const [isFortuneOpen, setIsFortuneOpen] = useState(false)
   const [isZooming, setIsZooming] = useState(false)
   const [showBlast, setShowBlast] = useState(false)
-  
+
   const cookieRef = useRef<HTMLImageElement>(null)
   const [animationData, setAnimationData] = useState({ x: 0, y: 0 })
   const audioRef = useRef<HTMLAudioElement | null>(null)
@@ -47,10 +43,9 @@ export default function BoxesIllustration() {
         x: screenCenterX - cookieCenterX,
         y: screenCenterY - cookieCenterY
       })
-      
+
       setIsZooming(true)
 
-      // Trigger blast slightly before modal
       setTimeout(() => setShowBlast(true), 750);
 
       setTimeout(() => {
@@ -76,8 +71,8 @@ export default function BoxesIllustration() {
       scale: 4,
       rotate: 720,
       opacity: [1, 1, 0],
-      transition: { 
-        duration: 0.9, 
+      transition: {
+        duration: 0.9,
         ease: [0.4, 0, 0.2, 1],
         opacity: { times: [0, 0.8, 1], duration: 0.9 }
       }
@@ -123,16 +118,16 @@ export default function BoxesIllustration() {
         <motion.img src={cookieChar} className="char char-cookie" whileHover={{ scale: 1.1 }} />
 
         <AnimatePresence>
-          {/* 1. THE GLOW: Follows the cookie path */}
+
           {isZooming && (
             <motion.div
               className="cookie-glow-effect"
               initial={{ x: 0, y: 0, scale: 0, opacity: 0 }}
-              animate={{ 
-                x: animationData.x, 
-                y: animationData.y, 
-                scale: [2, 14], 
-                opacity: [0, 0.9, 0] 
+              animate={{
+                x: animationData.x,
+                y: animationData.y,
+                scale: [2, 14],
+                opacity: [0, 0.9, 0]
               }}
               transition={{ duration: 0.9, ease: "easeOut" }}
               style={{
@@ -144,14 +139,13 @@ export default function BoxesIllustration() {
             />
           )}
 
-          {/* 2. THE BLAST: Bursting from the center */}
           {showBlast && BLAST_PARTICLES.map((_, i) => (
             <motion.div
               key={i}
               className="blast-particle"
               initial={{ x: animationData.x, y: animationData.y, scale: 1 }}
-              animate={{ 
-               x: animationData.x + (Math.cos(i * (360 / 12) * (Math.PI / 180)) * 250), 
+              animate={{
+               x: animationData.x + (Math.cos(i * (360 / 12) * (Math.PI / 180)) * 250),
                 y: animationData.y + (Math.sin(i * (360 / 12) * (Math.PI / 180)) * 250),
                 scale: 0,
                 opacity: 0
@@ -184,3 +178,4 @@ export default function BoxesIllustration() {
     </div>
   )
 }
+

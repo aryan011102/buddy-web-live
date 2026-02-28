@@ -23,3 +23,4 @@ export function useRevealOnScroll() {
 
   return { ref, visible };
 }
+

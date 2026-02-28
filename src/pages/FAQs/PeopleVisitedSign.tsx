@@ -19,3 +19,4 @@ export default function PeopleVisitedSign({ count }: Props) {
     </div>
   );
 }
+

@@ -1,7 +1,7 @@
 .cta-section {
   background: var(--cta-bg, #0f0f12);
-  height: 30vh;              /* fixed height as you want */
-  min-height: 260px;         /* safety for small laptops */
+  height: 30vh;
+  min-height: 260px;
   display: flex;
   align-items: stretch;
   overflow: hidden;
@@ -12,11 +12,9 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;   /* heading higher like Figma */
+  align-items: flex-start;
   gap: clamp(40px, 6vw, 120px);
 }
-
-/* LEFT SIDE */
 
 .cta-left {
   flex: 1;
@@ -52,11 +50,9 @@
   justify-content: center;
 }
 
-/* RIGHT SIDE */
-
 .cta-right {
   flex: 0 0 clamp(260px, 28vw, 420px);
-  height: 100%;                /* critical fix */
+  height: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -64,11 +60,9 @@
 
 .phones {
   position: relative;
-  height: 100%;                /* critical fix */
+  height: 100%;
   width: 100%;
 }
-
-/* PHONES */
 
 .phone {
   position: absolute;
@@ -92,8 +86,6 @@
   bottom:-10%;
 }
 
-/* VISIBILITY */
-
 .mobile-only {
   display: none;
 }
@@ -101,8 +93,6 @@
 .desktop-only {
   display: block;
 }
-
-/* MOBILE */
 
 @media (max-width: 768px) {
 
@@ -158,3 +148,4 @@
   }
 
 }
+

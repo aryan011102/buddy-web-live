@@ -1,4 +1,4 @@
-/* ================= HERO SECTION ================= */
+
 
 .hero-section {
   min-height: 100vh;
@@ -9,26 +9,20 @@
   align-items: center;
   justify-content: center;
 
-  /* reduced + fixed gap (no inverted clamp) */
   gap: clamp(0.75rem, 2vw, 1rem);
 
   overflow-x: hidden;
 }
 
-/* ================= TITLE ================= */
-
 .hero-title-wrapper {
   width: 100%;
   position: relative;
 
-  /* IMPORTANT: remove oversized fixed height */
   height: clamp(120px, 22vw, 220px);
 }
 
-/* ================= SUBTITLE ================= */
-
 .hero-subtitle {
-  margin-top: 4px; /* tighten buddy → subtitle */
+  margin-top: 4px;
   margin-bottom: clamp(16px, 4vw, 24px);
 
   font-family: "Rethink Sans", sans-serif;
@@ -41,8 +35,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-/* ================= CTA BUTTON ================= */
 
 .hero-cta {
   position: relative;
@@ -68,7 +60,6 @@
               transform 0.15s ease;
 }
 
-/* FILL LAYER */
 .hero-cta::before {
   content: "";
   position: absolute;
@@ -81,7 +72,6 @@
   z-index: -1;
 }
 
-/* HOVER STATE */
 .hero-cta:hover {
   transform: scale(1.05);
   color: #F6DDE1;
@@ -91,8 +81,6 @@
   transform: translateX(0);
 }
 
-/* ================= BOX STRIP ================= */
-
 .hero-boxes {
   position: absolute;
   bottom: -10px;
@@ -100,9 +88,6 @@
   width: 100%;
   pointer-events: none;
 }
-
-
-/* ================= MOBILE TEXT ================= */
 
 .hero-simple-text {
   font-family: "Rethink Sans";
@@ -113,8 +98,6 @@
   line-height: 1;
   letter-spacing: -6px;
 }
-
-/* ================= RESPONSIVE ================= */
 
 @media (max-width: 900px) {
   .hero-boxes {
@@ -131,7 +114,7 @@
 
   .hero-title-wrapper {
     height: 120px;
-    margin-top: 96px; /* tight on mobile */
+    margin-top: 96px;
   }
 
   .hero-cta {
@@ -157,3 +140,4 @@
     top: -34px;
   }
 }
+

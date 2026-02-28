@@ -53,7 +53,6 @@ const positions = Array.from(elements).map((el, i) => {
     )}
   </div>
 
-
   <p className="hero-subtitle">
   Feel like home, away from home
   </p>
@@ -76,3 +75,4 @@ const positions = Array.from(elements).map((el, i) => {
 
   );
 }
+

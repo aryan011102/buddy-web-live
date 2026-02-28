@@ -10,7 +10,7 @@
   width: min(1100px, 88vw);
   margin-inline: auto;
 
-  height: 450px;             
+  height: 450px;
   margin-bottom: 140px;
 
   background: white;
@@ -36,7 +36,6 @@
   }
 }
 
-
 @media (max-width: 765px) {
 
   .stack-container {
@@ -46,7 +45,7 @@
 
   .stack-card {
     transform: scale(0.5);
-    position: sticky;  
+    position: sticky;
 
     width: 92vw;
     height: auto;
@@ -59,3 +58,4 @@
     top: 20vh;
   }
 }
+

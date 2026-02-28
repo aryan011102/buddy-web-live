@@ -1,19 +1,10 @@
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
-import About from "./pages/About/About";
-import NotFound from "./pages/NotFound/NotFound";
-
-import FloatingMenuButton from "./components/FloatingMenuButton/FloatingMenuButton";
-import Sidebar from "./components/Sidebar/Sidebar";
-import Landing from "./pages/Landing/Landing";
-import CursorDot from "./components/Cursor/CursorDot";
+import { BrowserRouter, Routes, Route } from "react-router-dom";import { useState } from "react";import About from "./pages/About/About";import NotFound from "./pages/NotFound/NotFound";import FloatingMenuButton from "./components/FloatingMenuButton/FloatingMenuButton";import Sidebar from "./components/Sidebar/Sidebar";import Landing from "./pages/Landing/Landing";import CursorDot from "./components/Cursor/CursorDot";
 
 function App() {
   const [open, setOpen] = useState(false);
 
   return (
-    
+
     <BrowserRouter>
         <CursorDot />
    {!open && <FloatingMenuButton onClick={() => setOpen(true)} />}
@@ -30,3 +21,4 @@ function App() {
 }
 
 export default App;
+

@@ -13,7 +13,6 @@ export default function FortuneModal({ isOpen, onClose }: { isOpen: boolean; onC
     }
   }, [isOpen])
 
-  // Wrap everything in a Portal so it renders at the root level of the site
   return createPortal(
     <AnimatePresence>
       {isOpen && (
@@ -35,7 +34,7 @@ export default function FortuneModal({ isOpen, onClose }: { isOpen: boolean; onC
     type: "spring", 
     stiffness: 300, 
     damping: 25,
-    filter: { duration: 0.4 } // The flash fades out quickly
+    filter: { duration: 0.4 } 
   }}
 >
             <div className="fortune-paper">
@@ -45,6 +44,6 @@ export default function FortuneModal({ isOpen, onClose }: { isOpen: boolean; onC
         </>
       )}
     </AnimatePresence>,
-    document.body // This pushes the modal to the very end of the HTML
+    document.body
   )
 }

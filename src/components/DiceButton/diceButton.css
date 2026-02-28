@@ -24,8 +24,6 @@
   transform: scale(0.9);
 }
 
-
-/* Hover micro feedback */
 .dice-btn:hover {
   transform: scale(1.06);
 }
@@ -42,3 +40,4 @@
   80% { transform: translateX(4px) rotate(4deg); }
   100% { transform: translateX(0) rotate(0); }
 }
+

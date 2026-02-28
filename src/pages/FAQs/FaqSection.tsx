@@ -4,7 +4,6 @@ import FaqAccordion from "../../pages/FAQs/FaqAccordion";
 import PeopleVisitedSign from "./PeopleVisitedSign";
 import { useEffect, useRef, useState } from "react";
 import { getBuddyApiUrl } from "../../utils/api";
-
 import sparkPink from "../../assets/svg/spark-pink.svg";
 import sparkYellow from "../../assets/svg/spark-yellow.svg";
 import sparkPurple from "../../assets/svg/spark-purple.svg";
@@ -36,7 +35,6 @@ type GroundSpark = {
   scale: number;
 };
 
-
 const SPARK_SVGS: Record<SparkColor, string> = {
   pink: sparkPink,
   yellow: sparkYellow,
@@ -59,7 +57,7 @@ function randomColor(): SparkColor {
 }
 
 function randomScale() {
-  return 0.9 + Math.random() * 0.2; 
+  return 0.9 + Math.random() * 0.2;
 }
 
 function createFloatingSpark(slot: number): FloatingSpark {
@@ -86,7 +84,6 @@ export default function FaqSection() {
     const fallingId = crypto.randomUUID();
     const driftX = Math.random() * 120 - 60;
 
-    // start falling
     setFallingSparks(prev => [
       ...prev,
       {
@@ -118,13 +115,11 @@ export default function FaqSection() {
         },
       ]);
 
-
       setFallingSparks(prev =>
         prev.filter(s => s.id !== fallingId)
       );
     }, 1200);
 
-    // Fire-and-forget: increment server count
     void incrementStarCount();
   }
 
@@ -163,13 +158,12 @@ export default function FaqSection() {
 
       const data = await res.json().catch(() => null);
       const count = extractCount(data);
-       
+
       if (count > 0) {
         setGroundSparks(createGroundSparks(count));
       }
       setPeopleVisitedCount(count);
     } catch {
-      // Best-effort; leave empty on failure
     }
   }
 
@@ -187,15 +181,14 @@ export default function FaqSection() {
         body: JSON.stringify({ count: 1 }),
       });
     } catch {
-      // Best-effort; ignore errors
     }
   }
 
   return (
     <section ref={sectionRef} className="faq-section" id="faq">
-      
+
       <div className="faq-sparks-layer">
-     
+
         {floatingSparks.map(s => {
           const pos = SPARK_SLOTS[s.slot];
           return (
@@ -214,7 +207,6 @@ export default function FaqSection() {
           );
         })}
 
-       
         {fallingSparks.map(s => {
           const pos = SPARK_SLOTS[s.slot];
           return (
@@ -233,7 +225,6 @@ export default function FaqSection() {
           );
         })}
 
-      
         {groundSparks.map(s => (
           <img
             key={s.id}
@@ -249,10 +240,9 @@ export default function FaqSection() {
         ))}
       </div>
 
-    
       <h2 className="faq-title">
         You’re probably wondering...
-        {/* Have any <span>doubts ?</span> we got you covered */}
+
       </h2>
 
       <div className="faq-box">
@@ -277,25 +267,20 @@ function extractCount(data: unknown) {
 }
 
 function createGroundSparks(count: number): GroundSpark[] {
-  // max: hard cap for safety; increase to allow more total ground sparks
   const max = Math.min(count, 200);
-  // spreadY: height (in %) from bottom that the band occupies; increase for taller scatter
   const spreadY = 12;
 
   return Array.from({ length: max }).map((_, i) => {
-    // x: fully random across width; tweak edges by clamping to [1, 99]
     const x = Math.min(99, Math.max(1, Math.random() * 100));
-    // y: random within band with slight bias toward the bottom
     const y = Math.max(0, Math.pow(Math.random(), 0.6) * spreadY);
-    // sizeBias: slightly larger near bottom; tweak exponent for stronger gradient
     const sizeBias = 1.15 - (y / spreadY) * 0.35;
     return {
       id: `seed-${i}-${crypto.randomUUID()}`,
       x,
       y,
       color: randomColor(),
-      // scale: base random size * row bias; adjust clamp to allow bigger/smaller
       scale: Math.max(0.65, Math.min(1.35, randomScale() * sizeBias)),
     };
   });
 }
+

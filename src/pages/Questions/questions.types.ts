@@ -4,7 +4,8 @@ export interface QuestionBubbleData {
   id: string;
   text: string;
   color: QuestionColor;
-  x: number; 
-  y: number; 
+  x: number;
+  y: number;
   tail?: 'left' | 'right';
 }
+

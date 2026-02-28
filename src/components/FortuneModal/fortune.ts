@@ -28,3 +28,4 @@ export const FORTUNES = [
     "Your social calendar is about to get busier.",
     "Warning: You may accidentally build a life you love."
 ];
+

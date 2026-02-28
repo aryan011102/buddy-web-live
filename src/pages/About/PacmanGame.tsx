@@ -5,6 +5,7 @@ import squarePink from "../../assets/svg/sad-pink.svg";
 import squarePurple from "../../assets/svg/sad-purple.svg";
 import squareGreen from "../../assets/svg/sad-green.svg";
 import pacmanIcon from "../../assets/svg/circleYIcon.svg";
+import endSound from "../../assets/sound/end-sound.mp3";
 
 const ROWS = 13;
 const COLS = 20;
@@ -40,20 +41,7 @@ function PacmanIcon({ direction }: { direction: Dir }) {
   );
 }
 
-type CityMarkerProps = {
-  icon: string;
-  label: string;
-  style: React.CSSProperties;
-};
 
-function CityMarker({ icon, label, style }: CityMarkerProps) {
-  return (
-    <div className="city-marker" style={style}>
-      <img src={icon} alt="" aria-hidden="true" />
-      <span>{label}</span>
-    </div>
-  );
-}
 
 function keyToDir(key: string): Dir | null {
   if (key === "ArrowLeft") return "left";
@@ -124,6 +112,7 @@ export default function PacmanGame() {
   const [enemies, setEnemies] = useState<Enemy[]>([]);
   const [dots, setDots] = useState<boolean[][]>(() => initDots());
   const [gameOver, setGameOver] = useState(false);
+  const endSoundRef = useRef<HTMLAudioElement | null>(null);
   const pacmanRef = useRef(pacman);
   const enemiesRef = useRef<Enemy[]>([]);
   const directionRef = useRef<Dir>(direction);
@@ -139,6 +128,11 @@ export default function PacmanGame() {
   useEffect(() => {
     pacmanRef.current = pacman;
   }, [pacman]);
+
+  useEffect(() => {
+    endSoundRef.current = new Audio(endSound);
+    endSoundRef.current.volume = 0.7;
+  }, []);
 
   useEffect(() => {
     enemiesRef.current = enemies;
@@ -180,7 +174,6 @@ export default function PacmanGame() {
           ? directionRef.current
           : directionRef.current;
 
-      // If pacman moves onto an enemy, end immediately.
       if (enemiesRef.current.some(e => e.pos.x === nextPos.x && e.pos.y === nextPos.y)) {
         setPacman(nextPos);
         pacmanRef.current = nextPos;
@@ -229,6 +222,14 @@ export default function PacmanGame() {
       setIsRunning(false);
     }
   }, [remainingDots, isRunning]);
+
+  useEffect(() => {
+    if (!gameOver) return;
+    if (remainingDots === 0) return;
+    if (!endSoundRef.current) return;
+    endSoundRef.current.currentTime = 0;
+    void endSoundRef.current.play();
+  }, [gameOver, remainingDots]);
 
   useEffect(() => {
     if (!isRunning) return;
@@ -300,7 +301,6 @@ export default function PacmanGame() {
           </div>
         ))}
 
-     
       </div>
 
       <div className="pacman-sidebar">

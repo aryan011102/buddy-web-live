@@ -3,10 +3,7 @@ import { DEFAULT_QUESTIONS } from "./questions.constants";
 import { useQuestionSpawner } from "./useQuestionSpawner";
 import { useInViewport } from "../../hooks/useInViewport";
 
-import "./questions.css";
-import QuestionBubble from "../../components/QuestionsBubble/QuestionBubble";
-
-import { useRevealOnScroll } from "../../hooks/useRevealOnScroll";
+import "./questions.css";import QuestionBubble from "../../components/QuestionsBubble/QuestionBubble";import { useRevealOnScroll } from "../../hooks/useRevealOnScroll";
 export default function QuestionsSection() {
 
 const { ref: viewportRef, inView } = useInViewport();
@@ -26,7 +23,7 @@ const { ref: revealRef, visible } = useRevealOnScroll();
   return (
     <section id="questions" ref={setRefs} className={`questions-section ${visible ? "visible" : ""}`}>
       <div className="questions-div">
-      
+
         <h2 className="questions-title">Moving out comes with<br/>
         a lot of questions...</h2>
       </div>
@@ -54,7 +51,8 @@ const { ref: revealRef, visible } = useRevealOnScroll();
         />
       ))}
 </div>
-     
+
     </section>
   );
 }
+

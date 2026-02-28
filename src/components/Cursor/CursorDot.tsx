@@ -11,7 +11,7 @@ export default function CursorDot() {
     let currentX = 0;
     let currentY = 0;
 
-    const speed = 0.1; 
+    const speed = 0.1;
 
     const move = () => {
       currentX += (mouseX - currentX) * speed;
@@ -34,3 +34,4 @@ export default function CursorDot() {
 
   return <div ref={dotRef} className="cursor-dot" />;
 }
+

@@ -1,4 +1,3 @@
-
 import blueBox from "../../assets/svg/Blue-Box.svg";
 import booksBox from "../../assets/svg/Books-box.svg";
 import crockeryBox from "../../assets/svg/Crokery-Box.svg";
@@ -23,7 +22,7 @@ return (
         pointerEvents: "none",
       }}
     >
-      {/* FAR LEFT — travel / new city */}
+
       <img
         data-emoji-source
         data-emoji-count="3"
@@ -36,7 +35,6 @@ return (
         }}
       />
 
-      {/* flatmates / friendship */}
       <img
         data-emoji-source
         data-emoji-count="2"
@@ -50,7 +48,6 @@ return (
         }}
       />
 
-      {/* books / new beginnings */}
       <img
         data-emoji-source
         data-emoji-count="4"
@@ -64,7 +61,6 @@ return (
         }}
       />
 
-      {/* trolley — travel */}
       <img
         data-emoji-source
         data-emoji-count="3"
@@ -78,7 +74,6 @@ return (
         }}
       />
 
-      {/* MAIN FOOD BOX */}
       <img
         data-emoji-source
         data-emoji-count="4"
@@ -92,7 +87,6 @@ return (
         }}
       />
 
-      {/* love / spark */}
       <img
         data-emoji-source
         data-emoji-count="4"
@@ -106,7 +100,6 @@ return (
         }}
       />
 
-      {/* friendship / vibes */}
       <img
         data-emoji-source
         data-emoji-count="2"
@@ -120,7 +113,6 @@ return (
         }}
       />
 
-      {/* CENTER — new city / growth */}
       <img
         data-emoji-source
         data-emoji-count="3"
@@ -134,7 +126,6 @@ return (
         }}
       />
 
-      {/* friendship / spark */}
       <img
         data-emoji-source
         data-emoji-count="5"
@@ -148,7 +139,6 @@ return (
         }}
       />
 
-      {/* crockery — food / home */}
       <img
         data-emoji-source
         data-emoji-count="3"
@@ -162,7 +152,6 @@ return (
         }}
       />
 
-      {/* utensils — cooking / food */}
       <img
         data-emoji-source
         data-emoji-count="2"
@@ -176,7 +165,6 @@ return (
         }}
       />
 
-      {/* FAR RIGHT — travel / moving */}
       <img
         data-emoji-source
         data-emoji-count="3"
@@ -192,3 +180,4 @@ return (
     </div>
   );
 }
+

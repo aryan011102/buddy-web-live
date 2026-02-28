@@ -4,8 +4,6 @@
   gap: 16px;
 }
 
-/* Card */
-
 .faq-item {
   border-radius: 14px;
   padding: 18px 22px;
@@ -13,8 +11,6 @@
   transition: background 0.2s ease;
   border: 1px solid #ddd;
 }
-
-/* Alternating colors */
 
 .faq-item.pink {
   background: #F6DDE1;
@@ -26,8 +22,6 @@
   border-color: #D7DBE0;
 }
 
-/* Header */
-
 .faq-header {
   display: flex;
   align-items: center;
@@ -35,15 +29,12 @@
   font-weight: 500;
 }
 
-/* Chevron */
 .chevron-icon {
 color: #8793A1;
   width: 18px;
   height: 18px;
   transition: transform 0.25s ease;
 }
-
-/* Body */
 
 .faq-body {
   max-height: 0;
@@ -69,13 +60,11 @@ color: #8793A1;
   margin-bottom: 4px;
 }
 
-/* Open State */
-
 .faq-item.open .chevron-icon {
   transform: rotate(180deg);
 }
 
-
 .faq-item.open .faq-body {
   max-height: 400px;
 }
+

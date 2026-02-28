@@ -33,3 +33,4 @@ export function getBuddyApiUrl(path: string) {
   const cleanPath = path.startsWith("/") ? path.slice(1) : path;
   return new URL(cleanPath, baseUrl).toString();
 }
+

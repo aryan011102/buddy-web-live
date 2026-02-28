@@ -18,13 +18,12 @@
   overflow: hidden;
 }
 
-
 .buddy-content {
   position: relative;
   z-index: 2;
 
   text-align: center;
-  max-width: 1200px; 
+  max-width: 1200px;
   padding: 0 24px;
 
   display: flex;
@@ -32,15 +31,11 @@
   align-items: center;
 }
 
-
-
-
 .buddy-eyebrow {
   color: #f0dede;
   font-size: clamp(32px, 4vw, 38px);
   margin-bottom: 48px;
 }
-
 
 .identity-row {
   display: flex;
@@ -48,8 +43,6 @@
   gap: 16px;
   margin-bottom: 32px;
 }
-
-
 
 .buddy-sub-row {
   display: flex;
@@ -59,7 +52,6 @@
   color: #e4d1d1;
   font-size: 24px;
 }
-
 
 .spark {
   width: 26px;
@@ -98,8 +90,9 @@
     right: -200px;
   }
   .buddy-eyebrow {
- 
+
   font-size: 26px;
 
 }
 }
+

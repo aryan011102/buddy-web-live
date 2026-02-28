@@ -1,11 +1,4 @@
-import "./sidebar.css";
-import { useNavigate, useLocation } from "react-router-dom";
-
-import stairs from "../../assets/svg/staircaseImg.svg";
-
-import instagram from "../../assets/svg/instaIcon.svg";
-import twitter from "../../assets/svg/twitterIcon.svg";
-import linkedin from "../../assets/svg/linkedinIcon.svg";
+import "./sidebar.css";import { useNavigate, useLocation } from "react-router-dom";import stairs from "../../assets/svg/staircaseImg.svg";import instagram from "../../assets/svg/instaIcon.svg";import twitter from "../../assets/svg/twitterIcon.svg";import linkedin from "../../assets/svg/linkedinIcon.svg";
 
 type Props = {
   open: boolean;
@@ -15,7 +8,6 @@ type Props = {
 export default function Sidebar({ open, onClose }: Props) {
   const navigate = useNavigate();
   const location = useLocation();
-
 
   function goHome() {
     if (location.pathname === "/") {
@@ -32,13 +24,10 @@ export default function Sidebar({ open, onClose }: Props) {
     }
   }
 
- 
-
   function goAbout() {
     navigate("/about");
     onClose();
   }
-
 
   function scrollTo(id: string) {
     const el = document.getElementById(id);
@@ -62,16 +51,13 @@ export default function Sidebar({ open, onClose }: Props) {
 
       <aside className={`sidebar ${open ? "open" : ""}`}>
 
-    
         <div className="sidebar-header">
            <button className="sidebar-close" onClick={onClose}>
             ☰
           </button>
           <div className="sidebar-brand">buddy</div>
 
-         
         </div>
-
 
         <img
           src={stairs}
@@ -79,7 +65,6 @@ export default function Sidebar({ open, onClose }: Props) {
           alt=""
         />
 
-  
         <nav className="sidebar-nav">
           <button onClick={goHome}>Home</button>
           <button onClick={goAbout}>About Us</button>
@@ -90,7 +75,6 @@ export default function Sidebar({ open, onClose }: Props) {
           <button onClick={() => scrollTo("contact-section")}>Contact Us</button>
         </nav>
 
-   
         <a
           className="sidebar-cta"
           href="https://forms.gle/3xvxfkFvcDmjKh2L9"
@@ -99,7 +83,6 @@ export default function Sidebar({ open, onClose }: Props) {
         >
           Join Waitlist
         </a>
-
 
         <div className="sidebar-footer">
           <span>© buddy</span>
@@ -136,3 +119,4 @@ export default function Sidebar({ open, onClose }: Props) {
     </>
   );
 }
+

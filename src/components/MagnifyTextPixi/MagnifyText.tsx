@@ -12,7 +12,6 @@ export default function MagnifyText({ text }: { text: string }) {
     const container = containerRef.current;
     const cursor = cursorRef.current;
 
-    // 🔒 Hard guard — TS + runtime safe
     if (!container || !cursor) return;
 
     const move = (e: PointerEvent) => {
@@ -20,7 +19,6 @@ export default function MagnifyText({ text }: { text: string }) {
       const mx = e.clientX - rect.left;
       const my = e.clientY - rect.top;
 
-      // cursor is now guaranteed non-null
       cursor.style.left = `${mx}px`;
       cursor.style.top = `${my}px`;
       cursor.style.opacity = "1";
@@ -72,7 +70,7 @@ export default function MagnifyText({ text }: { text: string }) {
         cursor: "none",
       }}
     >
-      {/* Cursor ring */}
+
       <div
         ref={cursorRef}
         style={{
@@ -87,7 +85,6 @@ export default function MagnifyText({ text }: { text: string }) {
         }}
       />
 
-      {/* Text */}
       <div
         style={{
           position: "absolute",
@@ -124,3 +121,4 @@ export default function MagnifyText({ text }: { text: string }) {
     </div>
   );
 }
+

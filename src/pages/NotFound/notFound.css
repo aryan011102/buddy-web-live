@@ -34,7 +34,6 @@
   font-weight: 600;
 }
 
-
 .not-found-cta::before {
   content: "";
   position: absolute;
@@ -47,7 +46,6 @@
   z-index: -1;
 }
 
-/* HOVER STATE */
 .not-found-cta:hover {
   transform: scale(1.05);
   color: #F6DDE1;
@@ -88,3 +86,4 @@
     width: 85vw;
   }
 }
+

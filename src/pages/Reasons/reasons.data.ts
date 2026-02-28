@@ -1,6 +1,6 @@
-import type { Reason } from "./reasons.types"
+import type { Reason } from "./reasons.types";
 
-export const REASONS: Reason[] = 
+export const REASONS: Reason[] =
 [
   { letter: "A", text: "Adulting hacks you didn’t know you needed" },
   { letter: "B", text: "Because we put in a lot of effort to make this app for you 💗" },

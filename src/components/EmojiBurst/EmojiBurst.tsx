@@ -2,13 +2,13 @@ import { useEffect } from "react";
 
 type Target = {
   x: number;
-  y: number; 
+  y: number;
   count: number;
   emojis: string[];
 };
 
 export default function EmojiBurst({ targets }: { targets: Target[] }) {
-  const SPAWN_FROM_BOTTOM = 5;   
+  const SPAWN_FROM_BOTTOM = 5;
   const FADE_BEFORE_BOTTOM = 5;
 
   useEffect(() => {
@@ -36,7 +36,6 @@ export default function EmojiBurst({ targets }: { targets: Target[] }) {
 
         const startOffsetX = (Math.random() - 0.5) * 24;
 
-       
         const startY = heroHeight - SPAWN_FROM_BOTTOM;
 
         el.style.left = `${target.x + startOffsetX}px`;
@@ -45,10 +44,8 @@ export default function EmojiBurst({ targets }: { targets: Target[] }) {
         hero.appendChild(el);
         nodes.push(el);
 
-       
         const riseHeight = 180 + Math.random() * 240;
 
-       
         const xDrift = (Math.random() - 0.5) * 140;
 
         setTimeout(() => {
@@ -102,3 +99,4 @@ export default function EmojiBurst({ targets }: { targets: Target[] }) {
 
   return null;
 }
+
