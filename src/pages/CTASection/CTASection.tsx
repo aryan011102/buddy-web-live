@@ -14,7 +14,14 @@ const CTASection = () => {
 </h2>
 
           <div className="cta-buttons">
-               <button className="cta-btn">Join Waitlist</button>
+               <a
+                 className="cta-btn"
+                 href="https://forms.gle/3xvxfkFvcDmjKh2L9"
+                 target="_blank"
+                 rel="noopener noreferrer"
+               >
+                 Join Waitlist
+               </a>
             {/* <button className="cta-btn">App Store</button>
             <button className="cta-btn">Play Store</button> */}
           </div>

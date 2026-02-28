@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import stairs from "../../assets/svg/staircaseImg.svg";
 
 import instagram from "../../assets/svg/instaIcon.svg";
-import whatsapp from "../../assets/svg/whatsappIcon.svg";
+import twitter from "../../assets/svg/twitterIcon.svg";
 import linkedin from "../../assets/svg/linkedinIcon.svg";
 
 type Props = {
@@ -91,16 +91,44 @@ export default function Sidebar({ open, onClose }: Props) {
         </nav>
 
    
-        <button className="sidebar-cta">Join Waitlist</button>
+        <a
+          className="sidebar-cta"
+          href="https://forms.gle/3xvxfkFvcDmjKh2L9"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Join Waitlist
+        </a>
 
 
         <div className="sidebar-footer">
           <span>© buddy</span>
 
           <div className="socials">
-            <img src={instagram} alt="Instagram" />
-            <img src={linkedin} alt="LinkedIn" />
-            <img src={whatsapp} alt="WhatsApp" />
+            <a
+              href="https://www.instagram.com/buddyapp.co.in?igsh=eXY4c2prd2J4ZHA0"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Buddy on Instagram"
+            >
+              <img src={instagram} alt="Instagram" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/buddytechindia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Buddy on LinkedIn"
+            >
+              <img src={linkedin} alt="LinkedIn" />
+            </a>
+            <a
+              href="https://x.com/buildinbuddy?s=21"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Buddy on X"
+            >
+              <img src={twitter} alt="X" />
+            </a>
           </div>
         </div>
 

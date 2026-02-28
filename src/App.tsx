@@ -1,7 +1,8 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-// import About from "./pages/About/About";
+import About from "./pages/About/About";
+import NotFound from "./pages/NotFound/NotFound";
 
 import FloatingMenuButton from "./components/FloatingMenuButton/FloatingMenuButton";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -21,7 +22,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Landing />} />
-        {/* <Route path="/about" element={<About />} /> */}
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

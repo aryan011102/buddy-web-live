@@ -158,6 +158,7 @@ export default function FaqSection() {
         headers: {
           accept: "application/json",
         },
+        credentials: "omit",
       });
 
       const data = await res.json().catch(() => null);
@@ -182,6 +183,7 @@ export default function FaqSection() {
           accept: "application/json",
           "Content-Type": "application/json",
         },
+        credentials: "omit",
         body: JSON.stringify({ count: 1 }),
       });
     } catch {

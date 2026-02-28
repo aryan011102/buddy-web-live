@@ -58,9 +58,14 @@ const positions = Array.from(elements).map((el, i) => {
   Feel like home, away from home
   </p>
 
-  <button className="hero-cta">
+  <a
+    className="hero-cta"
+    href="https://forms.gle/3xvxfkFvcDmjKh2L9"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     Join the waiting list
-  </button>
+  </a>
 
   {targets.length > 0 && <EmojiBurst targets={targets} />}
 

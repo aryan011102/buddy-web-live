@@ -77,6 +77,7 @@ export default function ContactForm() {
           accept: "application/json",
           "Content-Type": "application/json",
         },
+        credentials: "omit",
         body: JSON.stringify({
           name: form.name.trim(),
           email: form.email.trim(),

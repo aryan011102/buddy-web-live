@@ -11,7 +11,7 @@ import purpleBox from "../../assets/svg/purple-box-footer.svg"
 import trolley from "../../assets/svg/yellow-trolley-footer.svg"
 import instaChar from "../../assets/svg/insta-char.svg"
 import linkedinChar from "../../assets/svg/linkedin-char.svg"
-import whatsappChar from "../../assets/svg/whatsapp-char.svg"
+import twitterChar from "../../assets/svg/twitter-char.svg"
 import cookieChar from "../../assets/svg/cookie-char.svg"
 import cookie from "../../assets/svg/cookie.svg"
 import cookieSound from "../../assets/sound/cookie-sound.mp3"
@@ -96,9 +96,30 @@ export default function BoxesIllustration() {
       </div>
 
       <div className="chars-layer">
-        <motion.img src={instaChar} className="char char-insta" whileHover={{ scale: 1.1 }} />
-        <motion.img src={linkedinChar} className="char char-linkedin" whileHover={{ scale: 1.1 }} />
-        <motion.img src={whatsappChar} className="char char-whatsapp" whileHover={{ scale: 1.1 }} />
+        <a
+          href="https://www.instagram.com/buddyapp.co.in?igsh=eXY4c2prd2J4ZHA0"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Buddy on Instagram"
+        >
+          <motion.img src={instaChar} className="char char-insta" whileHover={{ scale: 1.1 }} />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/buddytechindia/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Buddy on LinkedIn"
+        >
+          <motion.img src={linkedinChar} className="char char-linkedin" whileHover={{ scale: 1.1 }} />
+        </a>
+        <a
+          href="https://x.com/buildinbuddy?s=21"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Buddy on X"
+        >
+          <motion.img src={twitterChar} className="char char-twitter" whileHover={{ scale: 1.1 }} />
+        </a>
         <motion.img src={cookieChar} className="char char-cookie" whileHover={{ scale: 1.1 }} />
 
         <AnimatePresence>
