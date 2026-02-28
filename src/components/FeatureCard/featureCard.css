@@ -1,0 +1,123 @@
+
+.feature-card-outer {
+  position: absolute;
+  width: 370px;
+  height: 245px;
+  border-radius: 20px;
+  background: #ffffff;
+  overflow: hidden;
+  left: var(--card-x);
+  top: var(--card-y);
+
+  box-shadow:
+    -1px -1px 9.1px rgba(235, 237, 239, 0.18),
+     1px 1px 0.6px 1px var(--edge);
+
+  cursor: grab;
+}
+
+.feature-card-outer:active {
+  cursor: grabbing;
+}
+
+.feature-card-inner {
+  position: absolute;
+  inset: 16px;
+
+  border-radius: 15px;
+  background: var(--bg);
+
+  padding-left: 22px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: visible;
+}
+
+.feature-text h3 {
+  font-family: "Rethink Sans", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1.07;
+  color: #1e1e1e;
+  margin-bottom: 8px;
+}
+
+.feature-text p {
+  font-family: "Rethink Sans", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.36;
+  letter-spacing: 0.02em;
+  color: #000;
+  max-width: 200px;
+}
+
+.feature-card-inner img {
+  position: absolute;
+  right: 6px;
+  bottom: 0px;
+  width: 120px;
+  pointer-events: none;
+}
+
+@media (max-width: 1100px) and (min-width: 769px) {
+   .feature-card-outer[data-id="find"] {
+    left: 15%;
+  }
+
+  .feature-card-outer[data-id="communities"] {
+    left: 86%;
+  }
+
+  .feature-card-outer[data-id="nudge"]{
+    left:34%;
+     top: 52%;
+
+  }
+  .feature-card-outer[data-id="explore"] {
+
+    top: 52%;
+  }
+  .feature-card-outer {
+    width: 300px;
+    height: 225px;
+  }
+
+  .feature-card-inner {
+    inset: 12px;
+    padding-left: 18px;
+  }
+
+  .feature-text h3 {
+    font-size: 28px;
+  }
+
+  .feature-text p {
+    font-size: 11px;
+    max-width: 180px;
+  }
+
+  .feature-card-inner img {
+    width: 105px;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-card-outer {
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100%;
+    height: auto;
+  }
+
+  .feature-card-inner {
+    position: relative;
+    inset: 0;
+    min-height: 220px;
+  }
+}
+

@@ -1,0 +1,5 @@
+.magnify-wrapper {
+  width: 100%;
+  height: clamp(180px, 32vw, 320px);
+}
+

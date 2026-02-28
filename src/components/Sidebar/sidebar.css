@@ -1,0 +1,172 @@
+
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 40;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 320px;
+  height: 100vh;
+  background: #f6dde1;
+
+  padding: 28px 20px;
+  box-sizing: border-box;
+
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  z-index: 50;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  gap: 10px;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 3;
+}
+
+.sidebar-brand {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.sidebar-close {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.sidebar-stairs {
+  position: absolute;
+  right: 18px;
+  top: 32px;
+  height: 350px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.sidebar-nav button {
+  height: 44px;
+  border-radius: 10px;
+  border: none;
+  background: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sidebar-nav button:nth-child(even) {
+  background: #1e1e1e;
+  color: #f6dde1;
+}
+
+.sidebar-cta {
+  margin-top: auto;
+  height: 48px;
+  border-radius: 999px;
+  border: none;
+  background: black;
+  color: #f6dde1;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.sidebar-footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
+@media (max-height: 700px) and (min-width: 768px) {
+  .sidebar {
+    padding: 18px 16px;
+  }
+
+  .sidebar-header {
+    margin-bottom: 16px;
+  }
+
+  .sidebar-brand {
+    font-size: 24px;
+  }
+
+  .sidebar-close {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .sidebar-stairs {
+    top: 24px;
+    height: 280px;
+  }
+
+  .sidebar-nav {
+    gap: 10px;
+  }
+
+  .sidebar-nav button {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .sidebar-cta {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .sidebar-footer {
+    margin-top: 24px;
+    font-size: 14px;
+  }
+}
+

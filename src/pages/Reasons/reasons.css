@@ -1,0 +1,150 @@
+.reasons-section {
+  background: #F6DDE1;
+  position: relative;
+}
+
+.reasons-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reasons-heading {
+  position: absolute;
+  text-align: center;
+  max-width: 1000px;
+  z-index: 1;
+  color: #000000;
+}
+
+.reasons-heading h2 {
+  font-size: 72px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-bottom: 32px;
+}
+
+.reasons-heading p {
+  font-size: 65px;
+  line-height: 1.4;
+}
+
+.reasons-mask {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.reasons-vertical-stack {
+  position: relative;
+  width: 100%;
+}
+
+.reasons-floating-layer {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+    pointer-events: none;
+}
+
+.reason-absolute-wrapper {
+  position: absolute;
+  pointer-events: auto;
+}
+.reason-bubble {
+  width: 90px;
+  height: 82px;
+  background: #ffffff;
+  border-radius: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 28px;
+  color: #0f172a;
+  overflow: visible;
+  cursor: pointer;
+  padding: 10px 12px;
+  transition: width 0.25s ease, height 0.25s ease, padding 0.25s ease;
+}
+
+.reason-content,
+.reason-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+}
+
+.reason-content {
+  position: absolute;
+  inset: 0;
+}
+
+.reason-bubble.expanded {
+  width: fit-content;
+  max-width: 260px;
+  height: auto;
+  min-height: 96px;
+  padding: 14px 16px;
+}
+
+.reason-text {
+  position: relative;
+  inset: auto;
+  display: block;
+  font-size: 18px;
+  line-height: 1.3;
+  opacity: 0;
+  pointer-events: none;
+  max-width: 260px;
+  white-space: normal;
+}
+
+.reason-bubble.expanded .reason-text {
+  text-align: left;
+}
+
+.reason-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 24px;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  transform: rotate(45deg);
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .reason-bubble {
+    width: 60px;
+    height: 60px;
+  }
+  .reason-bubble.expanded {
+    max-width: 200px;
+    min-height: 84px;
+  }
+  .reason-text {
+    max-width: 200px;
+  }
+  .reasons-heading h2 {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+
+  .reasons-heading p {
+    font-size: 36px;
+    line-height: 1.4;
+    padding: 0 20px;
+  }
+}
+

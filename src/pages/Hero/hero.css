@@ -1,0 +1,143 @@
+
+
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(0.75rem, 2vw, 1rem);
+
+  overflow-x: hidden;
+}
+
+.hero-title-wrapper {
+  width: 100%;
+  position: relative;
+
+  height: clamp(120px, 22vw, 220px);
+}
+
+.hero-subtitle {
+  margin-top: 4px;
+  margin-bottom: clamp(16px, 4vw, 24px);
+
+  font-family: "Rethink Sans", sans-serif;
+  font-size: clamp(14px, 2vw, 20px);
+  font-weight: 400;
+  color: #161616;
+
+  text-align: center;
+  max-width: 28ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  position: relative;
+  overflow: hidden;
+
+  padding: clamp(0.8rem, 1.5vw, 1.2rem)
+           clamp(1.6rem, 4vw, 2.25rem);
+
+  font-size: clamp(0.95rem, 3vw, 1.05rem);
+  font-weight: 600;
+
+  border-radius: 999px;
+  border: 1.5px solid #F6DDE1;
+
+  background: white;
+  color: #111;
+  text-decoration: none;
+
+  cursor: pointer;
+  z-index: 5;
+
+  transition: color 0.25s ease,
+              transform 0.15s ease;
+}
+
+.hero-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: #111;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+
+  z-index: -1;
+}
+
+.hero-cta:hover {
+  transform: scale(1.05);
+  color: #F6DDE1;
+}
+
+.hero-cta:hover::before {
+  transform: translateX(0);
+}
+
+.hero-boxes {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.hero-simple-text {
+  font-family: "Rethink Sans";
+  font-size: clamp(64px, 28vw, 96px);
+  font-weight: 400;
+  color: #F6DDE1;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: -6px;
+}
+
+@media (max-width: 900px) {
+  .hero-boxes {
+    transform: scale(0.9);
+    transform-origin: bottom center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    padding-top: 80px;
+    justify-content: flex-start;
+  }
+
+  .hero-title-wrapper {
+    height: 120px;
+    margin-top: 96px;
+  }
+
+  .hero-cta {
+    height: 40px;
+    width: 150px;
+    font-size: 10px;
+    margin-top: 16px;
+  }
+
+  .hero-boxes {
+    mask-image: linear-gradient(
+      to top,
+      black 70%,
+      transparent 100%
+    );
+       transform: scale(1.2);
+    transform-origin: bottom center;
+
+  }
+  .hero-simple-text{
+    margin-bottom: 0;
+    position: relative;
+    top: -34px;
+  }
+}
+

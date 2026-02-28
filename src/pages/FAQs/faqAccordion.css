@@ -1,0 +1,70 @@
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  border-radius: 14px;
+  padding: 18px 22px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border: 1px solid #ddd;
+}
+
+.faq-item.pink {
+  background: #F6DDE1;
+  border-color: #FFADD8;
+}
+
+.faq-item.gray {
+  background: #F3F4F5;
+  border-color: #D7DBE0;
+}
+
+.faq-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.chevron-icon {
+color: #8793A1;
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+}
+
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.faq-body p {
+  margin-top: 12px;
+  color: #424242;
+  line-height: 1.5;
+  font-size: 12px;
+}
+.faq-body-content ul {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+.faq-body-content li {
+  font-size: 12px;
+  color: #424242;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.faq-item.open .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.faq-item.open .faq-body {
+  max-height: 400px;
+}
+

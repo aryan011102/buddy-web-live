@@ -1,0 +1,12 @@
+<svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.6289 0H1.32294C0.592299 0 0 0.5923 0 1.32294V11.6289C0 12.3595 0.592299 12.9518 1.32294 12.9518H11.6289C12.3595 12.9518 12.9518 12.3595 12.9518 11.6289V1.32294C12.9518 0.5923 12.3595 0 11.6289 0Z" fill="#98D81E"/>
+<path d="M1.67578 12.584V15.1036L4.9944 12.584H1.67578Z" fill="#98D81E"/>
+<line x1="3.93066" y1="6.39599" x2="4.68066" y2="5.89599" stroke="black" stroke-width="0.25"/>
+<line x1="5.18066" y1="6.39599" x2="5.93066" y2="5.89599" stroke="black" stroke-width="0.25"/>
+<line x1="6.43066" y1="6.39599" x2="7.18066" y2="5.89599" stroke="black" stroke-width="0.25"/>
+<line x1="4.56934" y1="5.89599" x2="5.31934" y2="6.39599" stroke="black" stroke-width="0.25"/>
+<line x1="5.81934" y1="5.89599" x2="6.56934" y2="6.39599" stroke="black" stroke-width="0.25"/>
+<line x1="7.06934" y1="5.89599" x2="7.81934" y2="6.39599" stroke="black" stroke-width="0.25"/>
+<line x1="3" y1="2.75" x2="5" y2="2.75" stroke="black" stroke-width="0.5"/>
+<line x1="7" y1="2.75" x2="9" y2="2.75" stroke="black" stroke-width="0.5"/>
+</svg>

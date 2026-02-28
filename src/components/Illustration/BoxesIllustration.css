@@ -1,0 +1,134 @@
+
+
+.boxes-wrapper {
+  position: relative;
+  width: clamp(450px, 45vw, 700px);
+  aspect-ratio: 4 / 3;
+  overflow: visible !important;
+}
+
+.boxes-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.box {
+  position: absolute;
+  width: clamp(120px, 12vw, 180px);
+  height: auto;
+}
+
+.box-blue   { bottom: 0; left: 0; }
+.box-green  { bottom: 0; left: 25%; }
+.box-purple { bottom: 0; left: 50%; }
+.box-pink   { bottom: 0; left: 85%; }
+.box-yellow { bottom: 0; left: 40%; }
+.box-trolley { bottom: 0; right: 0; }
+
+.chars-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.char {
+  cursor: pointer;
+  position: absolute;
+  width: clamp(80px, 6vw, 120px);
+  height: auto;
+}
+
+.char-insta {
+  bottom: 27%;
+  left: 35%;
+}
+
+.char-linkedin {
+  bottom: 35%;
+  left: 72%;
+}
+
+.char-twitter {
+  bottom: 35%;
+  left: 55%;
+}
+
+.char-cookie {
+  bottom: 21%;
+  left: 15%;
+}
+
+.char-fortune {
+  bottom: 22%;
+  left: 1%;
+  width: clamp(70px, 6vw, 100px);
+  z-index: 5;
+  transition: none !important;
+  cursor: pointer;
+}
+
+.cookie-glow-effect {
+  width: 40px;
+  height: 40px;
+
+  background: radial-gradient(circle, #ffca28 20%, #ffca28 40%, rgba(255, 202, 40, 0) 80%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(9px);
+  mix-blend-mode: screen;
+}
+
+.blast-particle {
+  width: 12px;
+  height: 12px;
+  background-color: #ffca28;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 15px #ffca28, 0 0 5px white;
+}
+
+@media (max-width: 1200px) {
+
+  .boxes-wrapper {
+  transform: scale(0.9);
+    transform-origin: bottom;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 80vh;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 480px;
+    align-items: center;
+  }
+    .boxes-wrapper {
+    transform: scale(0.75);
+    transform-origin: bottom center;
+    margin-top: 0;
+  }
+
+}
+
+@media (max-width: 375px) {
+    .boxes-wrapper {
+    transform: scale(0.65);
+    transform-origin: bottom center;
+    margin-top: 0;
+  }
+
+}
+

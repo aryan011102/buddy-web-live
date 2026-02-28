@@ -1,0 +1,167 @@
+.step-card {
+  display: flex;
+  align-items: center;
+  gap: 52px;
+
+}
+
+.step-left {
+  width: 42%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-image-wrap {
+  width: 360px;
+  height: 340px;
+
+background: var(--step-image-bg);
+  border-radius: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-image-wrap img {
+  max-width: 85%;
+  max-height: 85%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.step-right {
+  width: 58%;
+  align-self: center;
+  transform: translateY(-22px);
+}
+
+.step-right h3 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.step-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+ gap: 38px;
+}
+
+.step-right li {
+  display: flex;
+  align-items: center;
+  gap:32px;
+}
+
+.step-right li img {
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.step-right li::before {
+  content: "";
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fde4ea;
+
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.step-right li {
+  position: relative;
+
+}
+
+.step-right li span {
+  font-size: 16px;
+  margin-left: 58px;
+  line-height: 1.45;
+  color: #111;
+}
+
+@media (max-width: 1100px) and (min-width: 769px) {
+  .step-card {
+    gap: 32px;
+  }
+
+  .step-image-wrap {
+    width: 300px;
+    height: 280px;
+  }
+
+  .step-right h3 {
+    font-size: 32px;
+  }
+
+  .step-right ul {
+    gap: 28px;
+  }
+
+  .step-right li {
+    gap: 24px;
+  }
+
+  .step-right li span {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .step-card {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .step-left{
+    width: 100%;
+
+  }
+
+  .step-right {
+    width: 100%;
+    margin-right: 30px;
+    margin-left:60px;
+    transform: none;
+  }
+
+  .step-image-wrap {
+    width: min(76vw, 320px);
+    height: min(66vw, 270px);
+    padding: 20px;
+  }
+
+  .step-image-wrap img {
+    width: min(52vw, 200px);
+  }
+
+  .step-right h3 {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .step-right ul {
+    gap: 24px;
+    max-width: 320px;
+  }
+
+  .step-right li span {
+    font-size: 12px;
+  }
+}
