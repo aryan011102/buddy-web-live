@@ -81,6 +81,10 @@
   border-radius: 10px;
   border: none;
   background: white;
+  color: #1e1e1e;
+  -webkit-text-fill-color: #1e1e1e;
+  -webkit-appearance: none;
+  appearance: none;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -89,6 +93,7 @@
 .sidebar-nav button:nth-child(even) {
   background: #1e1e1e;
   color: #f6dde1;
+  -webkit-text-fill-color: #f6dde1;
 }
 
 .sidebar-cta {
@@ -169,4 +174,3 @@
     font-size: 14px;
   }
 }
-
