@@ -40,7 +40,7 @@
 
   .stack-container {
     height: calc(var(--stack-count, 5) * 120vh);
-    padding-top: 14vh;
+    padding-top: 9vh;
   }
 
   .stack-card {
