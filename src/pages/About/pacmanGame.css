@@ -17,6 +17,7 @@
   background: #ffffff;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  touch-action: none;
 }
 
 .pacman-grid {
@@ -162,4 +163,3 @@
     justify-content: center;
   }
 }
-
