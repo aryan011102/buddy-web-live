@@ -18,6 +18,16 @@
 
 @media (max-width: 768px) {
   .contact-section {
-   margin-top:52px;
+   margin-top: 24px;
+   padding: 12px 0 8px;
+  }
+
+  .contact-container {
+    gap: 10px;
+    height: 100%;
+  }
+
+  .contact-container .boxes-wrapper {
+    margin-top: auto;
   }
 }
