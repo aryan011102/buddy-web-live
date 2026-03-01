@@ -117,6 +117,7 @@ export default function PacmanGame() {
   const enemiesRef = useRef<Enemy[]>([]);
   const directionRef = useRef<Dir>(direction);
   const nextDirectionRef = useRef<Dir>(nextDirection);
+  const touchStartRef = useRef<Pos | null>(null);
 
   const totalDots = useMemo(() => ROWS * COLS, []);
   const remainingDots = useMemo(
@@ -158,6 +159,55 @@ export default function PacmanGame() {
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isRunning]);
+
+  useEffect(() => {
+    const board = boardRef.current;
+    if (!board) return;
+
+    function onTouchStart(e: TouchEvent) {
+      if (e.touches.length !== 1) return;
+      const t = e.touches[0];
+      touchStartRef.current = { x: t.clientX, y: t.clientY };
+    }
+
+    function onTouchMove(e: TouchEvent) {
+      if (!isRunning) return;
+      if (!touchStartRef.current) return;
+      if (e.touches.length !== 1) return;
+
+      const t = e.touches[0];
+      const dx = t.clientX - touchStartRef.current.x;
+      const dy = t.clientY - touchStartRef.current.y;
+      const threshold = 18;
+
+      if (Math.abs(dx) < threshold && Math.abs(dy) < threshold) return;
+
+      const dir: Dir = Math.abs(dx) > Math.abs(dy)
+        ? (dx > 0 ? "right" : "left")
+        : (dy > 0 ? "down" : "up");
+
+      setNextDirection(dir);
+      nextDirectionRef.current = dir;
+      touchStartRef.current = { x: t.clientX, y: t.clientY };
+      e.preventDefault();
+    }
+
+    function onTouchEnd() {
+      touchStartRef.current = null;
+    }
+
+    board.addEventListener("touchstart", onTouchStart, { passive: true });
+    board.addEventListener("touchmove", onTouchMove, { passive: false });
+    board.addEventListener("touchend", onTouchEnd);
+    board.addEventListener("touchcancel", onTouchEnd);
+
+    return () => {
+      board.removeEventListener("touchstart", onTouchStart);
+      board.removeEventListener("touchmove", onTouchMove);
+      board.removeEventListener("touchend", onTouchEnd);
+      board.removeEventListener("touchcancel", onTouchEnd);
+    };
   }, [isRunning]);
 
   useEffect(() => {
@@ -312,7 +362,7 @@ export default function PacmanGame() {
           {gameOver ? "Restart" : "Start"}
         </button>
         <div className="pacman-score">{score} / {totalDots}</div>
-        <p className="pacman-hint">Use arrow keys to move</p>
+        <p className="pacman-hint">Use arrow keys or swipe to move</p>
         {gameOver && (
           <div className="pacman-status">
             {remainingDots === 0 ? "You cleared all dots!" : "Caught by an enemy!"}
