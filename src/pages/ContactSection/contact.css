@@ -10,7 +10,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: clamp(40px, 6vw, 120px);
+  gap: clamp(20px, 6vw, 120px);
 }
 .contact-container > * {
   flex: 1;
