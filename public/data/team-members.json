@@ -1,0 +1,137 @@
+[
+  {
+    "id": "sakshi-thombre",
+    "name": "Sakshi Thombre",
+    "age": 23,
+    "title": "Designer",
+    "locationLabel": "Designer",
+    "shortBio": "I am a directionally challenged person who tends to travel a lot.",
+    "avatarKey": "sakshi",
+    "interests": [
+      "art",
+      "books",
+      "tech"
+    ],
+    "superpower": "I am a great listener.",
+    "buddyUse": "Finding Buddies in a new city where i might get lost pretty soon.",
+    "favoriteFeature": "Nudge",
+    "favoriteBuddy": "Aryan",
+    "roleColor": "#8D8DFF"
+  },
+  
+  {
+    "id": "ankur",
+    "name": "Ankur Lhila",
+    "age": 23,
+    "title": "CTO",
+    "locationLabel": "CTO",
+    "shortBio": "An engineer who trying to do everything right now because there might be no tomorrow.",
+    "avatarKey": "ankur",
+    "interests": [
+      "gaming",
+      "art",
+      "tech"
+    ],
+    "superpower": "Easily think of multiple things which the other person might dislike about me :3.",
+    "buddyUse": "Curing the \"weekend void.\" I would on Buddy to perfect weekend plans so every Saturday and Sunday feels fully utilised :p.",
+    "favoriteFeature": "Events",
+    "favoriteBuddy": "Pritika",
+    "roleColor": "#64BDFF"
+  },{
+    "id": "yash-agarwal",
+    "name": "Yash Agarwal",
+    "age": 23,
+    "title": "Full Stack Dev",
+    "locationLabel": "Full Stack Dev",
+    "shortBio": "always up at 4 am for a walks even if its raining.",
+    "avatarKey": "yash",
+    "interests": [
+      "sports",
+      "tech",
+      "art"
+    ],
+    "superpower": "sending texts to the wrong person.",
+    "buddyUse": "\"Nudge.\" It lets me ping people who want to join me making some papercrafts to add to my collection.",
+    "favoriteFeature": "Nudge",
+    "favoriteBuddy": "Roshan",
+    "roleColor": "#8D8DFF"
+  },
+  {
+    "id": "roshan-bagla",
+    "name": "Roshan Bagla",
+    "age": 23,
+    "title": "CTO",
+    "locationLabel": "CTO",
+    "shortBio": "I am a tech enthusiast waiting to be replaced by AI.",
+    "avatarKey": "roshan",
+    "interests": [
+      "music",
+      "adventure",
+      "sports"
+    ],
+    "superpower": "Being calm (sometimes).",
+    "buddyUse": "Nudge.",
+    "favoriteFeature": "Nudge",
+    "favoriteBuddy": "Pritika",
+    "roleColor": "#98D81E"
+  },
+   
+  {
+    "id": "devansh-ladha",
+    "name": "Devansh Ladha",
+    "age": 21,
+    "title": "Full Stack Dev",
+    "locationLabel": "Full Stack Dev",
+    "shortBio": "Tech enthusiast who enjoys solving hard problems and building products that make life easy.",
+    "avatarKey": "devansh",
+    "interests": [
+      "sports",
+      "tech",
+      "food"
+    ],
+    "superpower": "Solving complex problems.",
+    "buddyUse": "Finding people to explore the city with.",
+    "favoriteFeature": "Nudge",
+    "favoriteBuddy": "Roshan",
+    "roleColor": "#64BDFF"
+  },
+  {
+    "id": "pritika-agarwal",
+    "name": "Pritika Agarwal",
+    "age": 22,
+    "title": "CEO & Founder",
+    "locationLabel": "CEO & Founder",
+    "shortBio": "People move all the time. I moved once and made it everyone’s problem.",
+    "avatarKey": "pritika",
+    "interests": [
+      "art",
+      "popCulture",
+      "books"
+    ],
+    "superpower": "Sending meeting reminders.",
+    "buddyUse": "To find a flatmate who loves Harry Potter as much as I do.",
+    "favoriteFeature": "Bookmarking recommendations.",
+    "favoriteBuddy": "Sakshi",
+    "roleColor": "#FFB9FF"
+  },
+ 
+  {
+    "id": "aryan-srivastava",
+    "name": "Aryan Srivastava",
+    "age": 23,
+    "title": "CPO",
+    "locationLabel": "CPO",
+    "shortBio": "I panic when someone asks where I'm from because I've moved so many times.",
+    "avatarKey": "aryan",
+    "interests": [
+      "music",
+      "tech",
+      "popCulture"
+    ],
+    "superpower": "Sleeping while the team panics.",
+    "buddyUse": "Finding a new badminton partner every time I move to a new city.",
+    "favoriteFeature": "Nudge",
+    "favoriteBuddy": "Pritika",
+    "roleColor": "#98D81E"
+  }
+]

@@ -1,0 +1,165 @@
+.pacman-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 32px;
+  align-items: center;
+  padding: 60px 40px;
+  background: #ffffff;
+}
+
+.pacman-board {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  background: #ffffff;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  touch-action: none;
+}
+
+.pacman-grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  gap: 0;
+}
+
+.pacman-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(242, 215, 221, 0.9);
+  justify-self: center;
+  align-self: center;
+  transition: opacity 0.12s ease;
+}
+
+.pacman-dot.off {
+  opacity: 0;
+}
+
+.pacman-character,
+.pacman-enemy {
+  position: absolute;
+  width: calc(100% / var(--cols));
+  height: calc(100% / var(--rows));
+  left: calc((100% / var(--cols)) * var(--x));
+  top: calc((100% / var(--rows)) * var(--y));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.14s ease, top 0.14s ease;
+  z-index: 3;
+}
+
+.pacman-icon {
+  width: 70%;
+  height: 70%;
+}
+
+.pacman-icon.left {
+  transform: scaleX(-1);
+}
+
+.pacman-icon.up {
+  transform: rotate(-90deg);
+}
+
+.pacman-icon.down {
+  transform: rotate(90deg);
+}
+
+.pacman-enemy img {
+  width: 70%;
+  height: 70%;
+}
+
+.city-marker {
+  position: absolute;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.city-marker img {
+  width: 26px;
+  height: 26px;
+}
+
+.city-marker span {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.pacman-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.pacman-about-text {
+  max-width: 240px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000000;
+  margin: 0 0 6px;
+}
+
+.pacman-start {
+  padding: 10px 36px;
+  border-radius: 10px;
+  border: 2px solid rgba(246, 215, 221, 1);
+  background: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+
+.pacman-start:focus,
+.pacman-start:focus-visible,
+.pacman-start:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.pacman-score {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pacman-hint {
+  font-size: 12px;
+  color: #6f6f6f;
+}
+
+.pacman-status {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(246, 215, 221, 0.4);
+}
+
+@media (max-width: 900px) {
+  .pacman-page {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 40px 20px;
+  }
+
+  .pacman-sidebar {
+    flex-direction: column;
+    justify-content: center;
+  }
+}

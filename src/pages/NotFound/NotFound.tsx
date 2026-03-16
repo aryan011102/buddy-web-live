@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <main className="not-found">
       <div className="not-found-content">
-        <h1 className="not-found-title">You look lost let me help you</h1>
+        <h1 className="not-found-title">You look lost, let me help you</h1>
         <Link className="not-found-cta" to="/">
           Return to Buddy
         </Link>

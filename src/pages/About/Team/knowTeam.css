@@ -1,0 +1,345 @@
+.know-team-section {
+  padding: 72px 16px 86px;
+  background: #ffffff;
+}
+
+.know-team-section h2 {
+  margin: 0 0 40px;
+  text-align: center;
+  font-size: clamp(32px, 4vw, 38px);
+  font-weight: 600;
+  line-height: 1.05;
+  color: #131318;
+}
+
+.know-team-error {
+  margin: 16px auto 0;
+  width: min(560px, 100%);
+  text-align: center;
+  color: #851f3b;
+}
+
+.team-carousel-shell {
+  width: min(1380px, 100%);
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  background: #ffffff;
+}
+
+.team-carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  height: 38px;
+  width: 38px;
+  border: 0;
+  border-radius: 999px;
+  background: #F6DDE1;
+  color: #4f4045;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.team-carousel-nav:first-of-type {
+  left: 0;
+}
+
+.team-carousel-nav:last-of-type {
+  right: 0;
+}
+
+.team-carousel-nav:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.team-carousel-track {
+  display: flex;
+  gap: 24px;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 12px clamp(52px, 10vw, 170px) 16px;
+  background: #ffffff;
+  scrollbar-width: none;
+}
+
+.team-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.team-carousel-item {
+  scroll-snap-align: center;
+  flex: 0 0 min(88vw, 416px);
+  transform: scale(0.86);
+  transition: transform 0.3s ease, opacity 0.25s ease;
+  opacity: 0.84;
+}
+
+.team-carousel-item.is-active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.team-card {
+  width: 100%;
+  border-radius: 20.8px;
+  background: #ffffff;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.10);
+  border: 1px solid #ece8ea;
+  overflow: hidden;
+  transition: box-shadow 0.24s ease;
+}
+
+.team-card.is-active {
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.17);
+}
+
+.team-card-top {
+  position: relative;
+  padding: 44px 14px 24px;
+}
+
+.team-card-location {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f9f9ff;
+  background: var(--role-bg, #8d8dff);
+  border-radius: 0 20.8px 0 10.4px;
+  width: max-content;
+  min-width: 153px;
+  padding: 0 14px;
+}
+
+.team-card-main {
+  display: grid;
+  grid-template-columns: 146px minmax(0, 1fr);
+  gap: 14px;
+  padding-top: 10px;
+}
+
+.team-picture-shell {
+  width: 146px;
+  height: 158px;
+  border-radius: 23.4px;
+  border: 1.3px solid #f6dde1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.team-picture-circle {
+  width: 103.78px;
+  height: 103.78px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.team-picture-image,
+.team-picture-fallback {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.team-picture-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.team-picture-fallback {
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 30% 25%, #f2d3dd, #cdd6ff);
+  color: #2b2230;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.team-card-meta h3 {
+  margin: 0;
+  font-size: 20.8px;
+  line-height: 27px;
+  color: #14131a;
+}
+
+.team-card-title-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.team-card-age {
+  background: #f6d307;
+  color: #1f1a17;
+  border-radius: 2.76px;
+  font-size: 9.68px;
+  line-height: 1;
+  padding: 3px 6px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.team-card-meta p {
+  margin: 4px 0 0;
+  color: #8793a1;
+  font-size: 15.6px;
+  line-height: 20px;
+}
+
+.team-card-interest-list {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.team-interest-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 999px;
+  padding: 5px 11px;
+  font-size: 9.6px;
+  font-weight: 600;
+  color: #2f2e38;
+  background: var(--chip-fill);
+  border: 0.73125px solid var(--chip-border);
+  letter-spacing: -0.011em;
+}
+
+.team-interest-chip img {
+  width: 14px;
+  height: 14px;
+}
+
+.team-card-details {
+  padding: 0 14px 24px;
+  display: grid;
+  gap: 28px;
+}
+
+.team-card-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.team-elastic-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #eee8ea;
+  border-radius: 10.4px;
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.17);
+  padding: 0 14px 12px;
+}
+
+.team-elastic-card-label {
+  display: inline-block;
+  transform: translateY(-10px);
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: #f6dde1;
+  color: #1e1e1e;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 17px;
+}
+
+.team-elastic-card-value {
+  margin: -1px 0 0;
+  color: #222228;
+  font-size: 15.6px;
+  line-height: 20px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.team-elastic-card-button {
+  margin: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.team-elastic-card-button:focus-visible {
+  outline: 2px solid #8d8dff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .know-team-section {
+    padding: 42px 8px 48px;
+  }
+
+  .team-carousel-shell {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .team-carousel-nav {
+    display: none;
+  }
+
+  .team-carousel-item {
+    flex-basis: 90vw;
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .team-card.is-active {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.14);
+  }
+
+  .team-card-main {
+    grid-template-columns: 86px minmax(0, 1fr);
+  }
+
+  .team-picture-shell {
+    width: 86px;
+    height: 96px;
+    border-radius: 18px;
+    padding: 0;
+  }
+
+  .team-picture-circle {
+    width: 68px;
+    height: 68px;
+  }
+
+  .team-card-meta h3 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .team-card-meta p {
+    font-size: 13.5px;
+    line-height: 17px;
+  }
+
+  .team-interest-chip {
+    font-size: 9.2px;
+    padding: 5px 10px;
+  }
+
+  .team-elastic-card-label {
+    font-size: 12px;
+  }
+
+  .team-elastic-card-value {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
