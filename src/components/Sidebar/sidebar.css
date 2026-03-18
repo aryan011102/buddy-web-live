@@ -44,8 +44,10 @@
 }
 
 .sidebar-brand {
-  font-size: 28px;
-  font-weight: 700;
+  display: block;
+  width: 92px;
+  height: auto;
+  object-fit: contain;
 }
 
 .sidebar-close {
@@ -116,8 +118,21 @@
   margin-top: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 16px;
   font-weight: 600;
+}
+
+.sidebar-copyright {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sidebar-copyright-icon {
+  width: 84px;
+  height: 84px;
+  display: block;
 }
 
 .socials {
@@ -141,7 +156,7 @@
   }
 
   .sidebar-brand {
-    font-size: 24px;
+    width: 116px;
   }
 
   .sidebar-close {

@@ -13,6 +13,14 @@ body {
   font-family: "Rethink Sans", system-ui, -apple-system, sans-serif;
   background: #ffffff;
   color: #0f172a;
+  overflow-x: hidden;
+}
+
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
 }
 
 button {
@@ -32,4 +40,3 @@ html {
   opacity: 1;
   transform: scale(1);
 }
-

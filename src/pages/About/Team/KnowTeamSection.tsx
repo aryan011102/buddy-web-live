@@ -7,7 +7,7 @@ const TEAM_DATA_PATH = "/data/team-members.json";
 const CLONE_SETS = 3;
 const MIDDLE_SET_INDEX = 1;
 const STEP_MS = 260;
-const INITIAL_MEMBER_INDEX = 0;
+const INITIAL_MEMBER_INDEX = 5;
 
 type Direction = 1 | -1;
 
@@ -275,42 +275,46 @@ export default function KnowTeamSection() {
       {error && <p className="know-team-error">{error}</p>}
 
       {!error && (
-        <div className="team-carousel-shell">
-          <button
-            type="button"
-            className="team-carousel-nav"
-            aria-label="Show previous team member"
-            onClick={() => void goPrev()}
-            disabled={!canScroll}
-          >
-            &#8249;
-          </button>
+        <>
+          <div className="team-carousel-shell">
+            <button
+              type="button"
+              className="team-carousel-nav"
+              aria-label="Show previous team member"
+              onClick={() => void goPrev()}
+              disabled={!canScroll}
+            >
+              &#8249;
+            </button>
 
-          <div className="team-carousel-track" ref={trackRef}>
-            {virtualMembers.map((member, index) => {
-              const isActive = index === activeVirtualIndex;
-              return (
-                <div className={`team-carousel-item ${isActive ? "is-active" : ""}`} key={`${member.id}-${index}`}>
-                  <TeamProfileCard
-                    member={member}
-                    isActive={isActive}
-                    onFavBuddyClick={handleFavBuddyClick}
-                  />
-                </div>
-              );
-            })}
+            <div className="team-carousel-track" ref={trackRef}>
+              {virtualMembers.map((member, index) => {
+                const isActive = index === activeVirtualIndex;
+                return (
+                  <div className={`team-carousel-item ${isActive ? "is-active" : ""}`} key={`${member.id}-${index}`}>
+                    <TeamProfileCard
+                      member={member}
+                      isActive={isActive}
+                      onFavBuddyClick={handleFavBuddyClick}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+
+            <button
+              type="button"
+              className="team-carousel-nav"
+              aria-label="Show next team member"
+              onClick={() => void goNext()}
+              disabled={!canScroll}
+            >
+              &#8250;
+            </button>
           </div>
 
-          <button
-            type="button"
-            className="team-carousel-nav"
-            aria-label="Show next team member"
-            onClick={() => void goNext()}
-            disabled={!canScroll}
-          >
-            &#8250;
-          </button>
-        </div>
+          <p className="team-carousel-swipe-hint">Swipe to get to know them all</p>
+        </>
       )}
     </section>
   );

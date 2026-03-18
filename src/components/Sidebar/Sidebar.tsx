@@ -1,4 +1,4 @@
-import "./sidebar.css";import { useNavigate, useLocation } from "react-router-dom";import stairs from "../../assets/svg/staircaseImg.svg";import instagram from "../../assets/svg/instaIcon.svg";import twitter from "../../assets/svg/twitterIcon.svg";import linkedin from "../../assets/svg/linkedinIcon.svg";
+import "./sidebar.css";import { useNavigate, useLocation } from "react-router-dom";import stairs from "../../assets/svg/staircaseImg.svg";import instagram from "../../assets/svg/instaIcon.svg";import twitter from "../../assets/svg/twitterIcon.svg";import linkedin from "../../assets/svg/linkedinIcon.svg";import buddyText from "../../assets/svg/buddy-text.svg";import buddyAppIcon from "../../assets/svg/buddy-app-icon.svg";
 
 type Props = {
   open: boolean;
@@ -55,7 +55,7 @@ export default function Sidebar({ open, onClose }: Props) {
            <button className="sidebar-close" onClick={onClose}>
             ☰
           </button>
-          <div className="sidebar-brand">buddy</div>
+          <img className="sidebar-brand" src={buddyText} alt="buddy" />
 
         </div>
 
@@ -85,7 +85,10 @@ export default function Sidebar({ open, onClose }: Props) {
         </a>
 
         <div className="sidebar-footer">
-          <span>© buddy</span>
+          <span className="sidebar-copyright">
+            <span>©</span>
+            <img className="sidebar-copyright-icon" src={buddyAppIcon} alt="buddy" />
+          </span>
 
           <div className="socials">
             <a
@@ -119,4 +122,3 @@ export default function Sidebar({ open, onClose }: Props) {
     </>
   );
 }
-

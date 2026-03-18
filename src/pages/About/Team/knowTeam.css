@@ -85,6 +85,16 @@
   opacity: 1;
 }
 
+.team-carousel-swipe-hint {
+  display: none;
+  margin: 14px 0 0;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #6f6b78;
+}
+
 .team-card {
   width: 100%;
   border-radius: 20.8px;
@@ -299,6 +309,10 @@
     opacity: 1;
   }
 
+  .team-carousel-swipe-hint {
+    display: block;
+  }
+
   .team-card.is-active {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.14);
   }
@@ -341,5 +355,14 @@
   .team-elastic-card-value {
     font-size: 14px;
     line-height: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .know-team-section h2 {
+    width: min(520px, calc(100% - 104px));
+    margin: 0 auto 32px;
+    font-size: 26px;
+    line-height: 1.1;
   }
 }

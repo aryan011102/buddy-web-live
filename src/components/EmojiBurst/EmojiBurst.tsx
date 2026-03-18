@@ -58,7 +58,7 @@ export default function EmojiBurst({ targets }: { targets: Target[] }) {
               },
             ],
             {
-              duration: 900,
+              duration: 700,
               easing: "cubic-bezier(0.22, 1, 0.36, 1)",
               fill: "forwards",
             }
@@ -77,7 +77,7 @@ export default function EmojiBurst({ targets }: { targets: Target[] }) {
                 },
               ],
               {
-                duration: 1000,
+                duration: 900,
                 easing: "cubic-bezier(0.55, 0, 1, 0.45)",
                 fill: "forwards",
               }
@@ -99,4 +99,3 @@ export default function EmojiBurst({ targets }: { targets: Target[] }) {
 
   return null;
 }
-

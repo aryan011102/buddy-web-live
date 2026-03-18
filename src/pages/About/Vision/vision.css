@@ -1,0 +1,446 @@
+.vision-section {
+  padding: 44px 16px 96px;
+  background: #ffffff;
+}
+
+.vision-section h2 {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(32px, 4vw, 38px);
+  font-weight: 600;
+  line-height: 1.05;
+  color: #15151a;
+}
+
+.vision-stage {
+  position: relative;
+  width: min(920px, 100%);
+  min-height: 470px;
+  margin: 88px auto 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  perspective: 1600px;
+}
+
+.drives-card {
+  --drive-accent: #0f172a;
+  --drive-border: #d9d9d9;
+  --drive-panel: #f3f4f6;
+  --drive-rotation: 0deg;
+  --drive-shadow: 1.5px 1.5px 0px 0.15px #d9d9d9;
+  --drive-z: 1;
+  border: 0;
+  position: absolute;
+  top: 0;
+  width: 245.25px;
+  height: 384px;
+  padding: 15px 18px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 -0.75px 15.75px rgba(0, 0, 0, 0.14), var(--drive-shadow);
+  transform: rotate(var(--drive-rotation));
+  z-index: var(--drive-z);
+  transition: transform 0.5s ease, box-shadow 0.35s ease, opacity 0.35s ease, filter 0.35s ease;
+  cursor: pointer;
+  text-align: left;
+}
+
+.drives-card:hover {
+  transform: rotate(var(--drive-rotation)) translateY(-6px);
+}
+
+.vision-stage.has-active-card > .drives-card {
+  opacity: 0.2;
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.vision-backdrop {
+  position: absolute;
+  inset: -24px;
+  border: 0;
+  background: transparent;
+  z-index: 9;
+  cursor: default;
+}
+
+.vision-expanded-card {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  width: min(720px, calc(100% - 48px));
+  transform: translateX(-50%) scale(1.03);
+  z-index: 10;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  animation: vision-card-open 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes vision-card-open {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) rotateY(-88deg) scale(0.98);
+  }
+
+  55% {
+    opacity: 1;
+    transform: translateX(-50%) rotateY(10deg) scale(1.04);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) rotateY(0deg) scale(1.03);
+  }
+}
+
+.drives-card--left {
+  left: calc(50% - 245.25px - 128px);
+}
+
+.drives-card--center {
+  left: calc(50% - 122.625px);
+}
+
+.drives-card--right {
+  left: calc(50% + 122.625px - 22px);
+}
+
+.drives-card-panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  background: var(--drive-panel);
+  overflow: hidden;
+}
+
+.drives-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.drives-card h3 {
+  width: min(150px, 100%);
+  margin: 70px auto 0;
+  text-align: center;
+  font-size: 27px;
+  line-height: 1.07;
+  font-weight: 800;
+  color: var(--drive-accent);
+}
+
+.drives-card-close {
+  display: none;
+  flex: 0 0 auto;
+}
+
+.drives-card.is-active {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: 425px;
+  padding: 16px 18px;
+  transform: rotate(0deg);
+  box-shadow: 0 -0.75px 22px rgba(0, 0, 0, 0.16), var(--drive-shadow);
+  z-index: 11;
+  cursor: default;
+}
+
+.drives-card.is-active .drives-card-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 176px;
+  grid-template-areas:
+    "heading close"
+    "copy artwork";
+  gap: 20px 24px;
+  padding: 26px 26px 22px;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.drives-card.is-active .drives-card-heading {
+  grid-area: heading;
+  display: block;
+}
+
+.drives-card.is-active h3 {
+  width: auto;
+  margin: 0;
+  text-align: left;
+  font-size: 32px;
+  line-height: 1;
+}
+
+  .drives-card.is-active .drives-card-close {
+    display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: close;
+  justify-self: end;
+  align-self: start;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--drive-accent) 30%, transparent);
+  background: rgba(255, 255, 255, 0.54);
+  color: var(--drive-accent);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.drives-card-copy {
+  grid-area: copy;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  padding-top: 2px;
+  min-height: 0;
+}
+
+.drives-card-copy p {
+  margin: 0;
+  max-width: 50ch;
+  color: #232333;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.drives-card.is-active .drives-card-copy {
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.drives-card-illustration {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 128px;
+  height: 132px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.drives-card-artwork {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.drives-card-illustration--founders-corner .drives-card-artwork {
+  opacity: 1.8;
+  filter: saturate(1.15) contrast(1.08);
+}
+
+.drives-card.is-active .drives-card-illustration {
+  grid-area: artwork;
+  position: relative;
+  left: auto;
+  bottom: auto;
+  width: 176px;
+  height: 176px;
+  align-self: end;
+  justify-self: end;
+  transform: none;
+}
+
+.vision-hint {
+  margin: 26px 0 0;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #97a5b4;
+  text-transform: lowercase;
+}
+
+@media (max-width: 900px) {
+  .vision-section {
+    padding: 28px 12px 64px;
+  }
+
+  .vision-stage {
+    min-height: 410px;
+    margin-top: 56px;
+  }
+
+  .drives-card {
+    width: 212px;
+    height: 332px;
+    padding: 13px 15px;
+  }
+
+  .drives-card--left {
+    left: calc(50% - 212px - 78px);
+  }
+
+  .drives-card--center {
+    left: calc(50% - 106px);
+  }
+
+  .drives-card--right {
+    left: calc(50% + 106px - 12px);
+  }
+
+  .drives-card h3 {
+    margin-top: 60px;
+    width: 140px;
+    font-size: 23px;
+  }
+
+  .vision-expanded-card {
+    width: min(640px, calc(100% - 32px));
+  }
+
+  .drives-card.is-active {
+    height: 276px;
+  }
+
+  .drives-card.is-active .drives-card-panel {
+    grid-template-columns: minmax(0, 1fr) 148px;
+    grid-template-areas:
+      "heading close"
+      "copy artwork";
+    gap: 18px 20px;
+    padding: 22px;
+  }
+
+  .drives-card.is-active h3 {
+    font-size: 28px;
+  }
+
+  .drives-card.is-active .drives-card-illustration {
+    width: 148px;
+    height: 148px;
+  }
+
+  .drives-card-illustration {
+    width: 114px;
+    height: 118px;
+  }
+}
+
+@media (max-width: 640px) {
+  .drives-card-copy p {
+    max-width: 38ch;
+  }
+  .vision-section h2 {
+    width: min(520px, calc(100% - 104px));
+    margin: 0 auto;
+    font-size: 26px;
+    line-height: 1.1;
+  }
+
+  .vision-stage {
+    min-height: 360px;
+    margin-top: 34px;
+    padding: 0;
+  }
+
+  .drives-card {
+    width: 138px;
+    height: 222px;
+    padding: 9px 10px;
+  }
+
+  .drives-card--left {
+    left: calc(50% - 138px - 14px);
+  }
+
+  .drives-card--center {
+    left: calc(50% - 69px);
+  }
+
+  .drives-card--right {
+    left: calc(50% + 69px - 28px);
+    --drive-rotation: 5.5deg;
+  }
+
+  .drives-card h3 {
+    width: 120px;
+    margin-top: 46px;
+    font-size: 20px;
+  }
+
+  .drives-card-illustration {
+    width: 92px;
+    height: 96px;
+  }
+
+  .vision-expanded-card {
+    top: 18px;
+    width: calc(100% - 12px);
+    transform: translateX(-50%) scale(1.02);
+  }
+
+  @keyframes vision-card-open {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) rotateY(-88deg) scale(0.98);
+    }
+
+    55% {
+      opacity: 1;
+      transform: translateX(-50%) rotateY(10deg) scale(1.03);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(-50%) rotateY(0deg) scale(1.02);
+    }
+  }
+
+  .drives-card.is-active {
+    height: 372px;
+    padding: 10px;
+  }
+
+  .drives-card.is-active .drives-card-panel {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "close"
+      "heading"
+      "copy";
+    gap: 10px;
+    padding: 16px 16px 14px;
+  }
+
+  .drives-card.is-active .drives-card-heading {
+    justify-content: flex-start;
+  }
+
+  .drives-card.is-active .drives-card-close {
+    justify-self: end;
+  }
+
+  .drives-card.is-active h3 {
+    font-size: 26px;
+  }
+
+  .drives-card-copy {
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  .drives-card-copy p {
+    font-size: 14px;
+    line-height: 1.38;
+  }
+
+  .drives-card.is-active .drives-card-illustration {
+    display: none;
+  }
+
+  .drives-card.is-active .drives-card-copy {
+    padding-right: 0;
+  }
+
+  .vision-hint {
+    margin-top: 18px;
+  }
+}

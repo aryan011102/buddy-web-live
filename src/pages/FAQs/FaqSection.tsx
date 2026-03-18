@@ -47,7 +47,7 @@ const SPARK_SLOTS = [
   { x: 18, y: 32 },
   { x: 12, y: 38 },
   { x: 88, y: 36 },
-  { x: 82, y: 42 },
+  { x: 82, y: 38 },
 ];
 
 const SPARK_COLORS: SparkColor[] = ["pink", "yellow", "purple", "blue", "green"];
