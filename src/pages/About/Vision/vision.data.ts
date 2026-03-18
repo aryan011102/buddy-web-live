@@ -43,10 +43,10 @@ export const DRIVE_CARDS: DriveCardItem[] = [
   },
   {
     id: "founders-corner",
-    title: "Founder's Corner",
+    title: "Founder's Note",
     artwork: founderGuy,
     lines: [
-      "I moved cities once, and I hated it.Not because the city was bad, but because starting over is harder than anyone prepares you for.",
+      "I moved cities once, and I hated it. Not because the city was bad, but because starting over is harder than anyone prepares you for.",
       "Finding a place is chaotic. Finding your people is even harder. And somewhere along the way, you realise how easy it is to feel alone in a city full of people. There were moments I really wished things were easier. That I didn't have to figure everything out on my own.",
      
       "Buddy was born from that experience. If we get this right, fewer people will feel alone when they move. And more people will find a sense of belonging, a little sooner.",
