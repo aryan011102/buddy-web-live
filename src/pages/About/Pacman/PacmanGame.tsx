@@ -355,8 +355,7 @@ export default function PacmanGame() {
 
       <div className="pacman-sidebar">
         <p className="pacman-about-text">
-          You’ll find out more about us soon. Until then,<br />
-          play Pac-Man :)
+         And till you find your buddy, play Pac-Man :)
         </p>
         <button className="pacman-start" onClick={handleStart}>
           {gameOver ? "Restart" : "Start"}

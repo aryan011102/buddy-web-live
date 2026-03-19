@@ -17,7 +17,7 @@ import type { TeamInterestId } from "./knowTeam.types";
 export const TEAM_INTERESTS: Record<TeamInterestId, CategoryItem> = {
   art: {
     id: "art",
-    label: "Arts & Crafts",
+    label: "Arts & Design",
     icon: art,
     lightColor: "#FFF5BE",
     darkColor: "#F6D307",
@@ -42,6 +42,7 @@ export const TEAM_INTERESTS: Record<TeamInterestId, CategoryItem> = {
     icon: music,
     lightColor: "#C8E8FF",
     darkColor: "#64BDFF",
+    iconInlineStyle: { width: "12px", height: "12px" },
   },
   travel: {
     id: "travel",
@@ -56,6 +57,7 @@ export const TEAM_INTERESTS: Record<TeamInterestId, CategoryItem> = {
     icon: food,
     lightColor: "#FFF5BE",
     darkColor: "#F6D307",
+    iconInlineStyle: { width: "16px", height: "16px" },
   },
   gaming: {
     id: "gaming",

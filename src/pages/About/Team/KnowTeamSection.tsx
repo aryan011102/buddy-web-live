@@ -6,7 +6,6 @@ import "./knowTeam.css";
 const TEAM_DATA_PATH = "/data/team-members.json";
 const CLONE_SETS = 3;
 const MIDDLE_SET_INDEX = 1;
-const STEP_MS = 260;
 const INITIAL_MEMBER_INDEX = 5;
 
 type Direction = 1 | -1;
@@ -19,6 +18,7 @@ export default function KnowTeamSection() {
   const animationLockRef = useRef(false);
   const activeVirtualIndexRef = useRef(0);
   const isInitializedRef = useRef(false);
+  const scrollEndTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -64,18 +64,48 @@ export default function KnowTeamSection() {
   }, [activeVirtualIndex, cardCount]);
 
   const title = useMemo(() => {
-    if (error) return "The team behind the screen";
+    if (error) return "The OG Buddies";
     if (members.length === 0) return "Loading team...";
-    return "The team behind the screen";
+    return "The OG Buddies";
   }, [members.length, error]);
 
   useEffect(() => {
     activeVirtualIndexRef.current = activeVirtualIndex;
   }, [activeVirtualIndex]);
 
-  function wait(ms: number) {
-    return new Promise(resolve => {
-      window.setTimeout(resolve, ms);
+  function waitForScrollSettled(container: HTMLDivElement, timeoutMs = 900) {
+    return new Promise<void>(resolve => {
+      const start = performance.now();
+      let last = container.scrollLeft;
+      let stableFrames = 0;
+      let rafId = 0;
+
+      const done = () => {
+        window.cancelAnimationFrame(rafId);
+        resolve();
+      };
+
+      const tick = () => {
+        const now = performance.now();
+        const current = container.scrollLeft;
+
+        if (Math.abs(current - last) < 0.5) {
+          stableFrames += 1;
+        } else {
+          stableFrames = 0;
+        }
+
+        last = current;
+
+        if (stableFrames >= 4 || now - start >= timeoutMs) {
+          done();
+          return;
+        }
+
+        rafId = window.requestAnimationFrame(tick);
+      };
+
+      rafId = window.requestAnimationFrame(tick);
     });
   }
 
@@ -126,9 +156,11 @@ export default function KnowTeamSection() {
 
   async function stepBy(direction: Direction) {
     if (!cardCount) return;
+    const container = trackRef.current;
+    if (!container) return;
     const next = activeVirtualIndexRef.current + direction;
     scrollToVirtualIndex(next, "smooth");
-    await wait(STEP_MS);
+    await waitForScrollSettled(container);
     recenterIfNeeded(next);
   }
 
@@ -237,6 +269,7 @@ export default function KnowTeamSection() {
     const container = trackRef.current;
     if (!container || virtualMembers.length === 0) return;
     const scrollContainer = container;
+    let timeoutId: number | null = null;
 
     function onScroll() {
       if (!isInitializedRef.current) return;
@@ -258,13 +291,30 @@ export default function KnowTeamSection() {
 
       setActiveVirtualIndex(nearestIndex);
       activeVirtualIndexRef.current = nearestIndex;
-      recenterIfNeeded(nearestIndex);
+
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId);
+      }
+
+      timeoutId = window.setTimeout(() => {
+        recenterIfNeeded(activeVirtualIndexRef.current);
+      }, 120);
+      scrollEndTimeoutRef.current = timeoutId;
     }
 
     scrollContainer.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
-    return () => scrollContainer.removeEventListener("scroll", onScroll);
+    return () => {
+      scrollContainer.removeEventListener("scroll", onScroll);
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId);
+      }
+      if (scrollEndTimeoutRef.current !== null) {
+        window.clearTimeout(scrollEndTimeoutRef.current);
+        scrollEndTimeoutRef.current = null;
+      }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [virtualMembers.length, cardCount]);
 

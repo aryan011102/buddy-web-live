@@ -4,7 +4,7 @@
     "name": "Sakshi Thombre",
     "age": 23,
     "title": "Designer",
-    "locationLabel": "Designer",
+    "locationLabel": "buddy of the month",
     "shortBio": "I am a directionally challenged person who tends to travel a lot.",
     "avatarKey": "sakshi",
     "interests": [
@@ -24,7 +24,7 @@
     "name": "Ankur Lhila",
     "age": 23,
     "title": "CTO",
-    "locationLabel": "CTO",
+    "locationLabel": "thinks, then overthinks",
     "shortBio": "An engineer who trying to do everything right now because there might be no tomorrow.",
     "avatarKey": "ankur",
     "interests": [
@@ -33,7 +33,7 @@
       "tech"
     ],
     "superpower": "Easily think of multiple things which the other person might dislike about me :3.",
-    "buddyUse": "Curing the \"weekend void.\" I would on Buddy to perfect weekend plans so every Saturday and Sunday feels fully utilised :p.",
+    "buddyUse": "Curing the \"weekend void.\" I would use Buddy to perfect weekend plans so every Saturday and Sunday feels fully utilised :p.",
     "favoriteFeature": "Events",
     "favoriteBuddy": "Pritika and Roshan",
     "roleColor": "#64BDFF"
@@ -42,7 +42,7 @@
     "name": "Yash Agarwal",
     "age": 23,
     "title": "Full Stack Dev",
-    "locationLabel": "Full Stack Dev",
+    "locationLabel": "oves bullying Devansh",
     "shortBio": "always up at 4 am for a walks even if its raining.",
     "avatarKey": "yash",
     "interests": [
@@ -61,7 +61,7 @@
     "name": "Roshan Bagla",
     "age": 23,
     "title": "CTO",
-    "locationLabel": "CTO",
+    "locationLabel": "gets seenzoned by all",
     "shortBio": "I am a tech enthusiast waiting to be replaced by AI.",
     "avatarKey": "roshan",
     "interests": [
@@ -81,7 +81,7 @@
     "name": "Devansh Ladha",
     "age": 21,
     "title": "Full Stack Dev",
-    "locationLabel": "Full Stack Dev",
+    "locationLabel": "knows the tea first",
     "shortBio": "Tech enthusiast who enjoys solving hard problems and building products that make life easy.",
     "avatarKey": "devansh",
     "interests": [
@@ -100,7 +100,7 @@
     "name": "Pritika Agarwal",
     "age": 22,
     "title": "CEO & Founder",
-    "locationLabel": "CEO & Founder",
+    "locationLabel": "Csays ‘one last thing’ 17 times",
     "shortBio": "People move all the time. I moved once and made it everyone’s problem.",
     "avatarKey": "pritika",
     "interests": [
@@ -120,7 +120,7 @@
     "name": "Aryan Srivastava",
     "age": 23,
     "title": "CPO",
-    "locationLabel": "CPO",
+    "locationLabel": "great at rage-baiting ",
     "shortBio": "I panic when someone asks where I'm from because I've moved so many times.",
     "avatarKey": "aryan",
     "interests": [

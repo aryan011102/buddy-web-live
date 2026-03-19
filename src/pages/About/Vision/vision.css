@@ -15,7 +15,7 @@
 .vision-stage {
   position: relative;
   width: min(920px, 100%);
-  min-height: 470px;
+  min-height: 440px;
   margin: 88px auto 0;
   display: flex;
   align-items: flex-start;
@@ -95,7 +95,8 @@
 }
 
 .drives-card--left {
-  left: calc(50% - 245.25px - 128px);
+
+  left: calc(50% - 215.25px - 128px);
 }
 
 .drives-card--center {
@@ -265,7 +266,7 @@
   }
 
   .vision-stage {
-    min-height: 410px;
+    min-height: 340px;
     margin-top: 56px;
   }
 
@@ -337,8 +338,11 @@
   }
 
   .vision-stage {
-    min-height: 360px;
+    width: min(340px, 100%);
+    min-height: 290px;
     margin-top: 34px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0;
   }
 
@@ -349,7 +353,7 @@
   }
 
   .drives-card--left {
-    left: calc(50% - 138px - 14px);
+    left: calc(50% - 138px - 2px);
   }
 
   .drives-card--center {
@@ -357,7 +361,7 @@
   }
 
   .drives-card--right {
-    left: calc(50% + 69px - 28px);
+    left: calc(50% + 2px);
     --drive-rotation: 5.5deg;
   }
 
@@ -401,21 +405,23 @@
   }
 
   .drives-card.is-active .drives-card-panel {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
-      "close"
-      "heading"
-      "copy";
+      "heading close"
+      "copy copy";
     gap: 10px;
     padding: 16px 16px 14px;
   }
 
   .drives-card.is-active .drives-card-heading {
+    display: flex;
+    align-items: center;
     justify-content: flex-start;
   }
 
   .drives-card.is-active .drives-card-close {
     justify-self: end;
+    align-self: center;
   }
 
   .drives-card.is-active h3 {

@@ -68,12 +68,12 @@ export const DRIVE_CARDS: DriveCardItem[] = [
     title: "Our Mission",
     artwork: missionGuy,
     lines: [
-      "Our mission is to make moving to a new city feel less like a disruption and more like an opportunity.",
-      "We do this by:",
-      "• Helping people find meaningful, real-world connections from day one.",
-      "• Reducing the emotional friction of relocation: loneliness, uncertainty, and lack of belonging.",
-      "• Bringing structure, trust, and simplicity to the fragmented PG and flat ecosystem.",
-      "We're building tools, systems, and experiences that support both: your life outside your room, and the space you come back to.",
+      "Our mission is to make moving to a new city feel less like a disruption and more like an opportunity, by:",
+      "•⁠  ⁠Helping people find meaningful, real-world connections from day one",
+      "•⁠  ⁠Reducing the emotional friction of relocation - loneliness, uncertainty, and lack of belonging",
+      "•⁠  ⁠Bringing structure, trust, and simplicity to the fragmented PG and flat-sharing ecosystem",
+      "We’re building tools, systems, and experiences that support both - your life outside your room, and the space you come back to.",
+
     ],
     theme: {
       accent: "#E769CE",

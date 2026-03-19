@@ -28,7 +28,12 @@ export default function InterestChip({ category }: InterestChipProps) {
         ["--chip-border" as string]: borderColor,
       }}
     >
-      <img src={category.icon} alt="" aria-hidden="true" />
+      <img
+        src={category.icon}
+        alt=""
+        aria-hidden="true"
+        style={category.iconInlineStyle}
+      />
       <span>{category.label}</span>
     </span>
   );
