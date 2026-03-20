@@ -26,7 +26,7 @@
 }
 
 .people-visited-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   text-transform: lowercase;
   letter-spacing: 0.2px;
@@ -36,6 +36,7 @@
   font-size: 34px;
   font-weight: 800;
   line-height: 1.05;
+  margin: 6px 0 2px 0;
 }
 
 .people-visited-pole {

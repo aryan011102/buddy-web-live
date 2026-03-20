@@ -129,6 +129,12 @@
   gap: 6px;
 }
 
+.sidebar-tm-icon {
+  width: 12px;
+  height: 12px;
+  display: block;
+}
+
 .sidebar-copyright-icon {
   width: 84px;
   height: 84px;

@@ -189,12 +189,37 @@ async function incrementStarCount() {
         "accept": "application/json",
         "Content-Type": "application/json",
       },
-      // credentials: "omit",
       body: JSON.stringify({ count: 1 }),
     });
+
+    await fetchStarCount();
   } catch (error) {
-  
     console.error("Increment failed:", error);
+  }
+}
+
+async function fetchStarCount() {
+  try {
+    const url = getBuddyApiUrl("api/v1/stars/count");
+    if (!url) return;
+
+    const res = await fetch(url, {
+      method: "GET",
+      redirect: "follow",
+    });
+
+    const result = await res.text();
+    let count = 0;
+    try {
+      const parsed = JSON.parse(result);
+      count = extractCount(parsed);
+    } catch {
+      count = parseInt(result, 10) || 0;
+    }
+
+    setPeopleVisitedCount(count);
+  } catch (error) {
+    console.error("Fetch count failed:", error);
   }
 }
 

@@ -12,8 +12,9 @@ export default function PeopleVisitedSign({ count }: Props) {
   return (
     <div className="people-visited-sign" aria-label={`People visited ${formatted}`}>
       <div className="people-visited-board">
-        <div className="people-visited-title">people visited</div>
+        <div className="people-visited-title">people have left us</div>
         <div className="people-visited-count">{formatted}</div>
+        <div className="people-visited-title">stars</div>
       </div>
       <div className="people-visited-pole" aria-hidden="true" />
     </div>

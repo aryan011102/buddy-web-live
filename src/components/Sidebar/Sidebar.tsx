@@ -1,4 +1,4 @@
-import "./sidebar.css";import { useNavigate, useLocation } from "react-router-dom";import stairs from "../../assets/svg/staircaseImg.svg";import instagram from "../../assets/svg/instaIcon.svg";import twitter from "../../assets/svg/twitterIcon.svg";import linkedin from "../../assets/svg/linkedinIcon.svg";import buddyText from "../../assets/svg/buddy-text.svg";import buddyAppIcon from "../../assets/svg/buddy-app-icon.svg";
+import "./sidebar.css";import { useNavigate, useLocation } from "react-router-dom";import stairs from "../../assets/svg/staircaseImg.svg";import instagram from "../../assets/svg/instaIcon.svg";import twitter from "../../assets/svg/twitterIcon.svg";import linkedin from "../../assets/svg/linkedinIcon.svg";import buddyText from "../../assets/svg/buddy-text.svg";import buddyAppIcon from "../../assets/svg/buddy-app-icon.svg";import tmCircle from "../../assets/svg/tm-circle.png";
 
 type Props = {
   open: boolean;
@@ -86,7 +86,7 @@ export default function Sidebar({ open, onClose }: Props) {
 
         <div className="sidebar-footer">
           <span className="sidebar-copyright">
-            <span>©</span>
+            <img className="sidebar-tm-icon" src={tmCircle} alt="trademark" />
             <img className="sidebar-copyright-icon" src={buddyAppIcon} alt="buddy" />
           </span>
 
