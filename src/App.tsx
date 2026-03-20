@@ -7,6 +7,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Landing from "./pages/Landing/Landing";
 import CursorDot from "./components/Cursor/CursorDot";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
+import { Analytics } from "@vercel/analytics/react";
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
@@ -35,6 +36,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 }
