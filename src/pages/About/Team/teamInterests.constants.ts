@@ -17,7 +17,7 @@ import type { TeamInterestId } from "./knowTeam.types";
 export const TEAM_INTERESTS: Record<TeamInterestId, CategoryItem> = {
   art: {
     id: "art",
-    label: "Arts & Design",
+    label: "Art & Design",
     icon: art,
     lightColor: "#FFF5BE",
     darkColor: "#F6D307",
