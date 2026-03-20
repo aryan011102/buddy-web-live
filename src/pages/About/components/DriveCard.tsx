@@ -1,5 +1,5 @@
 import type { DriveCardItem } from "../Vision/vision.data";
-import { Cross } from "lucide-react";
+import close from "../../../assets/svg/close-icon.svg"
 type Props = {
   card: DriveCardItem;
   isActive?: boolean;
@@ -33,7 +33,7 @@ export default function DriveCard({ card, isActive = false, onOpen, onClose }: P
         </div>
         {isActive && onClose ? (
           <button type="button" className="drives-card-close" onClick={onClose} aria-label={`Close ${card.title}`}>
-             <Cross size={20} style={{ transform: 'rotate(45deg)' }} />
+              <img src={close} alt="" />
           
           </button>
         ) : null}

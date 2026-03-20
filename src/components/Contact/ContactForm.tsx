@@ -56,9 +56,7 @@ export default function ContactForm() {
     e.preventDefault()
 
     if (!validate()) return
-console.log("test")
     const apiUrl = getBuddyApiUrl("api/v1/contact")
-    console.log(apiUrl,"test2")
     if (!apiUrl) {
       setSubmitError("Contact service is not configured.")
       return

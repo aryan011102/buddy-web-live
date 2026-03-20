@@ -175,7 +175,7 @@
 }
 
   .drives-card.is-active .drives-card-close {
-    display: inline-flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   grid-area: close;
@@ -186,7 +186,7 @@
   border: 1px solid color-mix(in srgb, var(--drive-accent) 30%, transparent);
   background: rgba(255, 255, 255, 0.54);
   color: var(--drive-accent);
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 700;
   cursor: pointer;
 }
@@ -422,6 +422,15 @@
   .drives-card.is-active .drives-card-close {
     justify-self: end;
     align-self: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .drives-card.is-active .drives-card-close img {
+    width: 12px;
+    height: 12px;
   }
 
   .drives-card.is-active h3 {

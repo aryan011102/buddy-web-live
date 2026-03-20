@@ -141,48 +141,62 @@ export default function FaqSection() {
     return () => observer.disconnect();
   }, [loadedGround]);
 
-  async function loadGroundSparks() {
+async function loadGroundSparks() {
     if (loadedGround) return;
     setLoadedGround(true);
 
     try {
       const url = getBuddyApiUrl("api/v1/stars/count");
       if (!url) return;
+
+      // Exact match to the snippet provided
       const res = await fetch(url, {
         method: "GET",
-        headers: {
-          accept: "application/json",
-        },
-        credentials: "omit",
+        redirect: "follow",
+        // No headers at all, as per the new curl
       });
 
-      const data = await res.json().catch(() => null);
-      const count = extractCount(data);
+      // Get response as text first to avoid JSON parsing issues
+      const result = await res.text();
+      
+      // Attempt to parse the text into a number or object
+      let count = 0;
+      try {
+        const parsed = JSON.parse(result);
+        count = extractCount(parsed);
+      } catch {
+        // Fallback if the result is just a raw number string
+        count = parseInt(result, 10) || 0;
+      }
 
       if (count > 0) {
         setGroundSparks(createGroundSparks(count));
       }
       setPeopleVisitedCount(count);
-    } catch {
+    } catch (error) {
+      console.error("CORS or Network Error:", error);
     }
   }
 
-  async function incrementStarCount() {
-    try {
-      const url = getBuddyApiUrl("api/v1/stars/fall");
-      if (!url) return;
-      await fetch(url, {
-        method: "POST",
-        headers: {
-          accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        credentials: "omit",
-        body: JSON.stringify({ count: 1 }),
-      });
-    } catch {
-    }
+async function incrementStarCount() {
+  try {
+    const url = getBuddyApiUrl("api/v1/stars/fall");
+    if (!url) return;
+
+    await fetch(url, {
+      method: "POST",
+      headers: {
+        "accept": "application/json",
+        "Content-Type": "application/json",
+      },
+      // credentials: "omit",
+      body: JSON.stringify({ count: 1 }),
+    });
+  } catch (error) {
+  
+    console.error("Increment failed:", error);
   }
+}
 
   return (
     <section ref={sectionRef} className="faq-section" id="faq">
@@ -283,4 +297,3 @@ function createGroundSparks(count: number): GroundSpark[] {
     };
   });
 }
-

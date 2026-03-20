@@ -16,7 +16,7 @@ export default defineConfig({
     proxy: {
       // String shorthand for simple cases, or object for more control
       '/api': {
-        target: 'http://localhost:8080',
+        target: 'http://localhost:8000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
         // optional: configure secure: false if using self-signed SSL on target
