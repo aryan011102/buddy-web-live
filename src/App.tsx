@@ -8,6 +8,7 @@ import Landing from "./pages/Landing/Landing";
 import CursorDot from "./components/Cursor/CursorDot";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
@@ -37,6 +38,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Analytics />
+      <SpeedInsights />
     </BrowserRouter>
   );
 }
