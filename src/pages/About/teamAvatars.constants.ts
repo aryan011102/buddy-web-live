@@ -4,7 +4,7 @@ import devansh from "../../assets/img/devansh.png";
 import pritika from "../../assets/img/pritika.png";
 import roshan from "../../assets/img/roshan.jpeg";
 import sakshi from "../../assets/img/sakshi.jpeg";
-import yash from "../../assets/img/yash.png";
+import yash from "../../assets/img/yash.jpeg";
 
 export const TEAM_AVATARS = {
   ankur,

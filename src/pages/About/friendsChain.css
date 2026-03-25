@@ -1,0 +1,127 @@
+.friends-chain-section {
+  width: min(1880px, calc(100% - 32px));
+ 
+  border-radius: 10px;
+  padding: 120px 18px 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.friends-chain-track {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  overflow: hidden;
+  width: 100%;
+}
+
+.friend-avatar {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(158px, 10.4vw, 212px);
+  margin-top: 18px;
+  align-self: flex-end;
+}
+
+.friend-avatar + .friend-avatar {
+  margin-left: -18px;
+}
+
+.friend-shape {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+.friend-face-button {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 71%;
+  height: 71%;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.friend-face-mask {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: block;
+  border: 0;
+  box-shadow: none;
+}
+
+.friend-face-mask.is-revealed {
+  border: 0;
+  box-shadow: none;
+}
+
+.friend-face-mask.shape-square {
+  border-radius: 8%;
+}
+
+.friend-face-mask.shape-circle {
+  border-radius: 999px;
+}
+
+.friend-face {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 360ms ease, opacity 260ms ease;
+  transform-style: preserve-3d;
+}
+
+.friend-face.is-visible {
+  opacity: 1;
+  transform: rotateY(0deg) scale(1.24);
+}
+
+.friend-face.is-hidden {
+  opacity: 0;
+  transform: rotateY(90deg) scale(1.1);
+}
+
+.friend-face-button:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1024px) {
+  .friends-chain-track {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    padding-bottom: 8px;
+  }
+}
+
+@media (max-width: 760px) {
+  .friends-chain-section {
+    width: calc(100% - 20px);
+    margin-bottom: 42px;
+    padding: 18px 10px 0;
+  }
+
+  .friend-avatar {
+    width: clamp(124px, 35vw, 156px);
+    margin-top: 12px;
+  }
+
+  .friend-avatar + .friend-avatar {
+    margin-left: -10px;
+  }
+
+  .friend-face-button {
+    width: 71%;
+    height: 71%;
+  }
+}

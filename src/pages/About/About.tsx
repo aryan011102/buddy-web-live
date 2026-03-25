@@ -2,6 +2,7 @@ import "./about.css";
 import PacmanGame from "./Pacman/PacmanGame";
 import KnowTeamSection from "./Team/KnowTeamSection";
 import VisionSection from "./Vision/VisionSection";
+import FriendsChainSection from "./FriendsChainSection";
 
 export default function About() {
   return (
@@ -9,6 +10,7 @@ export default function About() {
       <KnowTeamSection />
       <VisionSection />
       <PacmanGame />
+      <FriendsChainSection />
     </main>
   );
 }
