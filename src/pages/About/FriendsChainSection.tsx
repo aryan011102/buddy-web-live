@@ -52,7 +52,7 @@ const SQUARE_SHAPES: ShapeConfig[] = [
 
 const SHAPES = [...SQUARE_SHAPES, ...CIRCLE_SHAPES];
 
-const PEOPLE = [ankur, aryan, devansh, pritika, roshan, sakshi, yash];
+const PEOPLE = [ankur, aryan, devansh,sakshi, pritika, roshan, yash];
 
 type FaceState = {
   revealed: boolean;
@@ -118,13 +118,13 @@ function createFaces(total: number) {
 }
 
 export default function FriendsChainSection() {
-  const trackRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const [itemCount, setItemCount] = useState(() => Math.max(SHAPES.length, PEOPLE.length));
   const [faces, setFaces] = useState<FaceState[]>([]);
 
   useEffect(() => {
-    const track = trackRef.current;
-    if (!track) {
+    const section = sectionRef.current;
+    if (!section) {
       return;
     }
 
@@ -139,7 +139,7 @@ export default function FriendsChainSection() {
       setItemCount(Math.max(minCount, needed));
     });
 
-    observer.observe(track);
+    observer.observe(section);
     return () => observer.disconnect();
   }, []);
 
@@ -196,8 +196,14 @@ export default function FriendsChainSection() {
   }
 
   return (
-    <section className="friends-chain-section" aria-label="Buddy chain">
-      <div ref={trackRef} className="friends-chain-track">
+    <section ref={sectionRef} className="friends-chain-section" aria-label="Buddy chain">
+      <h2>
+        Hope to see you on the app soon :)
+        <br />
+        Made with love in India ♡
+      </h2>
+
+      <div className="friends-chain-track">
         {items.map((item, i) => (
           <article key={item.id} className="friend-avatar">
             <img className="friend-shape" src={item.shape} alt="Buddy character" />
