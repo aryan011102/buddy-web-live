@@ -6,14 +6,6 @@
   flex-direction: column;
   gap: 100px;
   align-items: stretch;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.friends-chain-section::-webkit-scrollbar {
-  display: none;
 }
 
 .friends-chain-section h2 {
@@ -24,6 +16,18 @@
   font-weight: 600;
   line-height: 1.55;
   color: #15151a;
+}
+
+.friends-chain-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.friends-chain-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .friends-chain-track {

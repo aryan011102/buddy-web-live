@@ -203,34 +203,36 @@ export default function FriendsChainSection() {
         Made with love in India ♡
       </h2>
 
-      <div className="friends-chain-track">
-        {items.map((item, i) => (
-          <article key={item.id} className="friend-avatar">
-            <img className="friend-shape" src={item.shape} alt="Buddy character" />
+      <div className="friends-chain-scroll">
+        <div className="friends-chain-track">
+          {items.map((item, i) => (
+            <article key={item.id} className="friend-avatar">
+              <img className="friend-shape" src={item.shape} alt="Buddy character" />
 
-            <button
-              type="button"
-              className="friend-face-button"
-              onClick={() => handleFaceClick(i)}
-              aria-label="Toggle buddy face"
-            >
-              <span
-                className={`friend-face-mask shape-${item.headShape} ${
-                  item.revealed ? "is-revealed" : ""
-                }`}
+              <button
+                type="button"
+                className="friend-face-button"
+                onClick={() => handleFaceClick(i)}
+                aria-label="Toggle buddy face"
               >
-                {item.face ? (
-                  <img
-                    key={`${item.id}-${item.flips}`}
-                    className={`friend-face ${item.revealed ? "is-visible" : "is-hidden"}`}
-                    src={item.face}
-                    alt="Buddy face"
-                  />
-                ) : null}
-              </span>
-            </button>
-          </article>
-        ))}
+                <span
+                  className={`friend-face-mask shape-${item.headShape} ${
+                    item.revealed ? "is-revealed" : ""
+                  }`}
+                >
+                  {item.face ? (
+                    <img
+                      key={`${item.id}-${item.flips}`}
+                      className={`friend-face ${item.revealed ? "is-visible" : "is-hidden"}`}
+                      src={item.face}
+                      alt="Buddy face"
+                    />
+                  ) : null}
+                </span>
+              </button>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
