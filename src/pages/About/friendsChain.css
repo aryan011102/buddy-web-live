@@ -5,14 +5,18 @@
   padding: 120px 18px 0;
   display: flex;
   align-items: flex-end;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 
 .friends-chain-track {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  overflow: hidden;
-  width: 100%;
+  width: max-content;
+  min-width: 100%;
 }
 
 .friend-avatar {
@@ -93,15 +97,6 @@
 .friend-face-button:focus-visible {
   outline: 3px solid #2563eb;
   outline-offset: 3px;
-}
-
-@media (max-width: 1024px) {
-  .friends-chain-track {
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: thin;
-    padding-bottom: 8px;
-  }
 }
 
 @media (max-width: 760px) {
