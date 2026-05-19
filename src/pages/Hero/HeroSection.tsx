@@ -54,7 +54,7 @@ const positions = Array.from(elements).map((el, i) => {
   </div>
 
   <p className="hero-subtitle">
-  Feel like home, away from home
+  feel like home, away from home
   </p>
 
   <a
