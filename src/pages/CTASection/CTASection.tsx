@@ -16,11 +16,11 @@ const CTASection = () => {
           <div className="cta-buttons">
                <a
                  className="cta-btn"
-                 href="https://forms.gle/3xvxfkFvcDmjKh2L9"
+                 href="https://buddy-app-co.github.io/buddy-get/"
                  target="_blank"
                  rel="noopener noreferrer"
                >
-                 Join Waitlist
+                 Download now
                </a>
 
           </div>
