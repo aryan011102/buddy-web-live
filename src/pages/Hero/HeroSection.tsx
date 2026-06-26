@@ -59,11 +59,11 @@ const positions = Array.from(elements).map((el, i) => {
 
   <a
     className="hero-cta"
-    href="https://forms.gle/3xvxfkFvcDmjKh2L9"
+    href="https://buddy-app-co.github.io/buddy-get/"
     target="_blank"
     rel="noopener noreferrer"
   >
-    Join the waiting list
+    Download now
   </a>
 
   {targets.length > 0 && <EmojiBurst targets={targets} />}
