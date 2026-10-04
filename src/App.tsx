@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import About from "./pages/About/About";
 import NotFound from "./pages/NotFound/NotFound";
+import SharedLink from "./pages/SharedLink/SharedLink";
 import FloatingMenuButton from "./components/FloatingMenuButton/FloatingMenuButton";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Landing from "./pages/Landing/Landing";
@@ -35,6 +36,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/about" element={<About />} />
+        <Route path="/e/:eventId" element={<SharedLink kind="event" />} />
+        <Route path="/n/:nudgeId" element={<SharedLink kind="nudge" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Analytics />
