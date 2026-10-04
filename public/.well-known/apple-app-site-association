@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["Y973CM2352.com.buddytechindia.buddy"],
+        "components": [
+          { "/": "/e/*", "comment": "Shared events" },
+          { "/": "/n/*", "comment": "Shared nudges" }
+        ]
+      }
+    ]
+  }
+}
