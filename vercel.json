@@ -1,9 +1,13 @@
 {
-  "rewrites": [
-    { "source": "/oauth/digilocker", "destination": "/oauth/digilocker/index.html" },
-    { "source": "/(.*)", "destination": "/" }
-  ],
   "headers": [
+    {
+      "source": "/.well-known/apple-app-site-association",
+      "headers": [{ "key": "Content-Type", "value": "application/json" }]
+    },
+    {
+      "source": "/.well-known/assetlinks.json",
+      "headers": [{ "key": "Content-Type", "value": "application/json" }]
+    },
     {
       "source": "/oauth/digilocker(.*)",
       "headers": [
@@ -12,5 +16,9 @@
         { "key": "X-Robots-Tag", "value": "noindex" }
       ]
     }
+  ],
+  "rewrites": [
+    { "source": "/oauth/digilocker", "destination": "/oauth/digilocker/index.html" },
+    { "source": "/(.*)", "destination": "/" }
   ]
 }

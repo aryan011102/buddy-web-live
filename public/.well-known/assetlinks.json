@@ -1,0 +1,23 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.buddytechindia.buddy",
+      "sha256_cert_fingerprints": [
+        "55:B5:26:B8:93:9F:BD:39:27:F9:B6:63:83:CE:21:00:30:5D:31:77:C7:64:07:C2:C9:74:DF:82:0D:4C:16:0D",
+        "0B:B1:A1:C7:2F:AF:42:5F:25:6C:0B:78:89:69:89:62:B3:30:66:E3:78:A5:F9:31:D6:8D:B6:60:38:05:83:45"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.buddyindia.buddy.test",
+      "sha256_cert_fingerprints": [
+        "0B:B1:A1:C7:2F:AF:42:5F:25:6C:0B:78:89:69:89:62:B3:30:66:E3:78:A5:F9:31:D6:8D:B6:60:38:05:83:45"
+      ]
+    }
+  }
+]
