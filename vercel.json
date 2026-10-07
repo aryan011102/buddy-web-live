@@ -7,9 +7,18 @@
     {
       "source": "/.well-known/assetlinks.json",
       "headers": [{ "key": "Content-Type", "value": "application/json" }]
+    },
+    {
+      "source": "/oauth/digilocker(.*)",
+      "headers": [
+        { "key": "Referrer-Policy", "value": "no-referrer" },
+        { "key": "Cache-Control", "value": "no-store" },
+        { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
     }
   ],
   "rewrites": [
+    { "source": "/oauth/digilocker", "destination": "/oauth/digilocker/index.html" },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
